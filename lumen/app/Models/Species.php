@@ -11,7 +11,7 @@ class Species extends Model
      *
      * @var array
      */
-    protected $fillable = ["id", "number", "name", "generation"];
+    protected $fillable = ["id", "number", "name", "generation", "type1"];
 
     /**
      * The attributes excluded from the model's JSON form.

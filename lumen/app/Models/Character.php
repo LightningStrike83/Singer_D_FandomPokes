@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Line extends Model
+class Character extends Model
 {
      /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ["id", "species"];
+    protected $fillable = ["id", "number", "subseries"];
 
     /**
      * The attributes excluded from the model's JSON form.

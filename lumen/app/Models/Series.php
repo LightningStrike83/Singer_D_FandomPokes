@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class twfPrompt extends Model
+class Series extends Model
 {
      /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ["id", "prompt", "description", "credit", "random"];
+    protected $fillable = ["id", "name"];
 
     /**
      * The attributes excluded from the model's JSON form.
