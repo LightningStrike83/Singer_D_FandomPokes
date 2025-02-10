@@ -14,19 +14,32 @@
     <section class="grid-con">
         <h2 class="hidden"></h2>
 
-        <select id="main-select"></select>
+        <div class="select-con col-span-full">
+            <select class="select-list" id="main-select"></select>
+        </div>
 
-        <select id="sub-select">
-            <option disabled selected value="none">--Please Select A Series First--</option>
-        </select>
+
+        <div class="select-con col-span-full">
+            <select class="select-list" id="sub-select">
+                <option disabled selected value="none">--Please Select A Series First--</option>
+            </select>
+        </div>
     </section>
 
     <section class="grid-con">
-        <select id="character-list">
-            <option disabled selected value="none">--Please Select A Subseries First</option>
-        </select>
-        <div id="character-list-con" class="col-span-3"></div>
-        <div id="character-partner-con" class="col-span-9"></div>
+        <div id="character-list-select" class="select-con col-span-full">
+            <select class="select-list" id="character-list">
+                <option disabled selected value="none">--Please Select A Subseries First--</option>
+            </select>
+        </div>
+        <div id="character-list-con" class="col-span-2"></div>
+        <div id="character-partner-con" class="col-span-full m-col-span-10"></div>
+    </section>
+
+    <section class="grid-con">
+        <div class="col-start-2 col-end-4 m-col-start-6 m-col-end-8">
+            <p id="top-text">To Top ↑</p>
+        </div>
     </section>
 
     <footer></footer>
