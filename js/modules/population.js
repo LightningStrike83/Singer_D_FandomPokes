@@ -6,6 +6,8 @@ export function populationFunctionality() {
     const characterCon = document.querySelector("#character-list-con")
     const partnerCon = document.querySelector("#character-partner-con")
 
+    let nameVariable = ""
+
     function populateMain() {
         fetch(`${baseURL}series/all`)
         .then(response => response.json())
@@ -82,8 +84,10 @@ export function populationFunctionality() {
                 characterOption.innerText = character.name
                 characterOption.value = character.id
 
-                characterLink.textContent = character.name
-                characterLink.setAttribute("data-chatacter", `${character.id}`)
+                nameVariable = `${character.name}`
+
+                characterLink.textContent = `${character.name} ►`
+                characterLink.setAttribute("data-character", `${character.id}`)
                 characterLink.setAttribute("class", "character")
                 characterLink.addEventListener("click", showPokemon)
 
@@ -95,10 +99,8 @@ export function populationFunctionality() {
         })
     }
 
-    function showPokemon() {
-        const value = characterSelect.value || this.dataset.character
-
-        console.log(value)
+    function showPokemon(e) {
+        let value = e?.currentTarget?.dataset?.character || characterSelect.value
 
         fetch(`${baseURL}partners/${value}`)
         .then(response => response.json())
@@ -110,10 +112,32 @@ export function populationFunctionality() {
             const characterBox = document.createElement("div")
             const characterImage = document.createElement("img")
             const partnerBox = document.createElement("div")
+            const name = document.createElement("h3")
+            const displayDiv = document.createElement("div")
+            const characterImageBox = document.createElement("div")
+            const submitButton = document.createElement("button")
+
+            displayDiv.setAttribute("id", "display-div")
+
+            name.textContent = nameVariable
+            name.setAttribute("id", "character-title")
 
             characterImage.src = `../images/characters/${value}.png`
+            characterImage.setAttribute("class", "character-image")
 
-            characterBox.appendChild(characterImage)
+            characterBox.setAttribute("id", "character-box")
+            partnerBox.setAttribute("id", "partner-box")
+
+            submitButton.innerText = "Submit A Pokemon For This Character"
+            submitButton.setAttribute("id", "submit-pokemon-button")
+            submitButton.setAttribute("data-key", `${value}`)
+
+            characterImageBox.setAttribute("id", "character-image-box")
+
+            characterImageBox.appendChild(characterImage)
+            characterImageBox.appendChild(submitButton)
+            characterBox.appendChild(name)
+            displayDiv.appendChild(characterImageBox)
 
             response.forEach(partner => {
                 const div = document.createElement("div")
@@ -124,14 +148,20 @@ export function populationFunctionality() {
                 const vote = document.createElement("p")
                 const upvote = document.createElement("p")
 
-                div.setAttribute("class", "partner-div")
+                div.setAttribute("class", `partner-div type-${partner.type1}`)
 
                 image.src = `../images/pokemon/${partner.number}.png`
+                image.setAttribute("class", "pokemon-image")
                 
                 name.textContent = `${partner.name}`
 
                 vote.textContent = `${partner.votes}`
+                vote.setAttribute("class", "vote-count")
+
                 upvote.textContent = "▲"
+                upvote.setAttribute("class", "upvote")
+
+                voteBox.setAttribute("class", "vote-box")
 
                 voteBox.appendChild(upvote)
                 voteBox.appendChild(vote)
@@ -142,9 +172,9 @@ export function populationFunctionality() {
                 partnerBox.appendChild(div)
             })
 
-            characterBox.appendChild(partnerBox)
+            displayDiv.appendChild(partnerBox)
+            characterBox.appendChild(displayDiv)
             partnerCon.appendChild(characterBox)
-
         })
     }
 
