@@ -1,23 +1,32 @@
-#character-list-con, #character-partner-con {
+#character-list-con {
     border: 1px solid black;
     margin-top: 10px;
 }
 
+#character-partner-con {
+    margin-top: 10px;
+    border: 2px solid black;
+}
+
 #character-list-con {
-    background-color: rgb(222, 222, 222);
     height: 550px;
     overflow: scroll;
     position: sticky;
     top: 10px;
     display: none;
+    grid-template-rows: auto auto;
+    flex-direction: column;
 }
 
 #character-image-box {
-    width: 33%;
     height: 33%;
     margin: 10px;
-    position: sticky;
-    top: 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+#character-list, #character-list-title {
+    grid-row: 1;
 }
 
 .partner-div {
@@ -31,6 +40,7 @@
     margin-left: 2.5%;
     margin-right: 2.5%;
     padding-right: 20px;
+    border: 2px solid black;
 }
 
 .pokemon-image {
@@ -52,10 +62,6 @@
     align-items: center;
 }
 
-.upvote, .vote-count {
-    font-size: 20px;
-}
-
 .upvote {
     cursor: pointer;
     transition: all ease-in-out 0.5s;
@@ -67,11 +73,11 @@
 #character-title {
     text-align: center;
     width: 100%;
-    font-size: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
     margin-bottom: 5px;
-    border-bottom: 3px solid black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
     position: sticky;
     top: 0;
     z-index: 10;
@@ -85,11 +91,13 @@
 
 #display-div {
     display: flex;
+    flex-direction: column;
 }
 
 .character {
     cursor: pointer;
     transition: all ease-in-out 0.5s;
+    margin-bottom: 10px;
     &:hover {
         opacity: 70%;
         text-decoration: underline;
@@ -97,7 +105,22 @@
 }
 
 #submit-pokemon-button {
-    margin-top: 5px;
+    margin-top: 10px;
+}
+
+ul {
+    padding-inline-start: 25px;
+    margin-block-start: 10px;
+}
+
+#character-list-title {
+    text-align: center;
+    border-bottom: 1px solid black;
+    height: min-content;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    background-color: rgb(222, 222, 222);
 }
 
 @media screen and (min-width: 428px) {
@@ -105,17 +128,19 @@
         padding: 10px;
         height: 100px;
         width: 100px;
-        background-image: url(../images/pokeball-full.svg);
-    }
-
-    .upvote, .vote-count {
-        font-size: 24px;
     }
 }
 
 @media screen and (min-width: 768px) {
     .partner-div {
         padding-right: 50px;
+    }
+
+    .character-image {
+        max-height: 350px;
+        max-width: fit-content;
+        display: flex;
+        justify-self: center;
     }
 
     .pokemon-image {
@@ -129,19 +154,23 @@
         display: flex;
     }
 
-    .upvote, .vote-count {
-        font-size: 28px;
-    }
-
-    #character-title {
-        font-size: 24px;
-    }
-
     #character-list-select {
         display: none;
     }
 
     #character-list-con {
-        display: grid;
+        display: flex;
+    }
+
+    #character-image-box {
+        width: 33%;
+        position: sticky;
+        top: 70px;
+        display: flex;
+        align-items: center;
+    }
+
+    #display-div {
+        flex-direction: row;
     }
 }

@@ -1,0 +1,66 @@
+header {
+    background-color: rgb(222, 222, 222);
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#theme-enable {
+    display: flex;
+    align-items: center;
+}
+
+#theme-image {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#theme-enable-text {
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+    &:hover {
+        text-decoration: underline;
+        opacity: 70%;
+    }
+}
+
+#login-con {
+    padding-left: 5px;
+    padding-right: 5px;
+    display: none;
+    align-items: center;
+    a {
+        margin-left: 5px;
+        margin-right: 5px;
+        text-decoration: none;
+        transition: all ease-in-out 0.5s;
+        &:visited {
+            color: black;
+            text-decoration: none;
+        }
+        &:hover {
+            text-decoration: underline;
+            opacity: 70%;
+        }
+    }
+}
+
+#hamburger-menu {
+    img {
+        height: 35px;
+        width: 35px;
+    }
+
+    margin-right: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    #login-con {
+        display: flex;
+    }
+
+    #hamburger-menu {
+        display: none;
+    }
+}

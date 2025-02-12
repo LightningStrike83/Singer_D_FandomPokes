@@ -1,5 +1,9 @@
 @use "../abstracts/colours" as c;
 
+body.dark-mode {
+    background-color: rgb(83, 83, 83);
+}
+
 .select-con {
     display: flex;
     justify-content: center;
