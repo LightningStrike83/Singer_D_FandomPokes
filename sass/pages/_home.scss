@@ -123,6 +123,10 @@ ul {
     background-color: rgb(222, 222, 222);
 }
 
+#loading-text {
+    margin-top: 10px;
+}
+
 @media screen and (min-width: 428px) {
     .pokemon-image {
         padding: 10px;
@@ -138,7 +142,6 @@ ul {
 
     .character-image {
         max-height: 350px;
-        max-width: fit-content;
         display: flex;
         justify-self: center;
     }

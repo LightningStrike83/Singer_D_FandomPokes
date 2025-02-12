@@ -2,12 +2,25 @@
     font-size: 20px;
 }
 
-#character-title, .pokemon-name {
+#character-title, .pokemon-name, #select-title {
     font-size: 20px;
 }
 
-#top-text.dark-mode {
+#top-text.dark-mode, #update-text.dark-mode {
     color: white;
+}
+
+#update-text {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: right;
+    line-height: 20px;
+    margin-right: 2%;
+}
+
+.close-button {
+    font-size: 30px;
+    text-align: center;
 }
 
 @media screen and (min-width: 428px) {
@@ -21,7 +34,7 @@
         font-size: 28px;
     }
 
-    #character-title, .pokemon-name {
+    #character-title, .pokemon-name, #select-title {
         font-size: 24px;
     }
 }
