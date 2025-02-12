@@ -5,7 +5,6 @@ export function populationFunctionality() {
     const characterSelect = document.querySelector("#character-list")
     const characterCon = document.querySelector("#character-list-con")
     const partnerCon = document.querySelector("#character-partner-con")
-    const currentTheme = localStorage.getItem("theme");
 
     function populateMain() {
         fetch(`${baseURL}series/all`)
@@ -123,6 +122,7 @@ export function populationFunctionality() {
             const displayDiv = document.createElement("div")
             const characterImageBox = document.createElement("div")
             const submitButton = document.createElement("button")
+            const loadingText = document.createElement("p")
 
             displayDiv.setAttribute("id", "display-div")
 
@@ -139,11 +139,15 @@ export function populationFunctionality() {
             submitButton.innerText = "Submit A Pokemon For This Character"
             submitButton.setAttribute("id", "submit-pokemon-button")
             submitButton.setAttribute("data-key", `${value}`)
+            submitButton.addEventListener("click", displayPokeSubmit)
+
+            loadingText.setAttribute("id", "loading-text")
 
             characterImageBox.setAttribute("id", "character-image-box")
 
             characterImageBox.appendChild(characterImage)
             characterImageBox.appendChild(submitButton)
+            characterImageBox.appendChild(loadingText)
             characterBox.appendChild(name)
             displayDiv.appendChild(characterImageBox)
 
@@ -192,7 +196,50 @@ export function populationFunctionality() {
         })
     }
 
+    function displayPokeSubmit() {
+        const pokeSubmitCon = document.querySelector("#pokemon-submission-con")
+        const loadingText = document.querySelector("#loading-text")
+
+        loadingText.textContent = "Loading..."
+
+        fetch(`${baseURL}species/all`)
+        .then(response => response.json())
+        .then(function(response) {
+            const pokemonSelect = document.querySelector("#pokemon-submit-select")
+            const characterName = document.querySelector("#pokemon-submit-character")
+            const characterTitle = document.querySelector("#character-title")
+            const button = document.querySelector("#submit-pokemon-button")
+            const key = button.dataset.key
+            const defaultOption = document.createElement("option")
+
+            pokemonSelect.innerHTML = ""
+
+            defaultOption.innerText = "--Please Select A Pokemon--"
+            defaultOption.selected = true
+            defaultOption.disabled = true
+
+            pokemonSelect.appendChild(defaultOption)
+
+            characterName.value = characterTitle.textContent
+            characterName.setAttribute("data-submit", `${key}`)
+
+            response.forEach(item => {
+                const option = document.createElement("option")
+
+                option.value = item.id
+                option.innerText = item.name
+
+                pokemonSelect.appendChild(option)
+            })
+
+            pokeSubmitCon.style.display = "grid"
+            loadingText.textContent = ""
+        })
+    }
+
     function dynamicTheme() {
+        const currentTheme = localStorage.getItem("theme");
+
         if (currentTheme === "dark") {
             const changeElements = document.querySelectorAll(".dm");
 

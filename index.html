@@ -27,6 +27,10 @@
         </div>
     </header>
 
+    <div id="update-con" class="full-width-grid-con">
+        <p id="update-text" class="col-start-2 col-span-2 dm">Last Update: Sept. 24, 2025</p>
+    </div>
+
     <section class="grid-con">
         <h2 class="hidden"></h2>
 
@@ -61,5 +65,29 @@
     </section>
 
     <footer></footer>
+
+    <section id="pokemon-submission-con" class="full-width-grid-con lightbox">
+        <h2 class="hidden">Pokemon Submission Rules</h2>
+
+        <div id="pokemon-select-con" class="col-start-2 col-span-1" class="grid-con">
+            <h3 id="select-title" class="col-span-full">Submit A Pokemon</h3>
+            
+            <form id="pokemon-submit-form">
+                <label for="character">Character:</label>
+                <input id="pokemon-submit-character" type="text" disabled>
+
+                <label for="pokemon">Pokemon:</label>
+                <select id="pokemon-submit-select"></select>
+
+                <input type="submit" value="Submit" id="submit-pokemon">
+            </form>
+
+            <p id="submit-poke-text"></p>
+        </div>
+
+        <div class="col-span-1 mobile-close">
+            <p class="close-button">X</p>
+        </div>
+    </section>
 </body>
 </html>

@@ -15,7 +15,7 @@ class SpeciesController extends Species {
      */
 
      public function getAll() {
-        $species = Species::select('number', 'name', 'type1')->orderBy('number', 'asc')->get();
+        $species = Species::select('number', 'name', 'type1', 'id')->orderBy('name', 'asc')->get();
         return response()->json($species);
     }
 

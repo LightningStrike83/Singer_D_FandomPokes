@@ -17,7 +17,7 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get("/gen/all", "SpeciesController@getAll");
+$router->get("/species/all", "SpeciesController@getAll");
 $router->get("/series/all", "SeriesController@getAll");
 $router->get("/subseries/{id}", "SubseriesController@getOne");
 $router->get("/characters/{id}", "CharacterController@getOne");
