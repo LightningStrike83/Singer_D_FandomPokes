@@ -6,10 +6,26 @@
     <link rel="stylesheet" href="css/grid.css?version=0.1">
     <link rel="stylesheet" href="css/main.css?version=0.1">
     <script type="module" src="js/main.js?version=0.1"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
     <title>Fandom PokePartners</title>
 </head>
-<body data-page="home">
-    <header></header>
+<body data-page="home" class="dm">
+    <header>
+        <div id="theme-enable">
+            <img id="theme-image" src="images/dark-icon.png" alt="Theme Icon">
+            <p id="theme-enable-text">Enable <span id="theme-text">Dark</span> Mode</p>
+        </div>
+
+        <div id="hamburger-menu">
+            <img src="images/ham_menu.svg" alt="Hamburger Menu">
+        </div>
+
+        <div id="login-con">
+            <a href="">Login</a>
+            <a href="">Sign Up</a>
+        </div>
+    </header>
 
     <section class="grid-con">
         <h2 class="hidden"></h2>
@@ -32,13 +48,15 @@
                 <option disabled selected value="none">--Please Select A Subseries First--</option>
             </select>
         </div>
-        <div id="character-list-con" class="col-span-2"></div>
-        <div id="character-partner-con" class="col-span-full m-col-span-10"></div>
+        <div id="character-list-con" class="col-span-2 dm">
+            <p id="character-list-title" class="dm">Character List</p>
+        </div>
+        <div id="character-partner-con" class="col-span-full m-col-span-10 dm"></div>
     </section>
 
     <section class="grid-con">
         <div class="col-start-2 col-end-4 m-col-start-6 m-col-end-8">
-            <p id="top-text">To Top ↑</p>
+            <p id="top-text" class="dm">To Top ↑</p>
         </div>
     </section>
 

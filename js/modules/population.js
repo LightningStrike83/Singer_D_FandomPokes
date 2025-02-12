@@ -5,8 +5,7 @@ export function populationFunctionality() {
     const characterSelect = document.querySelector("#character-list")
     const characterCon = document.querySelector("#character-list-con")
     const partnerCon = document.querySelector("#character-partner-con")
-
-    let nameVariable = ""
+    const currentTheme = localStorage.getItem("theme");
 
     function populateMain() {
         fetch(`${baseURL}series/all`)
@@ -66,6 +65,7 @@ export function populationFunctionality() {
         .then(function(response) {
             const baseOption = document.createElement("option")
             const characterList = document.createElement("ul")
+            const title = document.createElement("p")
             baseOption.innerText = "--Select A Character--"
             baseOption.disabled = true
             baseOption.selected = true
@@ -75,7 +75,11 @@ export function populationFunctionality() {
 
             characterSelect.appendChild(baseOption)
 
-            console.log(response)
+            characterList.setAttribute("id", "character-list")
+
+            title.textContent = "Character List"
+            title.setAttribute("id", "character-list-title")
+            title.setAttribute("class", "dm")
 
             response.forEach(character => {
                 const characterOption = document.createElement("option")
@@ -84,23 +88,26 @@ export function populationFunctionality() {
                 characterOption.innerText = character.name
                 characterOption.value = character.id
 
-                nameVariable = `${character.name}`
-
                 characterLink.textContent = `${character.name} ►`
                 characterLink.setAttribute("data-character", `${character.id}`)
-                characterLink.setAttribute("class", "character")
+                characterLink.setAttribute("class", "character dm")
+                characterLink.setAttribute("data-name", `${character.name}`)
                 characterLink.addEventListener("click", showPokemon)
 
                 characterSelect.appendChild(characterOption)
                 characterList.appendChild(characterLink)
             })
 
+            characterCon.appendChild(title)
             characterCon.appendChild(characterList)
+
+            dynamicTheme()
         })
     }
 
     function showPokemon(e) {
         let value = e?.currentTarget?.dataset?.character || characterSelect.value
+        let nameVariable = e?.currentTarget?.dataset.name || characterSelect.options[this.selectedIndex].innerText
 
         fetch(`${baseURL}partners/${value}`)
         .then(response => response.json())
@@ -121,6 +128,7 @@ export function populationFunctionality() {
 
             name.textContent = nameVariable
             name.setAttribute("id", "character-title")
+            name.setAttribute("class", "dm")
 
             characterImage.src = `../images/characters/${value}.png`
             characterImage.setAttribute("class", "character-image")
@@ -148,12 +156,14 @@ export function populationFunctionality() {
                 const vote = document.createElement("p")
                 const upvote = document.createElement("p")
 
-                div.setAttribute("class", `partner-div type-${partner.type1}`)
+                div.setAttribute("class", `partner-div type-${partner.type1} dm`)
+                div.setAttribute("data-vote", `${partner.id}`)
 
                 image.src = `../images/pokemon/${partner.number}.png`
                 image.setAttribute("class", "pokemon-image")
                 
                 name.textContent = `${partner.name}`
+                name.setAttribute("class", "pokemon-name")
 
                 vote.textContent = `${partner.votes}`
                 vote.setAttribute("class", "vote-count")
@@ -175,7 +185,23 @@ export function populationFunctionality() {
             displayDiv.appendChild(partnerBox)
             characterBox.appendChild(displayDiv)
             partnerCon.appendChild(characterBox)
+
+            partnerCon.style.borderTop = "0px"
+
+            dynamicTheme()
         })
+    }
+
+    function dynamicTheme() {
+        if (currentTheme === "dark") {
+            const changeElements = document.querySelectorAll(".dm");
+
+            changeElements.forEach(element => {
+                if (!element.classList.contains("dark-mode")) {
+                    element.classList.add("dark-mode")
+                }
+            });
+        }
     }
 
     mainSelect.addEventListener("change", populateSub)
