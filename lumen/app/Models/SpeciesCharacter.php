@@ -11,7 +11,7 @@ class SpeciesCharacter extends Model
      *
      * @var array
      */
-    protected $fillable = ["id", "character_id", "species_id", "votes"];
+    protected $fillable = ["character_id", "species_id", "votes"];
 
     /**
      * The attributes excluded from the model's JSON form.
