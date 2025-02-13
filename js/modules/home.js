@@ -5,6 +5,7 @@ export function populationFunctionality() {
     const characterSelect = document.querySelector("#character-list")
     const characterCon = document.querySelector("#character-list-con")
     const partnerCon = document.querySelector("#character-partner-con")
+    const submitHomeForm = document.querySelector("#pokemon-submit-form")
 
     function populateMain() {
         fetch(`${baseURL}series/all`)
@@ -211,6 +212,9 @@ export function populationFunctionality() {
             const button = document.querySelector("#submit-pokemon-button")
             const key = button.dataset.key
             const defaultOption = document.createElement("option")
+            const text = document.querySelector("#submit-poke-text")
+
+            text.textContent = ""
 
             pokemonSelect.innerHTML = ""
 
@@ -251,7 +255,49 @@ export function populationFunctionality() {
         }
     }
 
+    function submitPartner(event) {
+        event.preventDefault()
+
+        const characterFind = document.querySelector("#pokemon-submit-character")
+        const characterID = characterFind.dataset.submit
+        const pokemonFind = document.querySelector("#pokemon-submit-select")
+        const pokemonID = pokemonFind.options[pokemonFind.selectedIndex].value
+
+        fetch(`${baseURL}partners/check/${characterID}/${pokemonID}`)
+        .then(response => response.json())
+        .then(function(response) {
+            const text = document.querySelector("#submit-poke-text")
+
+            text.textContent = ""
+
+            if (response.length > 0) {
+                text.textContent = "Sorry, this Pokemon has already been suggested for this character."
+
+            } else {
+                const partnerData = {
+                    character_id: characterID,
+                    species_id: pokemonID,
+                    votes: 0,
+                }
+
+                console.log(partnerData)
+
+                fetch (`${baseURL}partners/add`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json" 
+                    },
+                    body: JSON.stringify(partnerData)  
+                })
+                .then(function() {
+                    text.textContent = "Thank you for your submission! Please close this form and refresh the result to view the submission!"
+                })
+            }
+        })
+    }
+
     mainSelect.addEventListener("change", populateSub)
     subSelect.addEventListener("change", populateCharacter)
     characterSelect.addEventListener("change", showPokemon)
+    submitHomeForm.addEventListener("submit", submitPartner)
 }
