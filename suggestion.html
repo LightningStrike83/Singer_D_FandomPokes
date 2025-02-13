@@ -3,15 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/grid.css?version=0.1">
     <link rel="stylesheet" href="css/main.css?version=0.1">
     <script type="module" src="js/main.js?version=0.1"></script>
-    <title>Document</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+    <title>Fandom PokePartners</title>
 </head>
-<body data-page="suggest">
-    <header></header>
+<body data-page="suggest" class="dm">
+    <header>
+        <div id="theme-enable">
+            <img id="theme-image" src="images/dark-icon.png" alt="Theme Icon">
+            <p id="theme-enable-text">Enable <span id="theme-text">Dark</span> Mode</p>
+        </div>
 
-    <section>
-        <h2 class="hidden"></h2>
+        <div id="hamburger-menu">
+            <img src="images/ham_menu.svg" alt="Hamburger Menu">
+        </div>
+
+        <div id="login-con">
+            <a href="">Login</a>
+            <a href="">Sign Up</a>
+        </div>
+    </header>
+
+    <section class="grid-con">
+        <h2 class="hidden">Suggest A Character</h2>
+
+        <div id="rule-con" class="col-span-full">
+            <h3><b>Please Read The Full Rules Before Submitting</b></h3>
+
+            <div id="fictional-rules" class="rules-text">
+                <p><b>1.</b> Fandom PokePartners only accepts fictional characters only. While 'fictional' can be a very broad term, any characters depicted in live-action are allowed, but any real life people (including actors, voice actors, musicians, etc.) will not be accepted without notification. Fandom PokePartners wishes to maintain and respects freedom of choice for these individuals, unless if these individuals reach out and give consent to be added. Likewise, any actors that are depicting themselves in a fictious manner will be denied for the same reasons as mentioned above, unless consent is given. <!--  Examples:<br>
+                    <ul class="example-list">
+                        <li>Chris Evans <b>is not allowed</b> 🚫</li>
+                        <li>Steve Rogers/Captain America (MCU) <b>is allowed</b> ✅</li>
+                        <li>Matt Mercer <b>is not allowed</b> 🚫</li>
+                        <li>Cole Cassidy (Overwatch) <b>is allowed</b> ✅</li>
+                        <li>Selena Gomez is <b>not allowed</b> 🚫</li>
+                        <li>Alex Russo (Wizards of Waverly Place) <b>is allowed</b> ✅</li>
+                        <li>LeBron James (Multiversus/Space Jam: A New Legacy) <b>is not allowed</b> 🚫</li>
+                    </ul>-->
+                </p>
+
+                <input type="checkbox" id="fiction-box" class="rule-checkbox" data-checkbox="Rule 1"><label for="fiction-box">I understand and agree that my suggestion will be based off of a fictional character and my suggestion may be subject to denial and/or removal if it is discovered to be a real life person</label>
+            </div>
+
+            <div id="age-restriction-rules" class="rules-text">
+                <p><b>2.</b> Fandom PokePartners does not allow suggestions based on media that are sexually explicit in nature. Characters from adult-oriented content such as M-rated games and R-rated TV Shows and movies are allowed, but characters from specific media that are prohibited from younger audiences will not be accepted. If the source series is banned on Steam and/or needs an ID to access the material, it will not be accepted here. Any source material that contains sexual themes, such as ecchi anime series, will be accepted as long as it is not explicit and/or the depicted character is appropriate for audience viewing. <!-- Examples:<br>
+                    <ul class="example-list">
+                        <li>South Park <b>is allowed</b> ✅</li>
+                        <li>Huniepop <b>is not allowed</b> 🚫</li>
+                        <li>Ivy (Soulcalibur) <b>is allowed</b> ✅</li>
+                        <li>To Love Ru <b>is allowed ✅</b></li>
+                        <li>Itadaki! Seieki <b>is not allowed</b> 🚫</li>
+                    </ul> -->
+                </p>
+
+                <input type="checkbox" id="age-restricted-box" class="rule-checkbox" data-checkbox="Rule 2"><label for="age-restricted-box">I understand and agree that my suggestion is not based off any sexually explicit material, and will be subject to denial and/or removal if it is discovered to be</label>
+            </div>
+
+            <div id="problematic-rules" class="rules-text">
+                <p><b>3.</b> Fandom PokePartners does not allow suggestions based on characters or media that are deemed to be problematic. While the definition of 'problematic' can be broad, this includes, but is not limited to, any source material that is generally considered to be homophobic, transphobic, racist, anti-semetic, etc. in nature.</p>
+
+                <input type="checkbox" id="problematic" class="rule-checkbox" data-checkbox="Rule 3"><label for="problematic">I understand and agree that my suggestion is not generally considered to be problematic or comes from a problematic source material, and will be subject to denial and/or removal if it is discovered to be</label>
+            </div>
+
+            <button id="accept-all" class="accept-button">Accept All and Continue</button>
+            <button id="accept-button" class="accept-button">Accept and Continue</button>
+
+            <p id="rule-error"></p>
+        </div>
+
+        <div id="suggest-con">
+            <p>Hi</p>
+        </div>
+    </section>
+
+    <section class="grid-con">
+        <div class="col-start-2 col-end-4 m-col-start-6 m-col-end-8">
+            <p id="top-text" class="dm">To Top ↑</p>
+        </div>
     </section>
 
     <footer></footer>
