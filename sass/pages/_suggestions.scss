@@ -6,16 +6,30 @@
     margin-bottom: 20px;
 }
 
+#rule-con {
+    h3 {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
 .example-list {
     margin-block-end: 0;
 }
 
 .rule-checkbox {
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
-#accept-all {
-    display: none;
+#rule-error {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#accept-button {
+    display: flex;
+    justify-self: center;
 }
 
 #suggest-con {
