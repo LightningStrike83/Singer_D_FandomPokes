@@ -68,15 +68,41 @@
 
                 <input type="checkbox" id="problematic" class="rule-checkbox" data-checkbox="Rule 3"><label for="problematic">I understand and agree that my suggestion is not generally considered to be problematic or comes from a problematic source material, and will be subject to denial and/or removal if it is discovered to be</label>
             </div>
+            
+            <div id="oc-rules" class="rules-text">
+                <p><b>4.</b> Fandom PokePartners does not allow characters that are considered to be fan-made. While the developers love and support the creation of these characters, this website is intended for canon characters only. Fandom PokePartners is looking into an alternative way of sharing fan-made characters with others and have creators ask for suggestions, but these characters will not be added to and/or removed from the database.</p>
 
-            <button id="accept-all" class="accept-button">Accept All and Continue</button>
+                <input type="checkbox" id="problematic" class="rule-checkbox" data-checkbox="Rule 4"><label for="problematic">I understand and agree that my suggestion is not a fan made character, and will be subject to denial and/or removal if it is discovered to be</label>
+            </div>
+
             <button id="accept-button" class="accept-button">Accept and Continue</button>
 
             <p id="rule-error"></p>
         </div>
 
-        <div id="suggest-con">
-            <p>Hi</p>
+        <div id="suggest-con" class="col-span-full">
+            <h3>Suggest A Character</h3>
+
+            <form id="suggest-character">
+                <label for="character_name">Character Name (Required)</label>
+                <input type="text" name="character_name" id="character_name">
+
+                <label for="series">Series Name (Required)</label>
+                <input type="text" name="series" id="series">
+
+                <label for="subseries">Subseries Name <span data-info="subseries-info" class="more-info dm">?</span></label>
+                <input type="text" name="subseries" id="subseries">
+
+                <label for="wiki_page">Wikia / Fandom Page <span data-info="wiki-info" class="more-info dm">?</span></label>
+                <input type="text" name="wiki_page" id="wiki_page">
+
+                <label for="starting_pokemon">Starting Pokemon (Required)</label>
+                <select id="suggest-pokemon"></select>
+
+                <input type="submit" id="suggest-character-submit">
+            </form>
+
+            <p id="suggest-error"></p>
         </div>
     </section>
 
@@ -87,5 +113,21 @@
     </section>
 
     <footer></footer>
+
+    <section id="subseries-info" class="info-box dm full-width-grid-con">
+        <p class="info-text col-start-2 col-span-1">A subseries is a title that branches under the main series / franchise. This helps users from getting overwhelmed if there's series with multiple different titles with different casts, or helps create a distinction between versions of characters. Not every series has a subseries or needs to be divided. If you're unsure, please re-enter the series name. <br><br>Examples of subseries:<br>-Yu-Gi-Oh! GX<br>-Persona 5<br>-Marvel Cinematic Universe</p>
+
+        <div class="col-span-1 mobile-close">
+            <p class="close-button">X</p>
+        </div>
+    </section>
+
+    <section id="wiki-info" class="info-box dm full-width-grid-con">
+        <p class="info-text col-start-2 col-span-1">Linking to a wikia / fandom page is not required, but will give the submission a priority. This helps the dev collect appropriate assets and information to use for the website.</p>
+
+        <div class="col-span-1 mobile-close">
+            <p class="close-button">X</p>
+        </div>
+    </section>
 </body>
 </html>

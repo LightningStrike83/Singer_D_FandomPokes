@@ -24,5 +24,6 @@ $router->get("/characters/{id}", "CharacterController@getOne");
 $router->post("partners/add", "speciesCharacterController@addPartner");
 $router->get("partners/{id}", "speciesCharacterController@getOne");
 $router->get("partners/check/{character}/{species}", "speciesCharacterController@checkPartners");
+$router->post("suggestion/add", "SuggestionController@addSuggestion");
 // $router->get("");
 // $router->get("");

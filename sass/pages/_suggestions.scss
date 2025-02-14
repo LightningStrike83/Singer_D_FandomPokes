@@ -19,5 +19,86 @@
 }
 
 #suggest-con {
+    padding-top: 20px;
     display: none;
+    align-items: center;
+    flex-direction: column;
+}
+
+#suggest-character {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.more-info {
+    border: 1px solid black;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 50px;
+    margin-left: 3px;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+    &:hover {
+        opacity: 70%;
+    }
+}
+
+#suggest-character-submit {
+    margin-top: 20px;
+    max-width: 100px;
+    align-self: center;
+}
+
+.info-box {
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    background-color: rgba(222, 222, 222, 0.90);
+    display: none;
+}
+
+.info-text {
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#suggest-error {
+    margin-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    #suggest-character {
+        width: 50%;
+    }
+
+    .info-box {
+        width: 20%;
+        border: 1px solid black;
+        height: max-content;
+        margin-top: 25px;
+        position: absolute;
+        background-color: rgb(255, 255, 255);
+        .mobile-close {
+            margin: 0;
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+
+    .info-text {
+        margin: 0;
+    }
+
+    .info-box.dark-mode {
+        background-color: rgb(222, 222, 222);
+    }
+
+    .more-info.dark-mode {
+        background-color: rgb(222, 222, 222);
+    }
 }
