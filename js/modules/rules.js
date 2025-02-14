@@ -1,8 +1,9 @@
 export function ruleCheck() {
     const acceptButtons = document.querySelectorAll(".accept-button")
-    const currentAcceptance = localStorage.getItem("acceptance");
+    const currentAcceptance = sessionStorage.getItem("acceptance");
     const suggestCon = document.querySelector("#suggest-con")
     let accepted = currentAcceptance || "";
+
 
     function showForm() {
         const checkboxes = document.querySelectorAll(".rule-checkbox")
@@ -19,14 +20,6 @@ export function ruleCheck() {
                 uncheckedBox.push(box);
             }
         })
-
-        if (this.id === "accept-all") {
-            uncheckedBox = []
-
-            checkboxes.forEach(box => {
-                box.checked = true
-            })
-        } 
         
         if (uncheckedBox.length > 0) {
             ruleError.textContent = `Please accept the rules of: ${uncheckedBox.map(box => box.dataset.checkbox).join(", ")}`;
@@ -36,11 +29,13 @@ export function ruleCheck() {
             if (this.id === "accept-button") {
                 accepted = "accepted";
 
-                localStorage.setItem("acceptance", accepted);
+                sessionStorage.setItem("acceptance", accepted);
             }
 
             ruleCon.style.display = "none"
-            suggestCon.style.display = "block"
+            suggestCon.style.display = "flex"
+
+            toTop()
         }
     }
 
@@ -48,20 +43,18 @@ export function ruleCheck() {
         if (currentAcceptance === "accepted") {
             document.body.classList.add("accepted");
 
-            checkButton();
+            const ruleCon = document.querySelector("#rule-con")
+
+            ruleCon.style.display = "none"
+            suggestCon.style.display = "flex"
         }
     }
 
-    function checkButton() {
-        if (document.body.classList.contains("accepted")) {
-            const acceptButton = document.querySelector("#accept-button")
-            const acceptAllButton = document.querySelector("#accept-all")
-
-            acceptButton.style.display = "none"
-            acceptAllButton.style.display = "flex"
-        }
+    function toTop() {
+        gsap.to(window, { duration: 1, scrollTo: (0)})
     }
 
     acceptButtons.forEach(button => button.addEventListener("click", showForm))
     window.addEventListener("load", checkAcceptance);
+    document.addEventListener("DOMContentLoaded", (event) => {gsap.registerPlugin(ScrollToPlugin)});
 }

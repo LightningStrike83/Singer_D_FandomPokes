@@ -1,5 +1,9 @@
 @use "../abstracts/colours" as c;
 
+body {
+    position: relative;
+}
+
 body.dark-mode {
     background-color: rgb(83, 83, 83);
 }
