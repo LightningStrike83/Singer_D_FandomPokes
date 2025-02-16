@@ -175,6 +175,7 @@ export function populationFunctionality() {
 
                 upvote.textContent = "▲"
                 upvote.setAttribute("class", "upvote")
+                upvote.addEventListener("click", increaseVote)
 
                 voteBox.setAttribute("class", "vote-box")
 
@@ -293,6 +294,36 @@ export function populationFunctionality() {
                     text.textContent = "Thank you for your submission! Please close this form and refresh the result to view the submission!"
                 })
             }
+        })
+    }
+
+    function increaseVote() {
+        const parentNode = this.parentNode
+        const ID = this.parentNode.parentNode
+        const value = ID.dataset.vote
+        const voteCount = parentNode.querySelector(".vote-count")
+        const number = voteCount.textContent
+        let int = parseInt(number)
+        let newInt = ""
+
+        newInt = int+1
+
+        voteCount.textContent = newInt
+
+        const voteData = {
+            votes: newInt
+        }
+
+        fetch(`${baseURL}partners/update/${value}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json" 
+            },
+            body: JSON.stringify(voteData)
+        })
+        .then(response => response.json())
+        .then(function(response) {
+            console.log(response)
         })
     }
 
