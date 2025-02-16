@@ -132,6 +132,17 @@ ul {
     margin-top: 10px;
 }
 
+#vote-box {
+    border: 1px solid black;
+    background-color: white;
+    width: max-content;
+    height: max-content;
+    padding: 10px;
+    margin-top: 25px;
+    position: absolute;
+    display: none;
+}
+
 @media screen and (min-width: 428px) {
     .pokemon-image {
         padding: 10px;
