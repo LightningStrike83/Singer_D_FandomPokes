@@ -298,33 +298,54 @@ export function populationFunctionality() {
     }
 
     function increaseVote() {
-        const parentNode = this.parentNode
-        const ID = this.parentNode.parentNode
-        const value = ID.dataset.vote
-        const voteCount = parentNode.querySelector(".vote-count")
-        const number = voteCount.textContent
-        let int = parseInt(number)
-        let newInt = ""
+        const loginCheck = document.querySelector("#login-con")
 
-        newInt = int+1
+        if (loginCheck.classList.contains("login")) {
+            const parentNode = this.parentNode
+            const ID = this.parentNode.parentNode
+            const value = ID.dataset.vote
+            const voteCount = parentNode.querySelector(".vote-count")
+            const number = voteCount.textContent
+            let int = parseInt(number)
+            let newInt = ""
 
-        voteCount.textContent = newInt
+            newInt = int+1
 
-        const voteData = {
-            votes: newInt
+            voteCount.textContent = newInt
+
+            const voteData = {
+                votes: newInt
+            }
+
+            fetch(`${baseURL}partners/update/${value}`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json" 
+                },
+                body: JSON.stringify(voteData)
+            })
+            .then(response => response.json())
+            .then(function(response) {
+                console.log(response)
+            })
+        } else {
+            const voteBox = document.querySelector("#vote-box")
+            var button = this.getBoundingClientRect()
+
+            voteBox.style.display = "block"
+            voteBox.style.left = `${button.x}px`
+            voteBox.style.top = `${button.y}px`
+
+            hideBox()
         }
+    }
 
-        fetch(`${baseURL}partners/update/${value}`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json" 
-            },
-            body: JSON.stringify(voteData)
-        })
-        .then(response => response.json())
-        .then(function(response) {
-            console.log(response)
-        })
+    function hideBox() {
+        setTimeout(()=> {
+            const voteBox = document.querySelector("#vote-box")
+
+            voteBox.style.display = "none"
+        }, 2500)
     }
 
     mainSelect.addEventListener("change", populateSub)
