@@ -32,5 +32,14 @@ class SpeciesCharacterController extends SpeciesCharacter {
         ]);
         return response()->json($submit, 201);
     }
+
+    public function updateOne(Request $request, $id) {
+        $submit = SpeciesCharacter::where('id', '=', $id)->update([
+            'votes' => $request->votes
+        ]);
+
+        return response()->json($submit, 200);
+    }
+
 }
 
