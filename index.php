@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<?php
+session_start();
+
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,10 +27,16 @@
             <img src="images/ham_menu.svg" alt="Hamburger Menu">
         </div>
 
-        <div id="login-con">
-            <a href="login.html">Login</a>
-            <a href="">Sign Up</a>
-        </div>
+        <?php
+            if(!isset($_SESSION['username'])) {
+                echo '<div id="login-con"><a href="login.html">Login</a><a href="">Sign Up</a></div>';
+            } else {
+                $username = $_SESSION['username'];
+                $id = $_SESSION['id']; 
+                echo '<div id="login-con" class="login"><p>Welcome, <a href="profile.php?id='.$id.'">'.$username.'</a> <a class="logout" href="logout.php">Logout</a></p></div>';
+            }
+        ?>
+        
     </header>
 
     <header id="primary-header">
