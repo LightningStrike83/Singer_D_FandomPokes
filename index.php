@@ -17,43 +17,50 @@ session_start();
     <title>Fandom PokePartners</title>
 </head>
 <body data-page="home" class="dm">
-    <header id="supplementary-header">
-        <div id="theme-enable">
-            <img id="theme-image" src="images/dark-icon.png" alt="Theme Icon">
-            <p id="theme-enable-text">Enable <span id="theme-text">Dark</span> Mode</p>
+<header>
+        <div id="supplementary-header">
+            <div id="theme-enable">
+                <img id="theme-image" src="images/dark-icon.png" alt="Theme Icon">
+                <p id="theme-enable-text">Enable <span id="theme-text">Dark</span> Mode</p>
+            </div>
+
+            <div id="hamburger-menu">
+                <img src="images/ham_menu.svg" alt="Hamburger Menu">
+            </div>
+
+            <?php
+                if(!isset($_SESSION['username'])) {
+                    echo '<div id="login-con"><a href="login.html">Login</a><li class="link-divider">/</li><a href="register.html">Register</a></div>';
+                } else {
+                    $username = $_SESSION['username'];
+                    $id = $_SESSION['id']; 
+                    echo '<div id="login-con" class="login" data-id="'.$id.'"><p>Welcome, <a class="profile-name" href="profile.php?id='.$id.'">'.$username.'</a> <li class="link-divider">/</li> <a class="logout" href="logout.php">Logout</a></p></div>';
+                }
+            ?>
+            
         </div>
 
-        <div id="hamburger-menu">
-            <img src="images/ham_menu.svg" alt="Hamburger Menu">
-        </div>
+        <div id="primary-header">
+            <img src="images/pokeball-full.svg" alt="">
 
-        <?php
-            if(!isset($_SESSION['username'])) {
-                echo '<div id="login-con"><a href="login.html">Login</a><li class="link-divider">/</li><a href="register.html">Register</a></div>';
-            } else {
-                $username = $_SESSION['username'];
-                $id = $_SESSION['id']; 
-                echo '<div id="login-con" class="login" data-id="'.$id.'"><p>Welcome, <a class="profile-name" href="profile.php?id='.$id.'">'.$username.'</a> <li class="link-divider">/</li> <a class="logout" href="logout.php">Logout</a></p></div>';
-            }
-        ?>
-        
-    </header>
-
-    <header id="primary-header">
-        <img src="images/pokeball-full.svg" alt="">
-
-        <div id="links-con">
-            <ul id="links">
-                <li><a href="index.php">Character Database</a></li>
-                <li class="link-divider">/</li>
-                <li><a href="suggestion.php">Suggest</a></li>
-            </ul>
+            <div id="links-con">
+                <ul id="links">
+                    <li><a href="index.php">Character Database</a></li>
+                    <li class="link-divider">/</li>
+                    <li><a href="suggestion.php">Suggest</a></li>
+                </ul>
+            </div>
         </div>
     </header>
 
     <div id="update-con" class="full-width-grid-con">
         <p id="update-text" class="col-start-2 col-span-2 dm">Last Content Update: Sept. 24, 2025</p>
     </div>
+
+    <section id="error-con" class="grid-con">
+        <h2 class="hidden">Error Handling</h2>
+        <p class="col-span-full base-error" id="home-error-message"></p>
+    </section>
 
     <section class="grid-con">
         <h2 class="hidden"></h2>

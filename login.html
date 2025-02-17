@@ -11,31 +11,34 @@
     <title>Fandom PokePartners- Login</title>
 </head>
 <body data-page="login" class="dm">
-    <header id="supplementary-header">
-        <div id="theme-enable">
-            <img id="theme-image" src="images/dark-icon.png" alt="Theme Icon">
-            <p id="theme-enable-text">Enable <span id="theme-text">Dark</span> Mode</p>
-        </div>
-
-        <div id="hamburger-menu">
-            <img src="images/ham_menu.svg" alt="Hamburger Menu">
-        </div>
-
-        <div id="login-con">
-            <a href="login.html">Login</a>
-            <a href="register.html">Register</a>
-        </div>
-    </header>
-
-    <header id="primary-header">
-        <img src="images/pokeball-full.svg" alt="">
-
-        <div id="links-con">
-            <ul id="links">
-                <li><a href="index.html">Character Database</a></li>
+    <header>
+        <div id="supplementary-header">
+            <div id="theme-enable">
+                <img id="theme-image" src="images/dark-icon.png" alt="Theme Icon">
+                <p id="theme-enable-text">Enable <span id="theme-text">Dark</span> Mode</p>
+            </div>
+    
+            <div id="hamburger-menu">
+                <img src="images/ham_menu.svg" alt="Hamburger Menu">
+            </div>
+    
+            <div id="login-con">
+                <a href="login.html">Login</a>
                 <li class="link-divider">/</li>
-                <li><a href="suggestion.php">Suggest</a></li>
-            </ul>
+                <a href="register.html">Register</a>
+            </div>
+        </div>
+    
+        <div id="primary-header">
+            <img src="images/pokeball-full.svg" alt="">
+    
+            <div id="links-con">
+                <ul id="links">
+                    <li><a href="index.php">Character Database</a></li>
+                    <li class="link-divider">/</li>
+                    <li><a href="suggestion.php">Suggest</a></li>
+                </ul>
+            </div>
         </div>
     </header>
 
@@ -51,6 +54,8 @@
 
                 <input id="login-button" type="submit" value="Login">
             </form>
+
+            <p id="login-error"></p>
         </div>
     </section>
 

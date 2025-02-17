@@ -1,9 +1,6 @@
 header {
-    background-color: rgb(222, 222, 222);
     display: flex;
-    justify-content: space-between;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    flex-direction: column;
 }
 
 #theme-enable {
@@ -83,6 +80,17 @@ header img {
     position: relative;
     padding-top: 10px;
     padding-bottom: 10px;
+    background-color: rgb(222, 222, 222);
+    display: flex;
+    justify-content: space-between;
+}
+
+#supplementary-header {
+    background-color: rgb(222, 222, 222);
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 #primary-header::before {
