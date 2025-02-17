@@ -28,5 +28,8 @@ $router->post("suggestion/add", "SuggestionController@addSuggestion");
 $router->post("partners/update/{id}", "SpeciesCharactercontroller@updateOne");
 $router->get("/user-vote/check/{user}/{vote}", "UserVoteController@checkOne");
 $router->post("/user-vote/post", "UserVoteController@postOne");
+$router->get("/register/check/user/{user}", "UserController@checkUser");
+$router->get("/register/check/email/{email}", "UserController@checkEmail");
+$router->post("/register", "UserController@saveUser");
 // $router->get("");
 // $router->get("");

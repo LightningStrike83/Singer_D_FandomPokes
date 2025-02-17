@@ -22,8 +22,8 @@
         </div>
 
         <div id="login-con">
-            <a href="">Login</a>
-            <a href="">Sign Up</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
         </div>
     </header>
 
@@ -44,10 +44,10 @@
             <h3>Login</h3>
             <form id="login-form" action="login-form.php" method="post">
                 <label for="username">Username:</label>
-                <input type="text" name="username">
+                <input type="text" name="username" required>
 
                 <label for="password">Password:</label>
-                <input type="text" name="password">
+                <input type="password" name="password" required>
 
                 <input id="login-button" type="submit" value="Login">
             </form>
