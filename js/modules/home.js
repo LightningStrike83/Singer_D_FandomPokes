@@ -301,40 +301,81 @@ export function populationFunctionality() {
         const loginCheck = document.querySelector("#login-con")
 
         if (loginCheck.classList.contains("login")) {
+            const userDiv = document.querySelector("#login-con")
+            const userID = userDiv.dataset.id
+            const partnerDiv = this.parentNode.parentNode
+            const partnerID = partnerDiv.dataset.vote
             const parentNode = this.parentNode
             const ID = this.parentNode.parentNode
             const value = ID.dataset.vote
             const voteCount = parentNode.querySelector(".vote-count")
             const number = voteCount.textContent
-            let int = parseInt(number)
-            let newInt = ""
+            var button = this.getBoundingClientRect()
 
-            newInt = int+1
+            console.log(button)
 
-            voteCount.textContent = newInt
-
-            const voteData = {
-                votes: newInt
-            }
-
-            fetch(`${baseURL}partners/update/${value}`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json" 
-                },
-                body: JSON.stringify(voteData)
-            })
+            fetch(`${baseURL}user-vote/check/${userID}/${partnerID}`)
             .then(response => response.json())
             .then(function(response) {
                 console.log(response)
+                if (response.length === 0) {
+                    let int = parseInt(number)
+                    let newInt = ""
+
+                    newInt = int+1
+
+                    voteCount.textContent = newInt
+
+                    const voteData = {
+                        votes: newInt
+                    }
+
+                    const userVote = {
+                        user: userID,
+                        vote: partnerID,
+                    }
+
+                    fetch(`${baseURL}partners/update/${value}`, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json" 
+                        },
+                        body: JSON.stringify(voteData)
+                    })
+                    .then(response => response.json())
+                    .then(function(response) {
+                        console.log(response)
+                    })
+
+                    fetch(`${baseURL}user-vote/post`, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json" 
+                        },
+                        body: JSON.stringify(userVote)
+                    })
+                    .then(response => response.json())
+                    .then(function(response) {
+                        console.log(response)
+                    })
+                
+                } else if (response.length > 0) {
+                    const preventUpvote = document.querySelector("#upvote-prevent-box")
+
+                    preventUpvote.style.display = "block"
+                    preventUpvote.style.left = `${button.left + window.scrollX}px`; 
+                    preventUpvote.style.top = `${button.top + window.scrollY}px`;
+
+                    hideBox()
+                }
             })
         } else {
             const voteBox = document.querySelector("#vote-box")
             var button = this.getBoundingClientRect()
 
             voteBox.style.display = "block"
-            voteBox.style.left = `${button.x}px`
-            voteBox.style.top = `${button.y}px`
+            voteBox.style.left = `${button.left + window.scrollX}px`; 
+            voteBox.style.top = `${button.top + window.scrollY}px`;
 
             hideBox()
         }
@@ -343,8 +384,10 @@ export function populationFunctionality() {
     function hideBox() {
         setTimeout(()=> {
             const voteBox = document.querySelector("#vote-box")
+            const preventUpvote = document.querySelector("#upvote-prevent-box")
 
             voteBox.style.display = "none"
+            preventUpvote.style.display = "none"
         }, 2500)
     }
 

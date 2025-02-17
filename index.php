@@ -33,7 +33,7 @@ session_start();
             } else {
                 $username = $_SESSION['username'];
                 $id = $_SESSION['id']; 
-                echo '<div id="login-con" class="login"><p>Welcome, <a href="profile.php?id='.$id.'">'.$username.'</a> <a class="logout" href="logout.php">Logout</a></p></div>';
+                echo '<div id="login-con" class="login" data-id="'.$id.'"><p>Welcome, <a href="profile.php?id='.$id.'">'.$username.'</a> <a class="logout" href="logout.php">Logout</a></p></div>';
             }
         ?>
         
@@ -46,7 +46,7 @@ session_start();
             <ul id="links">
                 <li><a href="index.html">Character Database</a></li>
                 <li class="link-divider">/</li>
-                <li><a href="suggestion.html">Suggest</a></li>
+                <li><a href="suggestion.php">Suggest</a></li>
             </ul>
         </div>
     </header>
@@ -114,6 +114,14 @@ session_start();
         <div class="col-span-1 mobile-close">
             <p class="close-button">X</p>
         </div>
+    </section>
+
+    <section id="vote-box">
+        <p>Sorry, you must be logged in to vote</p>
+    </section>
+
+    <section id="upvote-prevent-box">
+        <p>Sorry, you have already voted for that Pokemon for that character</p>
     </section>
 </body>
 </html>
