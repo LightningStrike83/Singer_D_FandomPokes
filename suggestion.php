@@ -16,39 +16,46 @@ session_start();
     <title>Fandom PokePartners- Suggest A Character</title>
 </head>
 <body data-page="suggest" class="dm">
-    <header id="supplementary-header">
-        <div id="theme-enable">
-            <img id="theme-image" src="images/dark-icon.png" alt="Theme Icon">
-            <p id="theme-enable-text">Enable <span id="theme-text">Dark</span> Mode</p>
+    <header>
+        <div id="supplementary-header">
+            <div id="theme-enable">
+                <img id="theme-image" src="images/dark-icon.png" alt="Theme Icon">
+                <p id="theme-enable-text">Enable <span id="theme-text">Dark</span> Mode</p>
+            </div>
+
+            <div id="hamburger-menu">
+                <img src="images/ham_menu.svg" alt="Hamburger Menu">
+            </div>
+
+            <?php
+                if(!isset($_SESSION['username'])) {
+                    echo '<div id="login-con"><a href="login.html">Login</a><li class="link-divider">/</li><a href="register.html">Register</a></div>';
+                } else {
+                    $username = $_SESSION['username'];
+                    $id = $_SESSION['id']; 
+                    echo '<div id="login-con" class="login" data-id="'.$id.'"><p>Welcome, <a class="profile-name" href="profile.php?id='.$id.'">'.$username.'</a> <li class="link-divider">/</li> <a class="logout" href="logout.php">Logout</a></p></div>';
+                }
+            ?>
+            
         </div>
 
-        <div id="hamburger-menu">
-            <img src="images/ham_menu.svg" alt="Hamburger Menu">
-        </div>
+        <div id="primary-header">
+            <img src="images/pokeball-full.svg" alt="">
 
-        <?php
-            if(!isset($_SESSION['username'])) {
-                echo '<div id="login-con"><a href="login.html">Login</a><a href="register.html">Sign Up</a></div>';
-            } else {
-                $username = $_SESSION['username'];
-                $id = $_SESSION['id']; 
-                echo '<div id="login-con" class="login" data-id="'.$id.'"><p>Welcome, <a class="profile-name" href="profile.php?id='.$id.'">'.$username.'</a> <li class="link-divider">/</li> <a class="logout" href="logout.php">Logout</a></p></div>';
-            }
-        ?>
-        
+            <div id="links-con">
+                <ul id="links">
+                    <li><a href="index.php">Character Database</a></li>
+                    <li class="link-divider">/</li>
+                    <li><a href="suggestion.php">Suggest</a></li>
+                </ul>
+            </div>
+        </div>
     </header>
 
-    <header id="primary-header">
-        <img src="images/pokeball-full.svg" alt="">
-
-        <div id="links-con">
-            <ul id="links">
-                <li><a href="index.php">Character Database</a></li>
-                <li class="link-divider">/</li>
-                <li><a href="suggestion.php">Suggest</a></li>
-            </ul>
-        </div>
-    </header>
+    <section id="error-con" class="grid-con">
+        <h2 class="hidden">Error Handling</h2>
+        <p class="col-span-full base-error" id="suggest-error-message">Error</p>
+    </section>
 
     <section class="grid-con">
         <h2 class="hidden">Suggest A Character</h2>
@@ -93,7 +100,7 @@ session_start();
             </div>
             
             <div id="oc-rules" class="rules-text">
-                <p><b>4.</b> Fandom PokePartners does not allow characters that are considered to be fan-made. While the developers love and support the creation of these characters, this website is intended for canon characters only. Fandom PokePartners is looking into an alternative way of sharing fan-made characters with others and have creators ask for suggestions, but these characters will not be added to and/or removed from the database.</p>
+                <p><b>4.</b> Fandom PokePartners does not allow characters that are considered to be fan-made. While the developer of this website love and support the creation of fan-made characters, Fandom PokePartners is intended for canon characters only. Fandom PokePartners is looking into an alternative way of sharing fan-made characters with others and have creators ask for suggestions, but these characters will not be added to and/or removed from the database.</p>
 
                 <input type="checkbox" id="problematic" class="rule-checkbox" data-checkbox="Rule 4"><label for="problematic">I understand and agree that my suggestion is not a fan made character, and will be subject to denial and/or removal if it is discovered to be</label>
             </div>

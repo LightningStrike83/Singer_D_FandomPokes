@@ -6,11 +6,14 @@ export function populationFunctionality() {
     const characterCon = document.querySelector("#character-list-con")
     const partnerCon = document.querySelector("#character-partner-con")
     const submitHomeForm = document.querySelector("#pokemon-submit-form")
+    const errorMessage = document.querySelector("#home-error-message")
 
     function populateMain() {
         fetch(`${baseURL}series/all`)
         .then(response => response.json())
         .then(function(response) {
+            errorMessage.textContent = ""
+
             const baseOption = document.createElement("option")
             baseOption.innerText = "--Select A Series--"
             baseOption.disabled = true
@@ -25,6 +28,9 @@ export function populationFunctionality() {
 
                 mainSelect.appendChild(seriesOption)
             })
+        })
+        .catch(error => {
+            errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
         })
     }
 
@@ -42,10 +48,9 @@ export function populationFunctionality() {
             baseOption.selected = true
 
             subSelect.innerHTML = ""
+            errorMessage.textContent = ""
 
             subSelect.appendChild(baseOption)
-
-            console.log(response)
 
             response.forEach(subseries => {
                 const subseriesOption = document.createElement("option")
@@ -54,6 +59,9 @@ export function populationFunctionality() {
 
                 subSelect.appendChild(subseriesOption)
             })
+        })
+        .catch(error => {
+            errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
         })
     }
 
@@ -72,6 +80,7 @@ export function populationFunctionality() {
 
             characterCon.innerHTML = ""
             characterSelect.innerHTML = ""
+            errorMessage.textContent = ""
 
             characterSelect.appendChild(baseOption)
 
@@ -103,6 +112,9 @@ export function populationFunctionality() {
 
             dynamicTheme()
         })
+        .catch(error => {
+            errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
+        })
     }
 
     function showPokemon(e) {
@@ -113,8 +125,7 @@ export function populationFunctionality() {
         .then(response => response.json())
         .then(function(response) {
             partnerCon.innerHTML = ""
-
-            console.log(response)
+            errorMessage.textContent = ""
 
             const characterBox = document.createElement("div")
             const characterImage = document.createElement("img")
@@ -196,6 +207,9 @@ export function populationFunctionality() {
 
             dynamicTheme()
         })
+        .catch(error => {
+            errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
+        })
     }
 
     function displayPokeSubmit() {
@@ -219,6 +233,8 @@ export function populationFunctionality() {
 
             pokemonSelect.innerHTML = ""
 
+            errorMessage.textContent = ""
+
             defaultOption.innerText = "--Please Select A Pokemon--"
             defaultOption.selected = true
             defaultOption.disabled = true
@@ -239,6 +255,9 @@ export function populationFunctionality() {
 
             pokeSubmitCon.style.display = "grid"
             loadingText.textContent = ""
+        })
+        .catch(error => {
+            errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
         })
     }
 
@@ -269,6 +288,8 @@ export function populationFunctionality() {
         .then(function(response) {
             const text = document.querySelector("#submit-poke-text")
 
+            errorMessage.textContent = ""
+
             text.textContent = ""
 
             if (response.length > 0) {
@@ -281,8 +302,6 @@ export function populationFunctionality() {
                     votes: 0,
                 }
 
-                console.log(partnerData)
-
                 fetch (`${baseURL}partners/add`, {
                     method: "POST",
                     headers: {
@@ -291,9 +310,17 @@ export function populationFunctionality() {
                     body: JSON.stringify(partnerData)  
                 })
                 .then(function() {
+                    errorMessage.textContent = ""
+
                     text.textContent = "Thank you for your submission! Please close this form and refresh the result to view the submission!"
                 })
+                .catch(error => {
+                    errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
+                })
             }
+        })
+        .catch(error => {
+            errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
         })
     }
 
@@ -312,12 +339,11 @@ export function populationFunctionality() {
             const number = voteCount.textContent
             var button = this.getBoundingClientRect()
 
-            console.log(button)
-
             fetch(`${baseURL}user-vote/check/${userID}/${partnerID}`)
             .then(response => response.json())
             .then(function(response) {
-                console.log(response)
+                errorMessage.textContent = ""
+
                 if (response.length === 0) {
                     let int = parseInt(number)
                     let newInt = ""
@@ -344,7 +370,10 @@ export function populationFunctionality() {
                     })
                     .then(response => response.json())
                     .then(function(response) {
-                        console.log(response)
+                        errorMessage.textContent = ""
+                    })
+                    .catch(error => {
+                        errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
                     })
 
                     fetch(`${baseURL}user-vote/post`, {
@@ -356,7 +385,10 @@ export function populationFunctionality() {
                     })
                     .then(response => response.json())
                     .then(function(response) {
-                        console.log(response)
+                        errorMessage.textContent = ""
+                    })
+                    .catch(error => {
+                        errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
                     })
                 
                 } else if (response.length > 0) {
@@ -368,6 +400,9 @@ export function populationFunctionality() {
 
                     hideBox()
                 }
+            })
+            .catch(error => {
+                errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
             })
         } else {
             const voteBox = document.querySelector("#vote-box")

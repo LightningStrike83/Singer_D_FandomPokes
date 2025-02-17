@@ -2,6 +2,7 @@ export function suggestionSubmit() {
     const baseURL = "http://localhost/Singer_D_FandomPokes/lumen/public/"
     const infoButtons = document.querySelectorAll(".more-info")
     const form = document.querySelector("#suggest-character")
+    const errorMessage = document.querySelector("#suggest-error-message")
 
     function selectPopulation() {
         const suggestPokemon = document.querySelector("#suggest-pokemon")
@@ -9,6 +10,8 @@ export function suggestionSubmit() {
         fetch(`${baseURL}species/all`)
         .then(response => response.json())
         .then(function(response) {
+            errorMessage.textContent = ""
+
             const defaultOption = document.createElement("option")
 
             defaultOption.innerText = "--Please Select A Pokemon--"
@@ -25,6 +28,9 @@ export function suggestionSubmit() {
 
                 suggestPokemon.appendChild(option)
             })
+        })
+        .catch(error => {
+            errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
         })
     }
 
@@ -75,9 +81,14 @@ export function suggestionSubmit() {
         })
         .then(response => response.json())
         .then(function(response) {
+            errorMessage.textContent = ""
+
             suggestError.textContent = "Submitted! The request will be reviewed and will be added in the next update if approved!"
 
             form.reset()
+        })
+        .catch(error => {
+            errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
         })
     }
 

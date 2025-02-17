@@ -15,10 +15,6 @@ export function registerUser() {
 
         registerError.innerHTML = ""
 
-        console.log(emailInput, userInput)
-
-        console.log(`${baseURL}register/check/user/${userInput}`)
-
         fetch(`${baseURL}register/check/user/${userInput}`)
         .then(response => response.json())
         .then(function(response) {
@@ -49,7 +45,6 @@ export function registerUser() {
                     }
                 })
             } else if (response.length > 0) {
-                console.log("boo")
                 registerError.innerHTML = "Sorry, that username has already been registered."
             }
         })
