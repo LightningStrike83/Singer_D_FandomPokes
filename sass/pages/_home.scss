@@ -132,7 +132,7 @@ ul {
     margin-top: 10px;
 }
 
-#vote-box {
+#vote-box, #upvote-prevent-box {
     border: 1px solid black;
     background-color: white;
     width: max-content;
@@ -141,6 +141,10 @@ ul {
     margin-top: 25px;
     position: absolute;
     display: none;
+}
+
+#upvote-prevent-box {
+    width: 200px;
 }
 
 @media screen and (min-width: 428px) {

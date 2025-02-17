@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/grid.css?version=0.1">
+    <link rel="stylesheet" href="css/main.css?version=0.1">
+    <script type="module" src="js/main.js?version=0.1"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+    <title>Fandom PokePartners- Register</title>
+</head>
+<body data-page="register" class="dm">
+    <header id="supplementary-header">
+        <div id="theme-enable">
+            <img id="theme-image" src="images/dark-icon.png" alt="Theme Icon">
+            <p id="theme-enable-text">Enable <span id="theme-text">Dark</span> Mode</p>
+        </div>
+
+        <div id="hamburger-menu">
+            <img src="images/ham_menu.svg" alt="Hamburger Menu">
+        </div>
+
+        <div id="login-con">
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </div>
+    </header>
+
+    <header id="primary-header">
+        <img src="images/pokeball-full.svg" alt="">
+
+        <div id="links-con">
+            <ul id="links">
+                <li><a href="index.html">Character Database</a></li>
+                <li class="link-divider">/</li>
+                <li><a href="suggestion.php">Suggest</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="register-form-con" class="grid-con">
+        <div id="register-form-div" class="col-span-full">
+            <h3>Register</h3>
+            <form id="register-form" method="post">
+                <label for="email">Email:</label>
+                <input id="register-email" type="text" name="email" required>
+
+                <label for="username">Username:</label>
+                <input id="register-username" type="text" name="username" required>
+
+                <label for="password">Password:</label>
+                <input id="register-password" type="password" name="password" required>
+
+                <input id="register-button" type="submit" value="Register">
+            </form>
+
+            <p id="register-error"></p>
+        </div>
+    </section>
+
+    <section class="grid-con">
+        <div class="col-start-2 col-end-4 m-col-start-6 m-col-end-8">
+            <p id="top-text" class="dm">To Top ↑</p>
+        </div>
+    </section>
+
+    <footer class="full-width-grid-con">
+        <p id="footer-disclaimer" class="col-start-2 col-span-1">All images used are used for a transformative work and nonprofit. The images are copyrighted or are a registered trademark, sourced from the various Wikias/Fandoms. The contributor claims fair use. No copyright infringement is intended.<br><br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br><br>Fandom PokePartners is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by any of the series, creators, parent companies, or affiliated persons found throughout the website. The content displayed in this website is meant for informational purposes only and is not official in any shape or form.</p>
+    </footer>
+</body>
+</html>

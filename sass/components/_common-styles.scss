@@ -8,6 +8,12 @@ body.dark-mode {
     background-color: rgb(83, 83, 83);
 }
 
+.link-divider {
+    list-style-type: none;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
 .select-con {
     display: flex;
     justify-content: center;

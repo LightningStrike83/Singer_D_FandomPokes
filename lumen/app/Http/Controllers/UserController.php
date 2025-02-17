@@ -1,0 +1,48 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash; // Add this import for Hash facade
+use App\Models\User;
+
+class UserController extends User {
+    public function checkUser($user) {
+        $check = User::select('username')->where('username', "=", $user)->orderBy('username')->get();
+        return response()->json($check);
+    }
+
+    public function checkEmail($email) {
+        $check = User::select('email')->where('email', "=", $email)->orderBy('email')->get();
+        return response()->json($check);
+    }
+
+    public function saveUser(Request $request) {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], 422);
+        }
+
+        // Use the Hash facade for password hashing
+        $submit = User::create([
+            'username' => $request->username,
+            'password' => Hash::make($request->password), // Use Hash::make() instead of bcrypt()
+            'email' => $request->email,
+        ]);
+
+        return response()->json($submit, 201);
+    }
+
+    // public function saveUser(Request $request) {
+    //     $submit = User::create([
+    //         'username' => $request->username,
+    //         'password' => $request->password,
+    //         'email' => $request->email,
+    //     ]);
+    //     return response()->json($submit, 201);
+    // }
+}

@@ -29,11 +29,11 @@ session_start();
 
         <?php
             if(!isset($_SESSION['username'])) {
-                echo '<div id="login-con"><a href="login.html">Login</a><a href="">Sign Up</a></div>';
+                echo '<div id="login-con"><a href="login.html">Login</a><li class="link-divider">/</li><a href="register.html">Register</a></div>';
             } else {
                 $username = $_SESSION['username'];
                 $id = $_SESSION['id']; 
-                echo '<div id="login-con" class="login"><p>Welcome, <a href="profile.php?id='.$id.'">'.$username.'</a> <a class="logout" href="logout.php">Logout</a></p></div>';
+                echo '<div id="login-con" class="login" data-id="'.$id.'"><p>Welcome, <a class="profile-name" href="profile.php?id='.$id.'">'.$username.'</a> <li class="link-divider">/</li> <a class="logout" href="logout.php">Logout</a></p></div>';
             }
         ?>
         
@@ -44,15 +44,15 @@ session_start();
 
         <div id="links-con">
             <ul id="links">
-                <li><a href="index.html">Character Database</a></li>
+                <li><a href="index.php">Character Database</a></li>
                 <li class="link-divider">/</li>
-                <li><a href="suggestion.html">Suggest</a></li>
+                <li><a href="suggestion.php">Suggest</a></li>
             </ul>
         </div>
     </header>
 
     <div id="update-con" class="full-width-grid-con">
-        <p id="update-text" class="col-start-2 col-span-2 dm">Last Update: Sept. 24, 2025</p>
+        <p id="update-text" class="col-start-2 col-span-2 dm">Last Content Update: Sept. 24, 2025</p>
     </div>
 
     <section class="grid-con">
@@ -114,6 +114,14 @@ session_start();
         <div class="col-span-1 mobile-close">
             <p class="close-button">X</p>
         </div>
+    </section>
+
+    <section id="vote-box">
+        <p>Sorry, you must be logged in to vote</p>
+    </section>
+
+    <section id="upvote-prevent-box">
+        <p>Sorry, you have already voted for that Pokemon for that character</p>
     </section>
 </body>
 </html>
