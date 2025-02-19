@@ -59,6 +59,7 @@ export function suggestionSubmit() {
 
         const startingPokemon = document.querySelector("#suggest-pokemon")
         const suggestError = document.querySelector("#suggest-error")
+        const loginCon = document.querySelector("#login-con")
 
         suggestError.textContent = "Submitting..."
 
@@ -67,7 +68,8 @@ export function suggestionSubmit() {
             series: document.querySelector("#series").value,
             subseries: document.querySelector("#subseries").value,
             wiki_page: document.querySelector("#wiki_page").value,
-            starting_pokemon: startingPokemon.options[startingPokemon.selectedIndex].value
+            starting_pokemon: startingPokemon.options[startingPokemon.selectedIndex].value,
+            submitter: loginCon.dataset.id
         }
 
         console.log(suggestionInfo)

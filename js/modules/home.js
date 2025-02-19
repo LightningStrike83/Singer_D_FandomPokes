@@ -142,7 +142,7 @@ export function populationFunctionality() {
             name.setAttribute("id", "character-title")
             name.setAttribute("class", "dm")
 
-            characterImage.src = `../images/characters/${value}.png`
+            characterImage.src = `images/characters/${value}.png`
             characterImage.setAttribute("class", "character-image")
 
             characterBox.setAttribute("id", "character-box")
@@ -175,7 +175,7 @@ export function populationFunctionality() {
                 div.setAttribute("class", `partner-div type-${partner.type1} dm`)
                 div.setAttribute("data-vote", `${partner.id}`)
 
-                image.src = `../images/pokemon/${partner.number}.png`
+                image.src = `images/pokemon/${partner.number}.png`
                 image.setAttribute("class", "pokemon-image")
                 
                 name.textContent = `${partner.name}`
