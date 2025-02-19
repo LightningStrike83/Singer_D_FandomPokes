@@ -18,5 +18,10 @@ class CharacterController extends Character {
         $character = Character::select('id', 'name', 'subseries')->where('subseries', "=", $id)->orderBy('name', 'asc')->get();
         return response()->json($character);
     }
+
+    public function getSubmitter($id) {
+        $submitter = Character::join('subseries_controllers', 'character_controllers.subseries', "=", "subseries_controllers.id")->select('character_controllers.id', 'name', 'subseries_name', 'submitter')->where('submitter', "=", $id)->orderBy('subseries_name', "asc")->get();
+        return response()->json($submitter);
+    }
 }
 
