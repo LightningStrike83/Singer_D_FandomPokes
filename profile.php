@@ -64,7 +64,10 @@ $stmt = null;
 
     <section id="profile-info-con" class="grid-con">
         <div id="main-info-con" class="col-span-full m-col-span-3" <?php echo 'data-match="'.$row['id'].'"' ?>>
-            <img id="profile-image" src="images/pokeball-full.svg" alt="">
+            <div id="profile-image-con">
+                <img id="profile-image" src="images/pokeball-full.svg" alt="<?php echo $row['username'].' icon' ?>">
+            </div>
+
             <?php
                 echo '<h3 id="profile-username">'.$row['username'].'</h3>';
             ?>
@@ -78,15 +81,15 @@ $stmt = null;
             </div>
 
             <div id="profile-text-con" class="profile-info-box">
-                <p class="profile-info"><b>Favourite Pokemon:</b><br><span id="profile-fav-pokemon"></span></p>
+                <div class="profile-info-con" id="fav-pokemon-home"><p class="profile-info"><b>Favourite Pokemon:</b><span id="profile-fav-pokemon" class="dynamic-text"></span></p></div>
                 <div class="profile-info-divider"></div>
-                <p class="profile-info"><b>Favourite Pokemon Trainer:</b><br><span id="profile-fav-trainer"></span></p>
+                <div class="profile-info-con text-input" id="fav-trainer-home" data-input="fav_trainer"><p class="profile-info"><b>Favourite Pokemon Trainers:</b><span id="profile-fav-trainer" class="dynamic-text"></span></p></div>
                 <div class="profile-info-divider"></div>
-                <p class="profile-info"><b>Favourite Character:</b><br><span id="profile-fav-character"></span></p>
+                <div class="profile-info-con text-input" id="fav-series-home" data-input="fav_series"><p class="profile-info"><b>Favourite Series:</b><span id="profile-fav-series" class="dynamic-text"></span></p></div>
                 <div class="profile-info-divider"></div>
-                <p class="profile-info"><b>Favourite Series:</b><br><span id="profile-fav-series"></span></p>
+                <div class="profile-info-con text-input" id="fav-characters-home" data-input="fav_characters"><p class="profile-info"><b>Favourite Character (s):</b><span id="profile-fav-character" class="dynamic-text"></span></p></div>
                 <div class="profile-info-divider"></div>
-                <p class="profile-info"><b>Fandoms Interested In:</b><br><span id="profile-fandoms"></span></p>
+                <div class="profile-info-con text-input" id="fandoms-home" data-input="fandoms"><p class="profile-info"><b>Fandoms Interested In:</b><span id="profile-fandoms" class="dynamic-text"></span></p></div>
             </div>
             <div id="upvoted-con" class="profile-info-box"></div>
             <div id="submission-con" class="profile-info-box"></div>
@@ -117,6 +120,23 @@ $stmt = null;
         <div class="col-span-1 mobile-close">
             <p class="close-button">X</p>
         </div>
+    </section>
+
+    <section id="icon-con">
+        <div id="ball-icon-home">
+            <img class="pokeball-icon" src="images/icons/pokeball.svg" alt="Pokeball Icon">
+            <img class="pokeball-icon" src="images/icons/greatball.svg" alt="Great Ball Icon">
+            <img class="pokeball-icon" src="images/icons/ultraball.svg" alt="Ultra Ball Icon">
+            <img class="pokeball-icon" src="images/icons/masterball.svg" alt="Master Ball Icon">
+            <img class="pokeball-icon" src="images/icons/premierball.svg" alt="Premier Ball Icon">
+            <img class="pokeball-icon" src="images/icons/quickball.svg" alt="Quick Ball Icon">
+            <img class="pokeball-icon" src="images/icons/duskball.svg" alt="Dusk Ball Icon">
+            <img class="pokeball-icon" src="images/icons/diveball.svg" alt="Dive Ball Icon">
+            <img class="pokeball-icon" src="images/icons/friendball.svg" alt="Friend Ball Icon">
+            <img class="pokeball-icon" src="images/icons/dreamball.svg" alt="Dream Ball Icon">
+        </div>
+
+        <p id="pokeball-credit">Pokeball Icons made by Sophia</p>
     </section>
 </body>
 </html>
