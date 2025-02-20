@@ -106,7 +106,7 @@ export function profilePopulation() {
         this.style.backgroundColor = "rgb(222, 222, 222)"
         thisBox.style.display = "flex"
     }
-
+  
     function createEditButton() {
         const button = document.createElement("button")
 
