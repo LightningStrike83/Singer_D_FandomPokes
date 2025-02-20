@@ -37,6 +37,24 @@ class UserController extends User {
         return response()->json($submit, 201);
     }
 
+    public function updateUser(Request $request, $id) {
+        $submit = User::where('id', '=', $id)->update([
+            'icon' => $request->icon,
+            'fav_pokemon' => $request->fav_pokemon,
+            'fav_trainer' => $request->fav_trainer,
+            'fav_series' => $request->fav_series,
+            'fav_characters' => $request->fav_characters,
+            'fandoms' => $request->fandoms
+        ]);
+
+        return response()->json($submit, 200);
+    }
+    
+    public function loadUser($id) {
+        $check = User::select('icon', 'fav_pokemon', 'fav_trainer', 'fav_characters', 'fav_series', 'fandoms')->where('id', "=", $id)->get();
+        return response()->json($check);
+    }
+
     // public function saveUser(Request $request) {
     //     $submit = User::create([
     //         'username' => $request->username,

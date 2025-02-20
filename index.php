@@ -30,7 +30,7 @@ session_start();
 
             <?php
                 if(!isset($_SESSION['username'])) {
-                    echo '<div id="login-con"><a href="login.html">Login</a><li class="link-divider">/</li><a href="register.html">Register</a></div>';
+                    echo '<div id="login-con" data-id="na"><a href="login.html">Login</a><li class="link-divider">/</li><a href="register.html">Register</a></div>';
                 } else {
                     $username = $_SESSION['username'];
                     $id = $_SESSION['id']; 
