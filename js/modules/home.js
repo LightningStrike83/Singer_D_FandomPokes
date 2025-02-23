@@ -164,6 +164,8 @@ export function populationFunctionality() {
             displayDiv.appendChild(characterImageBox)
 
             response.forEach(partner => {
+                const loginCon = document.querySelector("#login-con")
+                const loginID = loginCon.dataset.id
                 const div = document.createElement("div")
                 const image = document.createElement("img")
                 const voteBox = document.createElement("div")
@@ -197,6 +199,14 @@ export function populationFunctionality() {
                 div.appendChild(infoBox)
                 div.appendChild(voteBox)
                 partnerBox.appendChild(div)
+
+                fetch(`${baseURL}user-vote/check/${loginID}/${partner.id}`)
+                .then(response => response.json())
+                .then(function(response) {
+                    if (response.length > 0) {
+                        upvote.style.color = "#00FF00"
+                    }
+                })
             })
 
             displayDiv.appendChild(partnerBox)
@@ -386,6 +396,8 @@ export function populationFunctionality() {
                     .then(response => response.json())
                     .then(function(response) {
                         errorMessage.textContent = ""
+
+                        this.style.color = "#00FF00"
                     })
                     .catch(error => {
                         errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
