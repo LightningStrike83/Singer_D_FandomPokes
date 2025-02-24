@@ -7,6 +7,7 @@ export function populationFunctionality() {
     const partnerCon = document.querySelector("#character-partner-con")
     const submitHomeForm = document.querySelector("#pokemon-submit-form")
     const errorMessage = document.querySelector("#home-error-message")
+    const patchLink = document.querySelector("#patch-open")
 
     function populateMain() {
         fetch(`${baseURL}series/all`)
@@ -438,8 +439,15 @@ export function populationFunctionality() {
         }, 2500)
     }
 
+    function openUpdateInfo() {
+        const updateCon = document.querySelector("#update-lb-con")
+
+        updateCon.style.display = "flex"
+    }
+
     mainSelect.addEventListener("change", populateSub)
     subSelect.addEventListener("change", populateCharacter)
     characterSelect.addEventListener("change", showPokemon)
     submitHomeForm.addEventListener("submit", submitPartner)
+    patchLink.addEventListener("click", openUpdateInfo)
 }
