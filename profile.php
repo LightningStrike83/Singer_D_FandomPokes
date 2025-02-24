@@ -75,7 +75,7 @@ $stmt = null;
 
         <div id="extra-info-con" class="col-span-full m-col-span-9">
             <div id="tab-con">
-                <p class="profile-tab" data-link="profile-text">Profile Info</p>
+                <p id="first-tab" class="profile-tab" data-link="profile-text">Profile Info</p>
                 <p id="middle-tab" class="profile-tab" data-link="upvoted">Upvoted (<span id="upvote-count-text">...</span>)</p>
                 <p class="profile-tab" data-link="submission">Character Submissions (<span id="submissions-count-text">...</span>)</p>
             </div>
