@@ -23,6 +23,11 @@
     margin: 10px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.character-image {
+    width: 120px;
 }
 
 #character-list, #character-list-title {
@@ -164,6 +169,7 @@ ul {
         max-height: 350px;
         display: flex;
         justify-self: center;
+        width: auto;
     }
 
     .pokemon-image {

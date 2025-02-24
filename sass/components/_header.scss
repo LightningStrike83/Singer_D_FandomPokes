@@ -58,7 +58,7 @@ header img {
 }
 
 #links-con {
-    display: flex;
+    display: none;
     align-items: center;
     margin-right: 10px;
 }
@@ -82,7 +82,7 @@ header img {
     padding-bottom: 10px;
     background-color: rgb(222, 222, 222);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 #supplementary-header {
@@ -93,16 +93,6 @@ header img {
     padding-bottom: 5px;
 }
 
-#primary-header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 2.5%; 
-    width: 95%;
-    height: 1px;
-    background-color: black;
-}
-
 @media screen and (min-width: 768px) {
     #login-con {
         display: flex;
@@ -110,5 +100,23 @@ header img {
 
     #hamburger-menu {
         display: none;
+    }
+
+    #links-con {
+        display: flex;
+    }
+
+    #primary-header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 2.5%; 
+        width: 95%;
+        height: 1px;
+        background-color: black;
+    }
+
+    #primary-header {
+        justify-content: space-between;
     }
 }
