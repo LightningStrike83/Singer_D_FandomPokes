@@ -140,13 +140,21 @@ export function profilePopulation() {
     function openIconMenu() {
         const iconCon = document.querySelector("#icon-con")
         var button = this.getBoundingClientRect()
+        var screen = window.matchMedia("(min-width: 728px)")
 
         if (iconCon.style.display === "block") {
             iconCon.style.display = "none"
         } else {
             iconCon.style.display = "block"
-            iconCon.style.left = `${button.left + window.scrollX}px`; 
             iconCon.style.top = `${button.top + window.scrollY}px`;
+
+            var box = document.querySelector("#ball-icon-home").getBoundingClientRect()
+
+            if (screen.matches) {
+                iconCon.style.left = `${button.left + window.scrollX}px`; 
+            } else {
+                iconCon.style.left = `${button.left - box.width + button.width}px`; 
+            }
         }
     }
 

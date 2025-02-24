@@ -38,6 +38,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 #tab-con {
@@ -129,8 +130,6 @@
     position: relative;
 }
 
-}
-
 .character-name-submission {
     text-align: center;
     width: 40%;
@@ -153,9 +152,6 @@
     margin-right: 2.5%;
     display: flex;
     flex-direction: column;
-    input {
-        margin-left: 10px;
-    }
 }
 
 #profile-text-con {
@@ -205,6 +201,9 @@
 
 .profile-info-submit-button {
     margin-left: 5px;
+    width: 100px;
+    align-self: center;
+    margin-top: 10px;
 }
 
 @media screen and (min-width: 768px) {
@@ -212,6 +211,9 @@
         align-items: center;
         flex-direction: row;
         select {
+            margin-left: 10px;
+        }
+        input {
             margin-left: 10px;
         }
     }
@@ -229,6 +231,12 @@
 
     .profile-image-con {
         height: 120px;
+    }
+
+    .profile-info-submit-button {
+        margin-left: 5px;
+        width: 100px;
+        margin-top: 0px;
     }
 }
 
