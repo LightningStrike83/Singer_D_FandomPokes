@@ -1,4 +1,5 @@
 import { darkmode } from "./modules/dark-mode.js";
+import { hamburgerMenu } from "./modules/hamburger.js";
 import { populationFunctionality } from "./modules/home.js";
 import { lightboxFunctions } from "./modules/lightbox.js";
 import { profilePopulation } from "./modules/profile.js";
@@ -27,3 +28,4 @@ if (document.body.dataset.page === 'profile') {
 smoothScroll()
 darkmode()
 lightboxFunctions()
+hamburgerMenu()

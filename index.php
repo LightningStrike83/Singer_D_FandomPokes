@@ -99,6 +99,27 @@ session_start();
         <p id="footer-disclaimer" class="col-start-2 col-span-1">All images used are used for a transformative work and nonprofit. The images are copyrighted or are a registered trademark, sourced from the various Wikias/Fandoms. The contributor claims fair use. No copyright infringement is intended.<br><br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br><br>Fandom PokePartners is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by any of the series, creators, parent companies, or affiliated persons found throughout the website. The content displayed in this website is meant for informational purposes only and is not official in any shape or form.</p>
     </footer>
 
+    <section id="hamburger-menu-con" class="full-width-grid-con mobile-menu dm">
+        <h1 class="hidden">Mobile-Menu</h1>
+        <div class="col-start-2 col-span-1 mobile-links">
+            <a href="index.php">Character Database</a>
+            <div class="hamburger-divider"></div>
+            <a href="suggestion.php">Suggest</a>
+            <div class="hamburger-divider"></div>
+            <?php if(!isset($_SESSION['username'])) {
+                    echo '<a href="login.html">Login</a><div class="hamburger-divider"></div><a href="register.html">Register</a>';
+                } else {
+                    $username = $_SESSION['username'];
+                    $id = $_SESSION['id']; 
+                    echo '<a href="profile.php?id='.$id.'">Profile</a><div class="hamburger-divider"></div><a class="logout" href="logout.php">Logout</a>';
+                } ?>
+        </div>
+
+        <div class="col-span-1 mobile-close">
+            <p class="close-button">X</p>
+        </div>
+    </section>
+
     <section id="pokemon-submission-con" class="full-width-grid-con lightbox">
         <h2 class="hidden">Pokemon Submission Rules</h2>
 
