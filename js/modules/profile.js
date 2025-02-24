@@ -123,6 +123,15 @@ export function profilePopulation() {
         const textCon = document.querySelector("#profile-text-con")
         const editImageIcon = document.createElement("img")
         const editInfoIcon = document.createElement("img")
+        const infoBoxes = document.querySelectorAll(".profile-info-box")
+        const profileTab = document.querySelector("#first-tab")
+        const profileCon = document.querySelector("#profile-text-con")
+
+        profileTabs.forEach(tab => tab.style.backgroundColor = "#fff")
+        infoBoxes.forEach(box => box.style.display = "none")
+
+        profileTab.style.backgroundColor = "rgb(222, 222, 222)"
+        profileCon.style.display = "flex"
 
         editImageIcon.src = "./images/icons/edit.svg"
         editImageIcon.addEventListener("click", openIconMenu)
