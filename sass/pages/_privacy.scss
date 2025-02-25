@@ -1,0 +1,28 @@
+#privacy-title {
+    text-align: center;
+}
+
+.privacy-text {
+    margin-bottom: 15px;
+}
+
+.privacy-title {
+    font-weight: bold;
+}
+
+#privacy-info ul li {
+    margin-bottom: 20px;
+}
+
+#privacy-update-text {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.privacy-link {
+    text-decoration: underline;
+    transition: all ease-in-out 0.5s;
+    &:hover {
+        opacity: 70%;
+    }
+}
