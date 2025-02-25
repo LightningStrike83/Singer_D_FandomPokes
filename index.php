@@ -14,7 +14,7 @@ session_start();
     <script type="module" src="js/main.js?version=0.1"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
-    <title>Fandom PokePartners</title>
+    <title>Fandom PokePartners- Character Database</title>
 </head>
 <body data-page="home" class="dm">
 <header>
@@ -96,7 +96,7 @@ session_start();
     </section>
 
     <footer class="full-width-grid-con">
-        <p id="footer-disclaimer" class="col-start-2 col-span-1">All images used are used for a transformative work and nonprofit. The images are copyrighted or are a registered trademark, sourced from the various Wikias/Fandoms. The contributor claims fair use. No copyright infringement is intended.<br><br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br><br>Fandom PokePartners is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by any of the series, creators, parent companies, or affiliated persons found throughout the website. The content displayed in this website is meant for informational purposes only and is not official in any shape or form.</p>
+        <p id="footer-disclaimer" class="col-start-2 col-span-1">All images used are used for a transformative work and nonprofit. The images are copyrighted or are a registered trademark, sourced from the various Wikias/Fandoms. The contributor claims fair use. No copyright infringement is intended.<br><br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br><br>Fandom PokePartners is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by any of the series, creators, parent companies, or affiliated persons found throughout the website. The content displayed in this website is meant for informational purposes only and is not official in any shape or form.<br><br><a href="privacy.php">Privacy Policy</a> | <a href="contact.php">Contact Us</a></p>
     </footer>
 
     <section id="hamburger-menu-con" class="full-width-grid-con mobile-menu dm">
@@ -113,6 +113,8 @@ session_start();
                     $id = $_SESSION['id']; 
                     echo '<a href="profile.php?id='.$id.'">Profile</a><div class="hamburger-divider"></div><a class="logout" href="logout.php">Logout</a>';
                 } ?>
+            <div class="hamburger-divider"></div>
+            <a href="contact.php">Contact</a>
         </div>
 
         <div class="col-span-1 mobile-close">
@@ -220,99 +222,99 @@ session_start();
 
                 <h3>Characters Added:</h3>
                 <p>-The Chosen<br>
--Hatsune Miku<br>
--Hilda Valentine Goneril<br>
--Xane<br>
--Joey Wheeler<br>
--Seto Kaiba<br>
--Rhino (Aleksei Sytsevich)<br>
--Asuna Yuuki<br>
--Miles Morales (Earth 1610B)<br>
--Princess Peach<br>
--Yuri Leclerc<br>
--Noir (Haru Okumura)<br>
--Tita Russell<br>
--Marianne von Edmund<br>
--Joker (Ren Amamiya)<br>
--Rise Kujikawa<br>
--Mitsuru Kijiro<br>
--Kirito (Kazuto Kirigaya)<br>
--Ben Tennyson<br>
--Ben Tennyson<br>
--Princess Rosalina<br>
--Ben Tennyson<br>
--Ben Tennyson<br>
--Akiza Izinski<br>
--Blue Maiden (Skye Zaizen)<br>
--Shark (Reginald Kastle)<br>
--Chumley Huffington<br>
--Vellian Crowler<br>
--Kamisato Ayaka<br>
--Firefly<br>
--Henry<br>
--Celine<br>
--Azura<br>
--Eirika<br>
--Ephraim<br>
--Rinea<br>
--Loki<br>
--Tsubasa Oribe<br>
--Kiria Kurono<br>
--Hector<br>
--Naruto Uzumaki<br>
--Naruto Uzumaki<br>
--Alastor<br>
--Jiraiya<br>
--Jiraiya<br>
--Naruto Uzumaki<br>
--Lucy Heartfilia<br>
--Yukino Agria<br>
--Jack Atlas<br>
--Kevin Levin<br>
--LLEN (Kohirumaki Karen)<br>
--Harley Quinn<br>
--Harley Quinn<br>
--Harley Quinn<br>
--Harley Quinn<br>
--Princess Ilana Rostovic<br>
--Faris<br>
--Elysia<br>
--Captain America (Steve Rogers)<br>
--Akiyama Mizuki<br>
--Yuya Sakaki<br>
--Princess Zelda<br>
--Link<br>
--Princess Zelda<br>
--Ganondorf<br>
--Samus Aran<br>
--Fae<br>
--Reinhardt<br>
--Leanne<br>
--Rowan<br>
--Lianna<br>
--Valjean<br>
--Yuga Ohdo<br>
--Yudias Velgear<br>
--Marinette Dupain-Cheng (Ladybug)<br>
--Adrien Agreste (Cat Noir)<br>
--Gabriel Agreste (Hawkmoth)<br>
--Alya Cesaire (Rena Rouge)<br>
--Nino Lahiffe (Carapace)<br>
--Chloe Bourgeois (Queen Bee)<br>
--Zoe Lee (Vesperia)<br>
--Cerise Bianca (Chrysalis)<br>
--Morgana (Mona)<br>
--Ryuji Sakamoto (Skull)<br>
--Ann Takamaki (Panther)<br>
--Makoto Niijima (Queen)<br>
--Yusuke Kitagawa (Fox)<br>
--Futaba Sakura (Oracle)<br>
--Goro Akechi (Crow / Black Mask)<br>
--Sumire Yoshizawa (Violet)<br>
--Lavenza<br>
--Sae Niijima<br>
--Takuto Maruki<br>
-</p>
+                -Hatsune Miku<br>
+                -Hilda Valentine Goneril<br>
+                -Xane<br>
+                -Joey Wheeler<br>
+                -Seto Kaiba<br>
+                -Rhino (Aleksei Sytsevich)<br>
+                -Asuna Yuuki<br>
+                -Miles Morales (Earth 1610B)<br>
+                -Princess Peach<br>
+                -Yuri Leclerc<br>
+                -Noir (Haru Okumura)<br>
+                -Tita Russell<br>
+                -Marianne von Edmund<br>
+                -Joker (Ren Amamiya)<br>
+                -Rise Kujikawa<br>
+                -Mitsuru Kijiro<br>
+                -Kirito (Kazuto Kirigaya)<br>
+                -Ben Tennyson<br>
+                -Ben Tennyson<br>
+                -Princess Rosalina<br>
+                -Ben Tennyson<br>
+                -Ben Tennyson<br>
+                -Akiza Izinski<br>
+                -Blue Maiden (Skye Zaizen)<br>
+                -Shark (Reginald Kastle)<br>
+                -Chumley Huffington<br>
+                -Vellian Crowler<br>
+                -Kamisato Ayaka<br>
+                -Firefly<br>
+                -Henry<br>
+                -Celine<br>
+                -Azura<br>
+                -Eirika<br>
+                -Ephraim<br>
+                -Rinea<br>
+                -Loki<br>
+                -Tsubasa Oribe<br>
+                -Kiria Kurono<br>
+                -Hector<br>
+                -Naruto Uzumaki<br>
+                -Naruto Uzumaki<br>
+                -Alastor<br>
+                -Jiraiya<br>
+                -Jiraiya<br>
+                -Naruto Uzumaki<br>
+                -Lucy Heartfilia<br>
+                -Yukino Agria<br>
+                -Jack Atlas<br>
+                -Kevin Levin<br>
+                -LLEN (Kohirumaki Karen)<br>
+                -Harley Quinn<br>
+                -Harley Quinn<br>
+                -Harley Quinn<br>
+                -Harley Quinn<br>
+                -Princess Ilana Rostovic<br>
+                -Faris<br>
+                -Elysia<br>
+                -Captain America (Steve Rogers)<br>
+                -Akiyama Mizuki<br>
+                -Yuya Sakaki<br>
+                -Princess Zelda<br>
+                -Link<br>
+                -Princess Zelda<br>
+                -Ganondorf<br>
+                -Samus Aran<br>
+                -Fae<br>
+                -Reinhardt<br>
+                -Leanne<br>
+                -Rowan<br>
+                -Lianna<br>
+                -Valjean<br>
+                -Yuga Ohdo<br>
+                -Yudias Velgear<br>
+                -Marinette Dupain-Cheng (Ladybug)<br>
+                -Adrien Agreste (Cat Noir)<br>
+                -Gabriel Agreste (Hawkmoth)<br>
+                -Alya Cesaire (Rena Rouge)<br>
+                -Nino Lahiffe (Carapace)<br>
+                -Chloe Bourgeois (Queen Bee)<br>
+                -Zoe Lee (Vesperia)<br>
+                -Cerise Bianca (Chrysalis)<br>
+                -Morgana (Mona)<br>
+                -Ryuji Sakamoto (Skull)<br>
+                -Ann Takamaki (Panther)<br>
+                -Makoto Niijima (Queen)<br>
+                -Yusuke Kitagawa (Fox)<br>
+                -Futaba Sakura (Oracle)<br>
+                -Goro Akechi (Crow / Black Mask)<br>
+                -Sumire Yoshizawa (Violet)<br>
+                -Lavenza<br>
+                -Sae Niijima<br>
+                -Takuto Maruki<br>
+                </p>
             </div>
         </div>
 

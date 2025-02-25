@@ -1,18 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <?php
 session_start();
 
-require_once('includes/connect.php');
-$query = 'SELECT username, user_controllers.id FROM user_controllers WHERE user_controllers.id = :userId ORDER BY username ASC';
-
-$stmt = $connection->prepare($query);
-$userId = $_GET['id'];
-$stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
-$stmt->execute();
-$row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-$stmt = null;
 ?>
 
 <head>
@@ -23,10 +14,10 @@ $stmt = null;
     <script type="module" src="js/main.js?version=0.1"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
-    <title>Fandom PokePartners- <?php echo $row['username']; ?></title>
+    <title>Fandom PokePartners- Privacy Policy</title>
 </head>
-<body data-page="profile" class="dm">
-    <header>
+<body data-page="privacy" class="dm">
+<header>
         <div id="supplementary-header">
             <div id="theme-enable">
                 <img id="theme-image" src="images/dark-icon.png" alt="Theme Icon">
@@ -62,37 +53,24 @@ $stmt = null;
         </div>
     </header>
 
-    <section id="profile-info-con" class="grid-con">
-        <div id="main-info-con" class="col-span-full m-col-span-3" <?php echo 'data-match="'.$row['id'].'"' ?>>
-            <div id="profile-image-con">
-                <img id="profile-image" src="images/pokeball-full.svg" alt="<?php echo $row['username'].' icon' ?>">
-            </div>
-
-            <?php
-                echo '<h3 id="profile-username">'.$row['username'].'</h3>';
-            ?>
-        </div>
-
-        <div id="extra-info-con" class="col-span-full m-col-span-9">
-            <div id="tab-con">
-                <p id="first-tab" class="profile-tab" data-link="profile-text">Profile Info</p>
-                <p id="middle-tab" class="profile-tab" data-link="upvoted">Upvoted (<span id="upvote-count-text">...</span>)</p>
-                <p class="profile-tab" data-link="submission">Character Submissions (<span id="submissions-count-text">...</span>)</p>
-            </div>
-
-            <div id="profile-text-con" class="profile-info-box">
-                <div class="profile-info-con" id="fav-pokemon-home"><p class="profile-info"><b>Favourite Pokemon:</b><span id="profile-fav-pokemon" class="dynamic-text"></span></p></div>
-                <div class="profile-info-divider"></div>
-                <div class="profile-info-con text-input" id="fav-trainer-home" data-input="fav_trainer"><p class="profile-info"><b>Favourite Pokemon Trainers:</b><span id="profile-fav-trainer" class="dynamic-text"></span></p></div>
-                <div class="profile-info-divider"></div>
-                <div class="profile-info-con text-input" id="fav-series-home" data-input="fav_series"><p class="profile-info"><b>Favourite Series:</b><span id="profile-fav-series" class="dynamic-text"></span></p></div>
-                <div class="profile-info-divider"></div>
-                <div class="profile-info-con text-input" id="fav-characters-home" data-input="fav_characters"><p class="profile-info"><b>Favourite Character (s):</b><span id="profile-fav-character" class="dynamic-text"></span></p></div>
-                <div class="profile-info-divider"></div>
-                <div class="profile-info-con text-input" id="fandoms-home" data-input="fandoms"><p class="profile-info"><b>Fandoms Interested In:</b><span id="profile-fandoms" class="dynamic-text"></span></p></div>
-            </div>
-            <div id="upvoted-con" class="profile-info-box"></div>
-            <div id="submission-con" class="profile-info-box"></div>
+    <section id="privacy-info-con" class="grid-con">
+        <p id="privacy-update-text" class="col-span-full privacy-text">Last Updated: February 24th, 2025</p>
+        <h3 id="privacy-title" class="col-span-full privacy-text">Privacy Policy</h3>
+        <p class="col-span-full privacy-text">This privacy policy details how Fandom PokePartners collects, uses, and safeguards user information. No personal information is required to access this website or view any regular pages.</p>
+        <div id="privacy-info" class="col-span-full">
+            <ul>
+                <li><span class="privacy-title">Information Collection:</span><br>Fandom PokePartners gathers email addresses from users during registration and login processes to enable access to some of the website's features.</li>
+                <li><span class="privacy-title">Use of Information:</span><br>The email addresses collected are solely used for user authentication, communication purposes, and to ensure a fair experience within Fandom PokePartners. <br> Members may fill out a public profile with information they wish to post. This is entirely optional and we recommend users do not post personally identifiable information.</li>
+                <li><span class="privacy-title">Protection of Information:</span><br>Fandom PokePartners is committed to ensuring the security and confidentiality of all collected email addresses. We have organizational and technical processes and procedures in place to protect your personal information. However, no electronic transmission over the internet or information storage technology can be guaranteed to be 100% secure, so we cannot promise or guarantee that hackers, cybercriminals, or other unauthorized third parties will not be able to defeat our security and improperly collect, access, steal, or modify your information.</li>
+                <li><span class="privacy-title">Account Deletion:</span><br>To request the deletion of a user account, and its associated user data, please use the contact form on our <a class="privacy-link" href="contact.php">contact page</a>.<br>Account deletion may occur without notice if the information contained breaks the </li>
+                <li><span class="privacy-title">Third-Party Disclosure:</span><br>Fandom PokePartners does not engage in the sale of users' email addresses or any personal information to third parties without explicit consent, except where required by law.</li>
+                <li><span class="privacy-title">Updates to Privacy Policy:</span><br>This Privacy Policy may be periodically updated. The updated version will be indicated by an updated “Revised” date and the updated version will be effective as soon as it is accessible. If we make material changes to this privacy notice, we will notify you by prominently posting a notice of such changes. We encourage you to review this privacy notice frequently to be informed of how we are protecting your information.</li>
+                <li><span class="privacy-title">Cookies and Tracking:</span><br>Fandom PokePartners does not use cookies or tracking for any of the features found within the website.</li>
+                <li><span class="privacy-title">Advertising:</span><br>Fandom PokePartners does not intend to use any form of advertising services within the website. No personal data will be collected for the use of advertising services but may be subject to change. In the event of a change, this policy will be updated and a prominent notice of these changes will be displayed to encourage users to review.</li>
+                <li><span class="privacy-title">Contact Information:</span><br>For any inquiries or concerns regarding this Privacy Policy or the use of pokedoku.com, please contact us through our <a class="privacy-link" href="contact.php">contact page</a>.<br>
+                By using Fandom PokePartners, you agree to adhere to the terms outlined in this Privacy Policy. If you do not agree with our policies and practices, please do not submit any information to the website.</li>
+                <!-- <li><span class="privacy-title"></span><br></li> -->
+            </ul>
         </div>
     </section>
 
@@ -129,21 +107,5 @@ $stmt = null;
         </div>
     </section>
 
-    <section id="icon-con">
-        <div id="ball-icon-home">
-            <img class="pokeball-icon" src="images/icons/pokeball.svg" alt="Pokeball Icon">
-            <img class="pokeball-icon" src="images/icons/greatball.svg" alt="Great Ball Icon">
-            <img class="pokeball-icon" src="images/icons/ultraball.svg" alt="Ultra Ball Icon">
-            <img class="pokeball-icon" src="images/icons/masterball.svg" alt="Master Ball Icon">
-            <img class="pokeball-icon" src="images/icons/premierball.svg" alt="Premier Ball Icon">
-            <img class="pokeball-icon" src="images/icons/quickball.svg" alt="Quick Ball Icon">
-            <img class="pokeball-icon" src="images/icons/duskball.svg" alt="Dusk Ball Icon">
-            <img class="pokeball-icon" src="images/icons/diveball.svg" alt="Dive Ball Icon">
-            <img class="pokeball-icon" src="images/icons/friendball.svg" alt="Friend Ball Icon">
-            <img class="pokeball-icon" src="images/icons/dreamball.svg" alt="Dream Ball Icon">
-        </div>
-
-        <p id="pokeball-credit">Pokeball Icons made by Sophia</p>
-    </section>
 </body>
 </html>

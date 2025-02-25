@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<?php
+session_start();
+
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,30 +14,35 @@
     <script type="module" src="js/main.js?version=0.1"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
-    <title>Fandom PokePartners- Register</title>
+    <title>Fandom PokePartners- Contact</title>
 </head>
-<body data-page="register" class="dm">
-    <header>
+<body data-page="contact" class="dm">
+<header>
         <div id="supplementary-header">
             <div id="theme-enable">
                 <img id="theme-image" src="images/dark-icon.png" alt="Theme Icon">
                 <p id="theme-enable-text">Enable <span id="theme-text">Dark</span> Mode</p>
             </div>
-    
+
             <div id="hamburger-menu">
                 <img src="images/ham_menu.svg" alt="Hamburger Menu">
             </div>
-    
-            <div id="login-con">
-                <a href="login.html">Login</a>
-                <li class="link-divider">/</li>
-                <a href="register.html">Register</a>
-            </div>
+
+            <?php
+                if(!isset($_SESSION['username'])) {
+                    echo '<div id="login-con" data-id="na"><a href="login.html">Login</a><li class="link-divider">/</li><a href="register.html">Register</a></div>';
+                } else {
+                    $username = $_SESSION['username'];
+                    $id = $_SESSION['id']; 
+                    echo '<div id="login-con" class="login" data-id="'.$id.'"><p>Welcome, <a class="profile-name" href="profile.php?id='.$id.'">'.$username.'</a> <li class="link-divider">/</li> <a class="logout" href="logout.php">Logout</a></p></div>';
+                }
+            ?>
+            
         </div>
-    
+
         <div id="primary-header">
             <img src="images/pokeball-full.svg" alt="">
-    
+
             <div id="links-con">
                 <ul id="links">
                     <li><a href="index.php">Character Database</a></li>
@@ -42,23 +53,26 @@
         </div>
     </header>
 
-    <section id="register-form-con" class="grid-con">
-        <div id="register-form-div" class="col-span-full">
-            <h3>Register</h3>
-            <form id="register-form" method="post">
+    <section id="contact-con" class="grid-con">
+      <h1 class="hidden">Contact Form</h1>
+        <h3 id="contact-title" class="col-span-full">Contact</h3>
+        <div id="contact-form-con" class="col-span-full dm">
+            <form id="contact-form">
+                <label for="name">Preferred Name:</label>
+                <input id="name" name="name" type="text" placeholder="Please Enter A Preferred Name">
                 <label for="email">Email:</label>
-                <input id="register-email" type="text" name="email" required>
-
-                <label for="username">Username:</label>
-                <input id="register-username" type="text" name="username" required>
-
-                <label for="password">Password:</label>
-                <input id="register-password" type="password" name="password" required>
-
-                <input id="register-button" type="submit" value="Register">
+                <input id="email" name="email" type="text" placeholder="Please Enter Your Email Address">
+                <label for="subject">Subject:</label>
+                <input id="subject" name="subject" type="text" placeholder="Please Enter A Subject">
+                <label for="message">Your Message:</label>
+                <textarea name="message" id="message" placeholder="Please Enter Your Message"></textarea>
+                <input type="submit" value="Send" id="submit-contact">
             </form>
 
-            <p id="register-error"></p>
+            <div id="error-message">
+                <p id="error-text"></p>
+                <div id="other-errors"></div>
+            </div>
         </div>
     </section>
 
@@ -79,9 +93,13 @@
             <div class="hamburger-divider"></div>
             <a href="suggestion.php">Suggest</a>
             <div class="hamburger-divider"></div>
-            <a href="login.html">Login</a>
-            <div class="hamburger-divider"></div>
-            <a href="register.html">Register</a>
+            <?php if(!isset($_SESSION['username'])) {
+                    echo '<a href="login.html">Login</a><div class="hamburger-divider"></div><a href="register.html">Register</a>';
+                } else {
+                    $username = $_SESSION['username'];
+                    $id = $_SESSION['id']; 
+                    echo '<a href="profile.php?id='.$id.'">Profile</a><div class="hamburger-divider"></div><a class="logout" href="logout.php">Logout</a>';
+                } ?>
             <div class="hamburger-divider"></div>
             <a href="contact.php">Contact</a>
         </div>
@@ -90,5 +108,6 @@
             <p class="close-button">X</p>
         </div>
     </section>
+
 </body>
 </html>

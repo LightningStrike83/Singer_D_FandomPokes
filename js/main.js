@@ -1,3 +1,4 @@
+import { contactForm } from "./modules/contact.js";
 import { darkmode } from "./modules/dark-mode.js";
 import { hamburgerMenu } from "./modules/hamburger.js";
 import { populationFunctionality } from "./modules/home.js";
@@ -23,6 +24,10 @@ if (document.body.dataset.page === 'register') {
 
 if (document.body.dataset.page === 'profile') {
     profilePopulation()
+}
+
+if (document.body.dataset.page === 'contact') {
+    contactForm()
 }
 
 smoothScroll()
