@@ -44,6 +44,8 @@ export function profilePopulation() {
                 title.textContent = `${upvote.character_name} and ${upvote.species_name}`
                 pokemonImage.src = `./images/pokemon/${upvote.number}.png`
                 characterImage.src = `./images/characters/${upvote.id}.png`
+                pokemonImage.setAttribute("alt", `${upvote.species_name}`)
+                characterImage.setAttribute("alt", `${upvote.character_name}`)
 
                 div.setAttribute("class", "profile-content-con")
                 imageDiv.setAttribute("class", "profile-image-con")
@@ -76,6 +78,7 @@ export function profilePopulation() {
                 name.textContent = `${character.name}`
 
                 characterImage.src = `./images/characters/${character.id}.png`
+                characterImage.setAttribute("alt", `${character.name}`)
 
                 div.setAttribute("class", "profile-content-con")
                 infoDiv.setAttribute("class", "character-submit-info")
@@ -136,11 +139,13 @@ export function profilePopulation() {
         editImageIcon.src = "./images/icons/edit.svg"
         editImageIcon.addEventListener("click", openIconMenu)
         editImageIcon.setAttribute("class", "edit-icon")
+        editImageIcon.setAttribute("alt", "Edit Profile Image Icon")
 
         editInfoIcon.src = "./images/icons/edit.svg"
         editInfoIcon.addEventListener("click", openInfoMenu)
         editInfoIcon.setAttribute("class", "edit-icon")
         editInfoIcon.setAttribute("id", "edit-profile-icon")
+        editInfoIcon.setAttribute("alt", "Edit Profile Information Icon")
 
         profileImage.appendChild(editImageIcon)
         textCon.appendChild(editInfoIcon)

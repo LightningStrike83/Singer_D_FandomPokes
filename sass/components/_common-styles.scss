@@ -126,3 +126,7 @@ body.dark-mode {
         width: 50%;
     }
 }
+
+img:not([alt]) {
+    border: 5px solid green;
+}
