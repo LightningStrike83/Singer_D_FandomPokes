@@ -52,9 +52,11 @@ header {
     margin-right: 20px;
 }
 
-header img {
-    max-height: 40px;
-    margin-left: 10px;
+#header-logo {
+    max-height: 50px;
+    max-width: 150px;
+    width: 100%;
+    margin-left: 40px;
 }
 
 #links-con {
@@ -78,11 +80,12 @@ header img {
 
 #primary-header {
     position: relative;
-    padding-top: 10px;
     padding-bottom: 10px;
     background-color: rgb(222, 222, 222);
     display: flex;
     justify-content: center;
+    order: -1;
+    padding-top: 10px;
 }
 
 #supplementary-header {
@@ -118,5 +121,14 @@ header img {
 
     #primary-header {
         justify-content: space-between;
+        order: 1;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    #header-logo {
+        margin-left: 15px;
+        max-width: 175px;
+        max-height: 75px;
     }
 }

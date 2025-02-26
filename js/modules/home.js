@@ -145,6 +145,7 @@ export function populationFunctionality() {
 
             characterImage.src = `images/characters/${value}.png`
             characterImage.setAttribute("class", "character-image")
+            characterImage.setAttribute("alt", `Image of ${nameVariable}`)
 
             characterBox.setAttribute("id", "character-box")
             partnerBox.setAttribute("id", "partner-box")
@@ -180,6 +181,7 @@ export function populationFunctionality() {
 
                 image.src = `images/pokemon/${partner.number}.png`
                 image.setAttribute("class", "pokemon-image")
+                image.setAttribute("alt", `Image of ${partner.name}`)
                 
                 name.textContent = `${partner.name}`
                 name.setAttribute("class", "pokemon-name")
@@ -348,6 +350,7 @@ export function populationFunctionality() {
             const value = ID.dataset.vote
             const voteCount = parentNode.querySelector(".vote-count")
             const number = voteCount.textContent
+            const upvoteButton = parentNode.querySelector(".upvote")
             var button = this.getBoundingClientRect()
 
             fetch(`${baseURL}user-vote/check/${userID}/${partnerID}`)
@@ -398,7 +401,7 @@ export function populationFunctionality() {
                     .then(function(response) {
                         errorMessage.textContent = ""
 
-                        this.style.color = "#00FF00"
+                        upvoteButton.style.color = "#00FF00"
                     })
                     .catch(error => {
                         errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
