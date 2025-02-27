@@ -16,6 +16,7 @@ header {
 #theme-enable-text {
     cursor: pointer;
     transition: all ease-in-out 0.5s;
+    font-size: 16px;
     &:hover {
         text-decoration: underline;
         opacity: 70%;
@@ -94,6 +95,10 @@ header {
     justify-content: space-between;
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+.mobile-links a {
+    font-size: 16px;
 }
 
 @media screen and (min-width: 768px) {

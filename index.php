@@ -86,10 +86,10 @@ session_start();
                 <option disabled selected value="none">--Please Select A Subseries First--</option>
             </select>
         </div>
-        <div id="character-list-con" class="col-span-2 dm">
+        <div id="character-list-con" class="col-span-3 dm">
             <p id="character-list-title" class="dm">Character List</p>
         </div>
-        <div id="character-partner-con" class="col-span-full m-col-span-10 dm"></div>
+        <div id="character-partner-con" class="col-span-full m-col-span-9 dm"></div>
     </section>
 
     <section class="grid-con">
@@ -221,7 +221,8 @@ session_start();
                 -DC Animated Movie Universe<br>
                 -Project Sekai<br>
                 -Metroid<br>
-                -Miraculous: Tales of Ladybug & Cat Noir<br></p>
+                -Miraculous: Tales of Ladybug & Cat Noir<br>
+                -Doki Doki Literature Club</p>
 
                 <h3>Characters Added:</h3>
                 <p>-The Chosen<br>
@@ -317,6 +318,10 @@ session_start();
                 -Lavenza<br>
                 -Sae Niijima<br>
                 -Takuto Maruki<br>
+                -Monika<br>
+                -Valentino<br>
+                -Sanganomiya Kokomi<br>
+                -Batman (Terry McGinnis)
                 </p>
             </div>
         </div>

@@ -57,7 +57,7 @@ session_start();
 
     <section id="error-con" class="grid-con">
         <h2 class="hidden">Error Handling</h2>
-        <p class="col-span-full base-error" id="suggest-error-message">Error</p>
+        <p class="col-span-full base-error" id="suggest-error-message"></p>
     </section>
 
     <section class="grid-con">
@@ -67,7 +67,7 @@ session_start();
             <h3><b>Please Read The Full Rules Before Submitting</b></h3>
 
             <div id="fictional-rules" class="rules-text">
-                <p><b>1.</b> Fandom PokePartners only accepts fictional characters only. While 'fictional' can be a very broad term, any characters depicted in live-action are allowed, but any real life people (including actors, voice actors, musicians, etc.) will not be accepted without notification. Fandom PokePartners wishes to maintain and respects freedom of choice for these individuals, unless if these individuals reach out and give consent to be added. Likewise, any actors that are depicting themselves in a fictious manner will be denied for the same reasons as mentioned above, unless consent is given. <!--  Examples:<br>
+                <p><b>1.</b> Fandom PokePartners only accepts fictional characters only. While 'fictional' can be a very broad term, any characters depicted in live-action are allowed, but any real life people (including actors, voice actors, musicians, etc.) will not be accepted without notification. Fandom PokePartners wishes to maintain and respects freedom of choice for these individuals, unless if these individuals reach out and give consent to be added. Likewise, any people from real life that are depicting themselves, or are being satired, in a fictious manner will be denied for the same reasons as mentioned above, unless consent is given. <!--  Examples:<br>
                     <ul class="example-list">
                         <li>Chris Evans <b>is not allowed</b> 🚫</li>
                         <li>Steve Rogers/Captain America (MCU) <b>is allowed</b> ✅</li>
@@ -83,7 +83,7 @@ session_start();
             </div>
 
             <div id="age-restriction-rules" class="rules-text">
-                <p><b>2.</b> Fandom PokePartners does not allow suggestions based on media that are sexually explicit in nature. Characters from adult-oriented content such as M-rated games and R-rated TV Shows and movies are allowed, but characters from specific media that are prohibited from younger audiences will not be accepted. If the source series is banned on Steam and/or needs an ID to access the material, it will not be accepted here. Any source material that contains sexual themes, such as ecchi anime series, will be accepted as long as it is not explicit and/or the depicted character is appropriate for audience viewing. <!-- Examples:<br>
+                <p><b>2.</b> Fandom PokePartners does not allow suggestions based on media that are sexually explicit in nature. Characters from restricted content such as M-rated games and R-rated TV Shows and movies are allowed, but characters from specific media that are prohibited from younger audiences will not be accepted. If the source series is banned on Steam and/or needs an ID to access the material, it will not be accepted here. Any source material that contains sexual themes, such as ecchi anime series, will be accepted as long as it is not explicit and/or the depicted character is appropriate for audience viewing. <!-- Examples:<br>
                     <ul class="example-list">
                         <li>South Park <b>is allowed</b> ✅</li>
                         <li>Huniepop <b>is not allowed</b> 🚫</li>
@@ -97,15 +97,15 @@ session_start();
             </div>
 
             <div id="problematic-rules" class="rules-text">
-                <p><b>3.</b> Fandom PokePartners does not allow suggestions based on characters or media that are deemed to be problematic. While the definition of 'problematic' can be broad, this includes, but is not limited to, any source material or characters that are generally considered to be homophobic, transphobic, racist, anti-semetic, etc. in nature without positive messaging. </p>
+                <p><b>3.</b> Fandom PokePartners does not allow suggestions based on characters or media that are widely regarded to be harmful or offensive in nature, with some exceptions. While the definition of 'harmful' can vary, this includes, but is not limited to, any source material or characters that promotes or perpetuates harmful stereotypes, discrimination, or hate, such as homophobia, transphobia, racism, anti-semetism, etc. unless the content is presented in a way that promotes positive messaging, raises constructive awareness of the issue, or is intended as satire in good faith.</p>
 
-                <input type="checkbox" id="problematic" class="rule-checkbox" data-checkbox="Rule 3"><label for="problematic">I understand and agree that my suggestion is not generally considered to be problematic or comes from a problematic source material, and will be subject to denial and/or removal if it is discovered to be</label>
+                <input type="checkbox" id="problematic" class="rule-checkbox" data-checkbox="Rule 3"><label for="problematic">I understand and agree that my suggestion is not considered harmful or offensive or comes from a media that is, unless it falls under the exceptions listed above, and will be subject to denial and/or removal if it is discovered to be</label>
             </div>
             
             <div id="oc-rules" class="rules-text">
-                <p><b>4.</b> Fandom PokePartners does not allow characters that are considered to be fan-made. While the developer of this website love and support the creation of fan-made characters, Fandom PokePartners is intended for canon characters only. Fandom PokePartners is looking into an alternative way of sharing fan-made characters with others and have creators ask for suggestions, but these characters will not be added to and/or removed from the database.</p>
+                <p><b>4.</b> Fandom PokePartners does not allow characters that are considered to be fan-made. While the developer of this website loves and supports the creation of fan-made characters, Fandom PokePartners is intended for canon characters only. Fandom PokePartners is looking into an alternative way of sharing fan-made characters with others and have creators ask for suggestions, but these characters will not be added to and/or removed from the database.</p>
 
-                <input type="checkbox" id="problematic" class="rule-checkbox" data-checkbox="Rule 4"><label for="problematic">I understand and agree that my suggestion is not a fan made character, and will be subject to denial and/or removal if it is discovered to be</label>
+                <input type="checkbox" id="fan-made" class="rule-checkbox" data-checkbox="Rule 4"><label for="fan-made">I understand and agree that my suggestion is not a fan-made character, and will be subject to denial and/or removal if it is discovered to be</label>
             </div>
 
             <button id="accept-button" class="accept-button">Accept and Continue</button>
@@ -117,10 +117,10 @@ session_start();
             <h3>Suggest A Character</h3>
 
             <form id="suggest-character">
-                <label for="character_name">Character Name (Required)</label>
+                <label for="character_name">Character Name (Required)*</label>
                 <input type="text" name="character_name" id="character_name">
 
-                <label for="series">Series Name (Required)</label>
+                <label for="series">Series Name (Required)*</label>
                 <input type="text" name="series" id="series">
 
                 <label for="subseries">Subseries Name <span data-info="subseries-info" class="more-info dm">?</span></label>
@@ -129,7 +129,7 @@ session_start();
                 <label for="wiki_page">Wikia / Fandom Page <span data-info="wiki-info" class="more-info dm">?</span></label>
                 <input type="text" name="wiki_page" id="wiki_page">
 
-                <label for="starting_pokemon">Starting Pokemon (Required)</label>
+                <label for="starting_pokemon">Starting Pokemon (Required)*</label>
                 <select id="suggest-pokemon"></select>
 
                 <input type="submit" id="suggest-character-submit">

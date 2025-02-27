@@ -1,3 +1,8 @@
+#privacy-info-con {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
 #privacy-title {
     text-align: center;
 }
@@ -15,7 +20,7 @@
 }
 
 #privacy-update-text {
-    margin-top: 20px;
+    margin-top: 15px;
     text-align: right;
 }
 
@@ -24,5 +29,11 @@
     transition: all ease-in-out 0.5s;
     &:hover {
         opacity: 70%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #privacy-update-text {
+        margin-top: 20px;
     }
 }

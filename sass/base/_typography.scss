@@ -1,6 +1,10 @@
 p, a, li, option, select, label, button, input, textarea {
     font-family: "Public Sans", "Arial", sans-serif;
     font-weight: 400;
+    font-size: 12px;
+    &:not(button) {
+        line-height: 20px;
+    }
 }
 
 h3 {
@@ -23,8 +27,16 @@ a {
     font-size: 20px;
 }
 
-#character-title, .pokemon-name, #select-title {
-    font-size: 20px;
+.pokemon-name {
+    font-size: 16px;
+}
+
+#character-title, #select-title {
+    font-size: 22px;
+}
+
+#character-list-title {
+    font-size: 18px;
 }
 
 .pokemon-name {
@@ -52,16 +64,45 @@ a {
 
 @media screen and (min-width: 428px) {
     .upvote, .vote-count {
-        font-size: 24px;
+        font-size: 20px;
+    }
+
+    .pokemon-name {
+        font-size: 19px;
     }
 }
 
 @media screen and (min-width: 768px) {
     .upvote, .vote-count {
-        font-size: 28px;
+        font-size: 24px;
     }
 
-    #character-title, .pokemon-name, #select-title {
+    .pokemon-name {
+        font-size: 21px;
+    }
+
+    #character-title, #select-title {
         font-size: 24px;
+    }
+
+    p, a, li, option, select, label, button, input, textarea {
+        font-size: 14px;
+        &:not(button) {
+            line-height: 25px;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    p, a, li, option, select, label, button, input, textarea {
+        font-size: 16px;
+    }
+
+    .pokemon-name {
+        font-size: 24px;
+    }
+
+    .upvote, .vote-count {
+        font-size: 28px;
     }
 }
