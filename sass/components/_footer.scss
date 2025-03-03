@@ -1,3 +1,5 @@
+@use "../abstracts/colours" as c;
+
 footer {
     text-align: center;
     background-color: rgb(222, 222, 222);
@@ -5,14 +7,15 @@ footer {
     padding-bottom: 10px;
     padding-left: 5px;
     padding-right: 5px;
+    background-color: c.$primarygray;
     a {
         margin-left: 5px;
         margin-right: 5px;
         text-decoration: underline;
-        color: blue;
+        color: black;
         transition: all ease-in-out 0.5s;
         &:visited {
-            color: blue;
+            color: black;
         }
         &:hover {
             opacity: 70%;

@@ -1,6 +1,9 @@
+@use "../abstracts/colours" as c;
+
 header {
     display: flex;
     flex-direction: column;
+    background-color: c.$primarygray;
 }
 
 #theme-enable {
@@ -82,7 +85,6 @@ header {
 #primary-header {
     position: relative;
     padding-bottom: 10px;
-    background-color: rgb(222, 222, 222);
     display: flex;
     justify-content: center;
     order: -1;
@@ -90,7 +92,6 @@ header {
 }
 
 #supplementary-header {
-    background-color: rgb(222, 222, 222);
     display: flex;
     justify-content: space-between;
     padding-top: 5px;

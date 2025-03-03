@@ -6,14 +6,30 @@ body {
     flex-direction: column;
     justify-content: space-between;
     min-height: 100vh;
+    background-color: c.$secondarygray;
+}
+
+button, input[type=submit] {
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: c.$primarygray;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+    padding: 5px 10px 5px 10px;
+    &:hover {
+        background-color: c.$secondarygray;
+        color: c.$primarygray;
+    }
+}
+
+input {
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 section {
     width: 100%;
-}
-
-body.dark-mode {
-    background-color: rgb(83, 83, 83);
 }
 
 .link-divider {
@@ -120,6 +136,28 @@ body.dark-mode {
         opacity: 70%;
         text-decoration: underline;
     }
+}
+
+select {
+    background-color: c.$secondarygray;
+    border: 1.5px solid black;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+input[type=checkbox] {
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 15px;
+    width: 15px;
+}
+
+// select, option {
+//     color: c.$graytext;
+// }
+
+option:disabled {
+    color: rgb(50, 50, 50);
 }
 
 @media screen and (min-width: 768px) {

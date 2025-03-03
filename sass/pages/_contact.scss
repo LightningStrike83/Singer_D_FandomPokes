@@ -7,9 +7,9 @@
 }
 
 #contact-title {
-    margin-top: 20px;
     text-align: center;
     margin-bottom: 15px;
+    margin-top: 10px;
 }
 
 #contact-form {
@@ -65,6 +65,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+#contact-con {
+    margin-top: 20px;
 }
 
 @media screen and (min-width: 768px) {

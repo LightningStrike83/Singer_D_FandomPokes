@@ -1,0 +1,38 @@
+#login-form, #register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#login-form-div, #register-form-div {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h3 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
+
+#login-button, #register-button {
+    margin-top: 20px;
+    width: 75%;
+    display: flex;
+    align-self: center;
+}
+
+#register-error, #login-error {
+    margin-top: 20px;
+}
+
+#register-privacy-link {
+    text-decoration: underline;
+}
+
+#privacy-check-con {
+    margin-top: 15px;
+}
+
+#login-form-con, #register-form-con {
+    margin-top: 20px;
+}

@@ -154,6 +154,11 @@ export function populationFunctionality() {
             submitButton.setAttribute("id", "submit-pokemon-button")
             submitButton.setAttribute("data-key", `${value}`)
             submitButton.addEventListener("click", displayPokeSubmit)
+            submitButton.setAttribute("class", "dm")
+
+            if (document.body.classList.contains("dark-mode")) {
+                submitButton.classList.add("dark-mode")
+            }
 
             loadingText.setAttribute("id", "loading-text")
 
@@ -207,7 +212,7 @@ export function populationFunctionality() {
                 .then(response => response.json())
                 .then(function(response) {
                     if (response.length > 0) {
-                        upvote.style.color = "#00FF00"
+                        upvote.style.color = "rgb(20, 248, 16)"
                     }
                 })
             })

@@ -20,7 +20,7 @@ session_start();
     <title>Fandom PokePartners- Contact</title>
 </head>
 <body data-page="contact" class="dm">
-<header>
+<header class="dm">
         <div id="supplementary-header">
             <div id="theme-enable">
                 <img id="theme-image" src="images/dark-icon.png" alt="Theme Icon">
@@ -56,20 +56,20 @@ session_start();
         </div>
     </header>
 
-    <section id="contact-con" class="grid-con">
+    <section id="contact-con" class="grid-con dm">
       <h1 class="hidden">Contact Form</h1>
         <h3 id="contact-title" class="col-span-full">Contact</h3>
         <div id="contact-form-con" class="col-span-full dm">
             <form id="contact-form">
                 <label for="name">Preferred Name:</label>
-                <input id="name" name="name" type="text" placeholder="Please Enter A Preferred Name">
+                <input id="name" name="name" type="text" placeholder="Please Enter A Preferred Name" class="dm">
                 <label for="email">Email:</label>
-                <input id="email" name="email" type="text" placeholder="Please Enter Your Email Address">
+                <input id="email" name="email" type="text" placeholder="Please Enter Your Email Address" class="dm">
                 <label for="subject">Subject:</label>
-                <input id="subject" name="subject" type="text" placeholder="Please Enter A Subject">
+                <input id="subject" name="subject" type="text" placeholder="Please Enter A Subject" class="dm">
                 <label for="message">Your Message:</label>
-                <textarea name="message" id="message" placeholder="Please Enter Your Message"></textarea>
-                <input type="submit" value="Send" id="submit-contact">
+                <textarea name="message" id="message" placeholder="Please Enter Your Message" class="dm"></textarea>
+                <input type="submit" value="Send" id="submit-contact" class="dm">
             </form>
 
             <div id="error-message">
@@ -81,12 +81,12 @@ session_start();
 
     <section class="grid-con">
         <div class="col-start-2 col-end-4 m-col-start-6 m-col-end-8">
-            <p id="top-text" class="dm">To Top ↑</p>
+            <p id="top-text" class="dm" class="dm">To Top ↑</p>
         </div>
     </section>
 
-    <footer class="full-width-grid-con">
-        <p id="footer-disclaimer" class="col-start-2 col-span-1">All images used are used for a transformative work and nonprofit. The images are copyrighted or are a registered trademark, sourced from the various Wikias/Fandoms. The contributor claims fair use. No copyright infringement is intended.<br><br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br><br>Fandom PokePartners is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by any of the series, creators, parent companies, or affiliated persons found throughout the website. The content displayed in this website is meant for informational purposes only and is not official in any shape or form.<br><br><a href="privacy.php">Privacy Policy</a> | <a href="contact.php">Contact Us</a></p>
+    <footer class="full-width-grid-con dm">
+        <p id="footer-disclaimer" class="col-start-2 col-span-1">All images used are used for a transformative work and nonprofit. The images are copyrighted or are a registered trademark, sourced from the various Wikias/Fandoms. The contributor claims fair use. No copyright infringement is intended.<br><br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br><br>Fandom PokePartners is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by any of the series, creators, parent companies, or affiliated persons found throughout the website. The content displayed in this website is meant for informational purposes only and is not official in any shape or form.<br><br><a href="privacy.php">Privacy Policy</a> | <a href="contact.php">Contact</a></p>
     </footer>
 
     <section id="hamburger-menu-con" class="full-width-grid-con mobile-menu dm">

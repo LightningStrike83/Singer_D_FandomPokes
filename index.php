@@ -20,7 +20,7 @@ session_start();
     <title>Fandom PokePartners- Character Database</title>
 </head>
 <body data-page="home" class="dm">
-<header>
+<header class="dm">
         <div id="supplementary-header">
             <div id="theme-enable">
                 <img id="theme-image" src="images/dark-icon.png" alt="Theme Icon">
@@ -69,12 +69,12 @@ session_start();
         <h2 class="hidden"></h2>
 
         <div class="select-con col-span-full">
-            <select class="select-list" id="main-select"></select>
+            <select class="select-list dm" id="main-select"></select>
         </div>
 
 
         <div class="select-con col-span-full">
-            <select class="select-list" id="sub-select">
+            <select class="select-list dm" id="sub-select">
                 <option disabled selected value="none">--Please Select A Series First--</option>
             </select>
         </div>
@@ -82,7 +82,7 @@ session_start();
 
     <section class="grid-con">
         <div id="character-list-select" class="select-con col-span-full">
-            <select class="select-list" id="character-list">
+            <select class="select-list dm" id="character-list">
                 <option disabled selected value="none">--Please Select A Subseries First--</option>
             </select>
         </div>
@@ -98,8 +98,8 @@ session_start();
         </div>
     </section>
 
-    <footer class="full-width-grid-con">
-        <p id="footer-disclaimer" class="col-start-2 col-span-1">All images used are used for a transformative work and nonprofit. The images are copyrighted or are a registered trademark, sourced from the various Wikias/Fandoms. The contributor claims fair use. No copyright infringement is intended.<br><br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br><br>Fandom PokePartners is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by any of the series, creators, parent companies, or affiliated persons found throughout the website. The content displayed in this website is meant for informational purposes only and is not official in any shape or form.<br><br><a href="privacy.php">Privacy Policy</a> | <a href="contact.php">Contact Us</a></p>
+    <footer class="full-width-grid-con dm">
+        <p id="footer-disclaimer" class="col-start-2 col-span-1">All images used are used for a transformative work and nonprofit. The images are copyrighted or are a registered trademark, sourced from the various Wikias/Fandoms. The contributor claims fair use. No copyright infringement is intended.<br><br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br><br>Fandom PokePartners is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by any of the series, creators, parent companies, or affiliated persons found throughout the website. The content displayed in this website is meant for informational purposes only and is not official in any shape or form.<br><br><a href="privacy.php">Privacy Policy</a> | <a href="contact.php">Contact</a></p>
     </footer>
 
     <section id="hamburger-menu-con" class="full-width-grid-con mobile-menu dm">
@@ -136,9 +136,9 @@ session_start();
                 <input id="pokemon-submit-character" type="text" disabled>
 
                 <label for="pokemon">Pokemon:</label>
-                <select id="pokemon-submit-select"></select>
+                <select class="dm" id="pokemon-submit-select"></select>
 
-                <input type="submit" value="Submit" id="submit-pokemon">
+                <input type="submit" value="Submit" id="submit-pokemon" class="dm">
             </form>
 
             <p id="submit-poke-text"></p>

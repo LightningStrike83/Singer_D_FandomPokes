@@ -19,7 +19,7 @@ session_start();
     <title>Fandom PokePartners- Suggest A Character</title>
 </head>
 <body data-page="suggest" class="dm">
-    <header>
+    <header class="dm">
         <div id="supplementary-header">
             <div id="theme-enable">
                 <img id="theme-image" src="images/dark-icon.png" alt="Theme Icon">
@@ -63,10 +63,10 @@ session_start();
     <section class="grid-con">
         <h2 class="hidden">Suggest A Character</h2>
 
-        <div id="rule-con" class="col-span-full">
-            <h3><b>Please Read The Full Rules Before Submitting</b></h3>
+        <div id="rule-con" class="col-span-full dm">
+            <h3 id="read-text" class="dm"><b>Please Read The Full Rules Before Submitting</b></h3>
 
-            <div id="fictional-rules" class="rules-text">
+            <div id="fictional-rules" class="rules-text dm">
                 <p><b>1.</b> Fandom PokePartners only accepts fictional characters only. While 'fictional' can be a very broad term, any characters depicted in live-action are allowed, but any real life people (including actors, voice actors, musicians, etc.) will not be accepted without notification. Fandom PokePartners wishes to maintain and respects freedom of choice for these individuals, unless if these individuals reach out and give consent to be added. Likewise, any people from real life that are depicting themselves, or are being satired, in a fictious manner will be denied for the same reasons as mentioned above, unless consent is given. <!--  Examples:<br>
                     <ul class="example-list">
                         <li>Chris Evans <b>is not allowed</b> 🚫</li>
@@ -82,7 +82,7 @@ session_start();
                 <input type="checkbox" id="fiction-box" class="rule-checkbox" data-checkbox="Rule 1"><label for="fiction-box">I understand and agree that my suggestion will be based off of a fictional character and my suggestion may be subject to denial and/or removal if it is discovered to be a real life person</label>
             </div>
 
-            <div id="age-restriction-rules" class="rules-text">
+            <div id="age-restriction-rules" class="rules-text dm">
                 <p><b>2.</b> Fandom PokePartners does not allow suggestions based on media that are sexually explicit in nature. Characters from restricted content such as M-rated games and R-rated TV Shows and movies are allowed, but characters from specific media that are prohibited from younger audiences will not be accepted. If the source series is banned on Steam and/or needs an ID to access the material, it will not be accepted here. Any source material that contains sexual themes, such as ecchi anime series, will be accepted as long as it is not explicit and/or the depicted character is appropriate for audience viewing. <!-- Examples:<br>
                     <ul class="example-list">
                         <li>South Park <b>is allowed</b> ✅</li>
@@ -96,43 +96,43 @@ session_start();
                 <input type="checkbox" id="age-restricted-box" class="rule-checkbox" data-checkbox="Rule 2"><label for="age-restricted-box">I understand and agree that my suggestion is not based off any sexually explicit material, and will be subject to denial and/or removal if it is discovered to be</label>
             </div>
 
-            <div id="problematic-rules" class="rules-text">
+            <div id="problematic-rules" class="rules-text dm">
                 <p><b>3.</b> Fandom PokePartners does not allow suggestions based on characters or media that are widely regarded to be harmful or offensive in nature, with some exceptions. While the definition of 'harmful' can vary, this includes, but is not limited to, any source material or characters that promotes or perpetuates harmful stereotypes, discrimination, or hate, such as homophobia, transphobia, racism, anti-semetism, etc. unless the content is presented in a way that promotes positive messaging, raises constructive awareness of the issue, or is intended as satire in good faith.</p>
 
                 <input type="checkbox" id="problematic" class="rule-checkbox" data-checkbox="Rule 3"><label for="problematic">I understand and agree that my suggestion is not considered harmful or offensive or comes from a media that is, unless it falls under the exceptions listed above, and will be subject to denial and/or removal if it is discovered to be</label>
             </div>
             
-            <div id="oc-rules" class="rules-text">
+            <div id="oc-rules" class="rules-text dm">
                 <p><b>4.</b> Fandom PokePartners does not allow characters that are considered to be fan-made. While the developer of this website loves and supports the creation of fan-made characters, Fandom PokePartners is intended for canon characters only. Fandom PokePartners is looking into an alternative way of sharing fan-made characters with others and have creators ask for suggestions, but these characters will not be added to and/or removed from the database.</p>
 
                 <input type="checkbox" id="fan-made" class="rule-checkbox" data-checkbox="Rule 4"><label for="fan-made">I understand and agree that my suggestion is not a fan-made character, and will be subject to denial and/or removal if it is discovered to be</label>
             </div>
 
-            <button id="accept-button" class="accept-button">Accept and Continue</button>
+            <button id="accept-button" class="accept-button dm">Accept and Continue</button>
 
             <p id="rule-error"></p>
         </div>
 
-        <div id="suggest-con" class="col-span-full">
+        <div id="suggest-con" class="col-span-full dm">
             <h3>Suggest A Character</h3>
 
             <form id="suggest-character">
                 <label for="character_name">Character Name (Required)*</label>
-                <input type="text" name="character_name" id="character_name">
+                <input type="text" name="character_name" id="character_name" class="dm">
 
                 <label for="series">Series Name (Required)*</label>
-                <input type="text" name="series" id="series">
+                <input type="text" name="series" id="series" class="dm">
 
                 <label for="subseries">Subseries Name <span data-info="subseries-info" class="more-info dm">?</span></label>
-                <input type="text" name="subseries" id="subseries">
+                <input type="text" name="subseries" id="subseries" class="dm">
 
                 <label for="wiki_page">Wikia / Fandom Page <span data-info="wiki-info" class="more-info dm">?</span></label>
-                <input type="text" name="wiki_page" id="wiki_page">
+                <input type="text" name="wiki_page" id="wiki_page" class="dm">
 
                 <label for="starting_pokemon">Starting Pokemon (Required)*</label>
-                <select id="suggest-pokemon"></select>
+                <select class="dm" id="suggest-pokemon" class="dm"></select>
 
-                <input type="submit" id="suggest-character-submit">
+                <input type="submit" id="suggest-character-submit" class="dm">
             </form>
 
             <p id="suggest-error"></p>
@@ -141,12 +141,12 @@ session_start();
 
     <section class="grid-con">
         <div class="col-start-2 col-end-4 m-col-start-6 m-col-end-8">
-            <p id="top-text" class="dm">To Top ↑</p>
+            <p id="top-text" class="dm" class="dm">To Top ↑</p>
         </div>
     </section>
 
-    <footer class="full-width-grid-con">
-        <p id="footer-disclaimer" class="col-start-2 col-span-1">All images used are used for a transformative work and nonprofit. The images are copyrighted or are a registered trademark, sourced from the various Wikias/Fandoms. The contributor claims fair use. No copyright infringement is intended.<br><br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br><br>Fandom PokePartners is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by any of the series, creators, parent companies, or affiliated persons found throughout the website. The content displayed in this website is meant for informational purposes only and is not official in any shape or form.<br><br><a href="privacy.php">Privacy Policy</a> | <a href="contact.php">Contact Us</a></p>
+    <footer class="full-width-grid-con dm">
+        <p id="footer-disclaimer" class="col-start-2 col-span-1">All images used are used for a transformative work and nonprofit. The images are copyrighted or are a registered trademark, sourced from the various Wikias/Fandoms. The contributor claims fair use. No copyright infringement is intended.<br><br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br><br>Fandom PokePartners is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by any of the series, creators, parent companies, or affiliated persons found throughout the website. The content displayed in this website is meant for informational purposes only and is not official in any shape or form.<br><br><a href="privacy.php">Privacy Policy</a> | <a href="contact.php">Contact</a></p>
     </footer>
 
     <section id="hamburger-menu-con" class="full-width-grid-con mobile-menu dm">

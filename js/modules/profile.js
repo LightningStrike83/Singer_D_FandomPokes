@@ -49,7 +49,11 @@ export function profilePopulation() {
 
                 div.setAttribute("class", "profile-content-con")
                 imageDiv.setAttribute("class", "profile-image-con")
-                title.setAttribute("class", "profile-info-title")
+                title.setAttribute("class", "profile-info-title dm")
+
+                if (document.body.classList.contains("dark-mode")) {
+                    title.classList.add("dark-mode")
+                }
 
                 imageDiv.appendChild(characterImage)
                 imageDiv.appendChild(pokemonImage)
@@ -85,6 +89,10 @@ export function profilePopulation() {
                 title.setAttribute("class", "profile-info-title")
                 name.setAttribute("class", "character-name-submission")
 
+                if (document.body.classList.contains("dark-mode")) {
+                    title.classList.add("dark-mode")
+                }
+
                 div.appendChild(title)
                 infoDiv.appendChild(characterImage)
                 infoDiv.appendChild(name)
@@ -104,9 +112,9 @@ export function profilePopulation() {
 
         infoBoxes.forEach(box => box.style.display = "none")
 
-        profileTabs.forEach(tab => tab.style.backgroundColor = "#fff")
+        profileTabs.forEach(tab => tab.classList.remove("tab-selected"))
         
-        this.style.backgroundColor = "rgb(222, 222, 222)"
+        this.classList.add("tab-selected")
         thisBox.style.display = "flex"
     }
   
@@ -114,6 +122,7 @@ export function profilePopulation() {
         const button = document.createElement("button")
 
         button.innerHTML = "Edit Profile"
+        button.setAttribute("class", "dm")
         button.addEventListener("click", activateEditMode)
 
         if (document.body.classList.contains("match")) {
@@ -130,10 +139,10 @@ export function profilePopulation() {
         const profileTab = document.querySelector("#first-tab")
         const profileCon = document.querySelector("#profile-text-con")
 
-        profileTabs.forEach(tab => tab.style.backgroundColor = "#fff")
+        profileTabs.forEach(tab => tab.classList.remove("tab-selected"))
         infoBoxes.forEach(box => box.style.display = "none")
 
-        profileTab.style.backgroundColor = "rgb(222, 222, 222)"
+        profileTab.classList.add("tab-selected")
         profileCon.style.display = "flex"
 
         editImageIcon.src = "./images/icons/edit.svg"
@@ -177,7 +186,13 @@ export function profilePopulation() {
         const favPokemon = document.querySelector("#fav-pokemon-home")
         const textInputs = document.querySelectorAll(".text-input")
 
+        select.setAttribute("id", "profile-select-menu")
+        select.setAttribute("class", "dm")
         select.addEventListener("change", submitFavPokemon)
+
+        if (document.body.classList.contains("dark-mode")) {
+            select.classList.add("dark-mode")
+        }
 
         fetch(`${baseURL}species/all`)
         .then(response => response.json())
@@ -205,12 +220,17 @@ export function profilePopulation() {
             const input = document.createElement("input")
             const button = document.createElement("button")
 
-            input.setAttribute("class", "profile-input-text")
+            input.setAttribute("class", "profile-input-text dm")
             input.maxLength = "1000"
 
             button.addEventListener("click", submitInfo)
             button.innerText = "Submit"
-            button.setAttribute("class", "profile-info-submit-button")
+            button.setAttribute("class", "profile-info-submit-button dm")
+
+            if (document.body.classList.contains("dark-mode")) {
+                button.classList.add("dark-mode")
+                input.classList.add("dark-mode")
+            }
 
             info.appendChild(input)
             info.appendChild(button)
