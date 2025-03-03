@@ -29,7 +29,7 @@ $stmt = null;
     <title>Fandom PokePartners- <?php echo $row['username']; ?></title>
 </head>
 <body data-page="profile" class="dm">
-    <header>
+    <header class="dm">
         <div id="supplementary-header">
             <div id="theme-enable">
                 <img id="theme-image" src="images/dark-icon.png" alt="Theme Icon">
@@ -72,18 +72,18 @@ $stmt = null;
             </div>
 
             <?php
-                echo '<h3 id="profile-username">'.$row['username'].'</h3>';
+                echo '<h3 id="profile-username" class="dm">'.$row['username'].'</h3>';
             ?>
         </div>
 
         <div id="extra-info-con" class="col-span-full m-col-span-9">
             <div id="tab-con">
-                <p id="first-tab" class="profile-tab" data-link="profile-text">Profile Info</p>
-                <p id="middle-tab" class="profile-tab" data-link="upvoted">Upvoted (<span id="upvote-count-text">...</span>)</p>
-                <p class="profile-tab" data-link="submission">Character Submissions (<span id="submissions-count-text">...</span>)</p>
+                <p id="first-tab" class="profile-tab dm tab-selected" data-link="profile-text">Profile Info</p>
+                <p id="middle-tab" class="profile-tab dm" data-link="upvoted">Upvoted (<span id="upvote-count-text">...</span>)</p>
+                <p class="profile-tab dm" data-link="submission">Character Submissions (<span id="submissions-count-text">...</span>)</p>
             </div>
 
-            <div id="profile-text-con" class="profile-info-box">
+            <div id="profile-text-con" class="profile-info-box dm">
                 <div class="profile-info-con" id="fav-pokemon-home"><p class="profile-info"><b>Favourite Pokemon:</b><span id="profile-fav-pokemon" class="dynamic-text"></span></p></div>
                 <div class="profile-info-divider"></div>
                 <div class="profile-info-con text-input" id="fav-trainer-home" data-input="fav_trainer"><p class="profile-info"><b>Favourite Pokemon Trainers:</b><span id="profile-fav-trainer" class="dynamic-text"></span></p></div>
@@ -94,19 +94,19 @@ $stmt = null;
                 <div class="profile-info-divider"></div>
                 <div class="profile-info-con text-input" id="fandoms-home" data-input="fandoms"><p class="profile-info"><b>Fandoms Interested In:</b><span id="profile-fandoms" class="dynamic-text"></span></p></div>
             </div>
-            <div id="upvoted-con" class="profile-info-box"></div>
-            <div id="submission-con" class="profile-info-box"></div>
+            <div id="upvoted-con" class="profile-info-box dm"></div>
+            <div id="submission-con" class="profile-info-box dm"></div>
         </div>
     </section>
 
     <section class="grid-con">
         <div class="col-start-2 col-end-4 m-col-start-6 m-col-end-8">
-            <p id="top-text" class="dm">To Top ↑</p>
+            <p id="top-text" class="dm" class="dm">To Top ↑</p>
         </div>
     </section>
 
-    <footer class="full-width-grid-con">
-        <p id="footer-disclaimer" class="col-start-2 col-span-1">All images used are used for a transformative work and nonprofit. The images are copyrighted or are a registered trademark, sourced from the various Wikias/Fandoms. The contributor claims fair use. No copyright infringement is intended.<br><br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br><br>Fandom PokePartners is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by any of the series, creators, parent companies, or affiliated persons found throughout the website. The content displayed in this website is meant for informational purposes only and is not official in any shape or form.<br><br><a href="privacy.php">Privacy Policy</a> | <a href="contact.php">Contact Us</a></p>
+    <footer class="full-width-grid-con dm">
+        <p id="footer-disclaimer" class="col-start-2 col-span-1">All images used are used for a transformative work and nonprofit. The images are copyrighted or are a registered trademark, sourced from the various Wikias/Fandoms. The contributor claims fair use. No copyright infringement is intended.<br><br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br><br>Fandom PokePartners is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by any of the series, creators, parent companies, or affiliated persons found throughout the website. The content displayed in this website is meant for informational purposes only and is not official in any shape or form.<br><br><a href="privacy.php">Privacy Policy</a> | <a href="contact.php">Contact</a></p>
     </footer>
 
     <section id="hamburger-menu-con" class="full-width-grid-con mobile-menu dm">
@@ -132,7 +132,7 @@ $stmt = null;
         </div>
     </section>
 
-    <section id="icon-con">
+    <section id="icon-con" class="dm">
         <h3 id="pokeball-title"> Select An Icon</h3>
         <div id="ball-icon-home">
             <img class="pokeball-icon" src="images/icons/pokeball.svg" alt="Pokeball Icon">
