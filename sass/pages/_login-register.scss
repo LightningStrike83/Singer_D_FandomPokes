@@ -23,6 +23,7 @@
 
 #register-error, #login-error {
     margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 #register-privacy-link {
@@ -35,4 +36,8 @@
 
 #login-form-con, #register-form-con {
     margin-top: 20px;
+}
+
+#register-login-link {
+    text-decoration: underline!important;
 }
