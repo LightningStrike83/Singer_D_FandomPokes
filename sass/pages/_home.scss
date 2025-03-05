@@ -333,6 +333,10 @@ ul {
     }
 }
 
+#pokemon-submit-shiny, #shiny-label-click {
+    cursor: pointer;
+}
+
 @media screen and (min-width: 428px) {
     .pokemon-image {
         padding: 10px;

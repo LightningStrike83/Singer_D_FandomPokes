@@ -8,6 +8,7 @@ export function populationFunctionality() {
     const submitHomeForm = document.querySelector("#pokemon-submit-form")
     const errorMessage = document.querySelector("#home-error-message")
     const patchLink = document.querySelector("#patch-open")
+    const shinyCheckbox = document.querySelector("#shiny-label-click")
 
     function populateMain() {
         fetch(`${baseURL}series/all`)
@@ -184,12 +185,23 @@ export function populationFunctionality() {
                 div.setAttribute("class", `partner-div type-${partner.type1} dm`)
                 div.setAttribute("data-vote", `${partner.id}`)
 
-                image.src = `images/pokemon/${partner.number}.png`
-                image.setAttribute("class", "pokemon-image")
-                image.setAttribute("alt", `Image of ${partner.name}`)
-                
-                name.textContent = `${partner.name}`
-                name.setAttribute("class", "pokemon-name")
+                if (partner.shiny === "y") {
+                    image.src = `images/pokemon/shiny/${partner.number}.png`
+                    image.setAttribute("class", "pokemon-image")
+                    image.setAttribute("alt", `Image of Shiny ${partner.name}`)
+
+                    name.textContent = `${partner.name} (Shiny)`
+                    name.setAttribute("class", "pokemon-name")
+                } else {
+                    image.src = `images/pokemon/${partner.number}.png`
+                    image.setAttribute("class", "pokemon-image")
+                    image.setAttribute("alt", `Image of ${partner.name}`)
+
+                    name.textContent = `${partner.name}`
+                    name.setAttribute("class", "pokemon-name")
+                }
+
+                image.setAttribute("data-shiny", `${partner.shiny}`)
 
                 vote.textContent = `${partner.votes}`
                 vote.setAttribute("class", "vote-count")
@@ -300,8 +312,16 @@ export function populationFunctionality() {
         const characterID = characterFind.dataset.submit
         const pokemonFind = document.querySelector("#pokemon-submit-select")
         const pokemonID = pokemonFind.options[pokemonFind.selectedIndex].value
+        const shinyBox = document.querySelector("#pokemon-submit-shiny")
+        let shinyData = ""
 
-        fetch(`${baseURL}partners/check/${characterID}/${pokemonID}`)
+        if (shinyBox.checked === true) {
+            shinyData = "y"
+        } else {
+            shinyData = "n"
+        }
+
+        fetch(`${baseURL}partners/check/${characterID}/${pokemonID}/${shinyData}`)
         .then(response => response.json())
         .then(function(response) {
             const text = document.querySelector("#submit-poke-text")
@@ -317,6 +337,7 @@ export function populationFunctionality() {
                 const partnerData = {
                     character_id: characterID,
                     species_id: pokemonID,
+                    shiny: shinyData,
                     votes: 0,
                 }
 
@@ -453,9 +474,20 @@ export function populationFunctionality() {
         updateCon.style.display = "flex"
     }
 
+    function checkBox() {
+        const shinyBox = document.querySelector("#pokemon-submit-shiny")
+
+        if (shinyBox.checked === true) {
+            shinyBox.checked = false
+        } else {
+            shinyBox.checked = true
+        }
+    }
+
     mainSelect.addEventListener("change", populateSub)
     subSelect.addEventListener("change", populateCharacter)
     characterSelect.addEventListener("change", showPokemon)
     submitHomeForm.addEventListener("submit", submitPartner)
     patchLink.addEventListener("click", openUpdateInfo)
+    shinyCheckbox.addEventListener("click", checkBox)
 }
