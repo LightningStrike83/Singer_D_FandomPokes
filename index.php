@@ -63,7 +63,7 @@ session_start();
     </header>
 
     <div id="update-con" class="full-width-grid-con">
-        <p id="update-text" class="col-start-2 col-span-2 dm">Last Content Update: <span id="patch-open">Feb. 23, 2025</span></p>
+        <p id="update-text" class="col-start-2 col-span-2 dm">Last Content Update: <span id="patch-open">March 4th, 2025</span></p>
     </div>
 
     <section id="error-con" class="grid-con">
@@ -143,6 +143,12 @@ session_start();
 
                 <label for="pokemon">Pokemon:</label>
                 <select class="dm" id="pokemon-submit-select"></select>
+
+                <label for="shiny" id="shiny-label">Shiny?:</label>
+
+                <div id="shiny-checkbox-con">
+                    <input type="checkbox" id="pokemon-submit-shiny"><label for="shiny" id="shiny-label-click">The Pokemon is shiny</p>
+                </div>
 
                 <input type="submit" value="Submit" id="submit-pokemon" class="dm">
             </form>
@@ -327,7 +333,8 @@ session_start();
                 -Monika<br>
                 -Valentino<br>
                 -Sanganomiya Kokomi<br>
-                -Batman (Terry McGinnis)
+                -Batman (Terry McGinnis)<br>
+                -Yami Bakura
                 </p>
             </div>
         </div>

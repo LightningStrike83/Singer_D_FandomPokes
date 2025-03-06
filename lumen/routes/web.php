@@ -24,7 +24,7 @@ $router->get("/characters/{id}", "CharacterController@getOne");
 $router->get("/submitter/{id}", "CharacterController@getSubmitter");
 $router->post("partners/add", "SpeciesCharacterController@addPartner");
 $router->get("partners/{id}", "SpeciesCharacterController@getOne");
-$router->get("partners/check/{character}/{species}", "speciesCharacterController@checkPartners");
+$router->get("partners/check/{character}/{species}/{shiny}", "speciesCharacterController@checkPartners");
 $router->post("suggestion/add", "SuggestionController@addSuggestion");
 $router->post("partners/update/{id}", "SpeciesCharactercontroller@updateOne");
 $router->get("/user-vote/check/{user}/{vote}", "UserVoteController@checkOne");

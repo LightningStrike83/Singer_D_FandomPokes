@@ -182,61 +182,77 @@ export function profilePopulation() {
     }
 
     function openInfoMenu() {
-        const select = document.createElement("select")
-        const favPokemon = document.querySelector("#fav-pokemon-home")
-        const textInputs = document.querySelectorAll(".text-input")
+        const parentNode = this.parentNode
 
-        select.setAttribute("id", "profile-select-menu")
-        select.setAttribute("class", "dm")
-        select.addEventListener("change", submitFavPokemon)
+        if (parentNode.classList.contains("edit-mode")) {
+            const removeSelect = parentNode.querySelector("select")
+            const removeInputs = parentNode.querySelectorAll("input")
+            const removeButtons = parentNode.querySelectorAll("button")
 
-        if (document.body.classList.contains("dark-mode")) {
-            select.classList.add("dark-mode")
-        }
+            parentNode.classList.remove("edit-mode")
 
-        fetch(`${baseURL}species/all`)
-        .then(response => response.json())
-        .then(function(response) {
-            const defaultOption = document.createElement("option")
+            removeSelect.remove()
+            removeInputs.forEach(input => input.remove())
+            removeButtons.forEach(button => button.remove())
+        } else {
+            const select = document.createElement("select")
+            const favPokemon = document.querySelector("#fav-pokemon-home")
+            const textInputs = document.querySelectorAll(".text-input")
 
-            defaultOption.innerText = "--Please Select A Pokemon--"
-            defaultOption.selected = true
-            defaultOption.disabled = true
+            parentNode.classList.add("edit-mode")
 
-            select.appendChild(defaultOption)
-
-            response.forEach(item => {
-                const option = document.createElement("option")
-
-                option.innerText = item.name
-
-                select.appendChild(option)
-            })
-        })
-        .catch(error => {
-        })
-
-        textInputs.forEach(info => {
-            const input = document.createElement("input")
-            const button = document.createElement("button")
-
-            input.setAttribute("class", "profile-input-text dm")
-            input.maxLength = "1000"
-
-            button.addEventListener("click", submitInfo)
-            button.innerText = "Submit"
-            button.setAttribute("class", "profile-info-submit-button dm")
+            select.setAttribute("id", "profile-select-menu")
+            select.setAttribute("class", "dm")
+            select.addEventListener("change", submitFavPokemon)
 
             if (document.body.classList.contains("dark-mode")) {
-                button.classList.add("dark-mode")
-                input.classList.add("dark-mode")
+                select.classList.add("dark-mode")
             }
 
-            info.appendChild(input)
-            info.appendChild(button)
-        })
+            fetch(`${baseURL}species/all`)
+            .then(response => response.json())
+            .then(function(response) {
+                const defaultOption = document.createElement("option")
 
-        favPokemon.appendChild(select)
+                defaultOption.innerText = "--Please Select A Pokemon--"
+                defaultOption.selected = true
+                defaultOption.disabled = true
+
+                select.appendChild(defaultOption)
+
+                response.forEach(item => {
+                    const option = document.createElement("option")
+
+                    option.innerText = item.name
+
+                    select.appendChild(option)
+                })
+            })
+            .catch(error => {
+            })
+
+            textInputs.forEach(info => {
+                const input = document.createElement("input")
+                const button = document.createElement("button")
+
+                input.setAttribute("class", "profile-input-text dm")
+                input.maxLength = "1000"
+
+                button.addEventListener("click", submitInfo)
+                button.innerText = "Submit"
+                button.setAttribute("class", "profile-info-submit-button dm")
+
+                if (document.body.classList.contains("dark-mode")) {
+                    button.classList.add("dark-mode")
+                    input.classList.add("dark-mode")
+                }
+
+                info.appendChild(input)
+                info.appendChild(button)
+            })
+
+            favPokemon.appendChild(select)
+        }
     }
 
     function changeIcon() {
