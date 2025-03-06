@@ -3,9 +3,18 @@ export function suggestionSubmit() {
     const infoButtons = document.querySelectorAll(".more-info")
     const form = document.querySelector("#suggest-character")
     const errorMessage = document.querySelector("#suggest-error-message")
+    const shinyCheckbox = document.querySelector("#shiny-label-click")
 
     function selectPopulation() {
         const suggestPokemon = document.querySelector("#suggest-pokemon")
+        const loadingOption = document.createElement("option")
+
+        loadingOption.innerText = "Loading..."
+        loadingOption.disabled = true
+        loadingOption.selected = true
+        loadingOption.setAttribute("data-loading", "loading")
+
+        suggestPokemon.appendChild(loadingOption)
 
         fetch(`${baseURL}species/all`)
         .then(response => response.json())
@@ -28,6 +37,10 @@ export function suggestionSubmit() {
 
                 suggestPokemon.appendChild(option)
             })
+
+            const loadingOption = document.querySelector("option[data-loading='loading']");
+
+            loadingOption.remove()
         })
         .catch(error => {
             errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
@@ -60,6 +73,14 @@ export function suggestionSubmit() {
         const startingPokemon = document.querySelector("#suggest-pokemon")
         const suggestError = document.querySelector("#suggest-error")
         const loginCon = document.querySelector("#login-con")
+        const shinyBox = document.querySelector("#pokemon-submit-shiny")
+        let shinyData = ""
+
+        if (shinyBox.checked === true) {
+            shinyData = "y"
+        } else {
+            shinyData = "n"
+        }
 
         suggestError.textContent = "Submitting..."
 
@@ -68,11 +89,10 @@ export function suggestionSubmit() {
             series: document.querySelector("#series").value,
             subseries: document.querySelector("#subseries").value,
             wiki_page: document.querySelector("#wiki_page").value,
+            shiny: shinyData,
             starting_pokemon: startingPokemon.options[startingPokemon.selectedIndex].value,
             submitter: loginCon.dataset.id
         }
-
-        console.log(suggestionInfo)
 
         fetch(`${baseURL}suggestion/add`, {
             method: "POST",
@@ -94,6 +114,17 @@ export function suggestionSubmit() {
         })
     }
 
+    function checkBox() {
+        const shinyBox = document.querySelector("#pokemon-submit-shiny")
+
+        if (shinyBox.checked === true) {
+            shinyBox.checked = false
+        } else {
+            shinyBox.checked = true
+        }
+    }
+
     infoButtons.forEach(button => button.addEventListener("click", openInfoBox))
     form.addEventListener("submit", submitSuggestion)
+    shinyCheckbox.addEventListener("click", checkBox)
 }

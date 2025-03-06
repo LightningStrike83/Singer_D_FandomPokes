@@ -11,6 +11,15 @@ export function populationFunctionality() {
     const shinyCheckbox = document.querySelector("#shiny-label-click")
 
     function populateMain() {
+        const loadingOption = document.createElement("option")
+
+        loadingOption.innerText = "Loading..."
+        loadingOption.disabled = true
+        loadingOption.selected = true
+        loadingOption.setAttribute("data-loading", "loading")
+
+        mainSelect.appendChild(loadingOption)
+
         fetch(`${baseURL}series/all`)
         .then(response => response.json())
         .then(function(response) {
@@ -30,6 +39,10 @@ export function populationFunctionality() {
 
                 mainSelect.appendChild(seriesOption)
             })
+
+            const loadingOption = document.querySelector("option[data-loading='loading']");
+
+            loadingOption.remove()
         })
         .catch(error => {
             errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
@@ -40,6 +53,15 @@ export function populationFunctionality() {
 
     function populateSub() {
         const fetchID = mainSelect.value
+        const loadingOption = document.createElement("option")
+
+        loadingOption.innerText = "Loading..."
+        loadingOption.disabled = true
+        loadingOption.selected = true
+        loadingOption.setAttribute("data-loading", "loading")
+
+        subSelect.innerHTML = ""
+        subSelect.appendChild(loadingOption)
 
         fetch(`${baseURL}subseries/${fetchID}`)
         .then(response => response.json())
@@ -49,7 +71,6 @@ export function populationFunctionality() {
             baseOption.disabled = true
             baseOption.selected = true
 
-            subSelect.innerHTML = ""
             errorMessage.textContent = ""
 
             subSelect.appendChild(baseOption)
@@ -61,6 +82,10 @@ export function populationFunctionality() {
 
                 subSelect.appendChild(subseriesOption)
             })
+
+            const loadingOption = document.querySelector("option[data-loading='loading']");
+
+            loadingOption.remove()
         })
         .catch(error => {
             errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
@@ -69,6 +94,16 @@ export function populationFunctionality() {
 
     function populateCharacter() {
         const fetchID = subSelect.value
+        const loadingOption = document.createElement("option")
+
+        characterSelect.innerHTML = ""
+
+        loadingOption.innerText = "Loading..."
+        loadingOption.disabled = true
+        loadingOption.selected = true
+        loadingOption.setAttribute("data-loading", "loading")
+
+        characterSelect.appendChild(loadingOption)
 
         fetch(`${baseURL}characters/${fetchID}`)
         .then(response => response.json())
@@ -81,7 +116,6 @@ export function populationFunctionality() {
             baseOption.selected = true
 
             characterCon.innerHTML = ""
-            characterSelect.innerHTML = ""
             errorMessage.textContent = ""
 
             characterSelect.appendChild(baseOption)
@@ -113,6 +147,10 @@ export function populationFunctionality() {
             characterCon.appendChild(characterList)
 
             dynamicTheme()
+
+            const loadingOption = document.querySelector("option[data-loading='loading']");
+
+            loadingOption.remove()
         })
         .catch(error => {
             errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
@@ -227,6 +265,9 @@ export function populationFunctionality() {
                         upvote.style.color = "rgb(20, 248, 16)"
                     }
                 })
+                .catch(error => {
+                    errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
+                })
             })
 
             displayDiv.appendChild(partnerBox)
@@ -245,13 +286,21 @@ export function populationFunctionality() {
     function displayPokeSubmit() {
         const pokeSubmitCon = document.querySelector("#pokemon-submission-con")
         const loadingText = document.querySelector("#loading-text")
+        const loadingOption = document.createElement("option")
+        const pokemonSelect = document.querySelector("#pokemon-submit-select")
+
+        loadingOption.innerText = "Loading..."
+        loadingOption.disabled = true
+        loadingOption.selected = true
+        loadingOption.setAttribute("data-loading", "loading")
 
         loadingText.textContent = "Loading..."
+
+        pokemonSelect.appendChild(loadingOption)
 
         fetch(`${baseURL}species/all`)
         .then(response => response.json())
         .then(function(response) {
-            const pokemonSelect = document.querySelector("#pokemon-submit-select")
             const characterName = document.querySelector("#pokemon-submit-character")
             const characterTitle = document.querySelector("#character-title")
             const button = document.querySelector("#submit-pokemon-button")
@@ -285,6 +334,10 @@ export function populationFunctionality() {
 
             pokeSubmitCon.style.display = "grid"
             loadingText.textContent = ""
+
+            const loadingOption = document.querySelector("option[data-loading='loading']");
+
+            loadingOption.remove()
         })
         .catch(error => {
             errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`

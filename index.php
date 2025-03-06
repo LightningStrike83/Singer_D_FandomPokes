@@ -12,12 +12,12 @@ session_start();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="./images/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="./images/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="./images/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
-    <link rel="manifest" href="./images/favicon/site.webmanifest" />
+    <link rel="icon" type="image/png" href="./images/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="./images/favicon/favicon.svg">
+    <link rel="shortcut icon" href="./images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="MyWebSite">
+    <link rel="manifest" href="./images/favicon/site.webmanifest">
     <link rel="stylesheet" href="css/grid.css?version=0.1">
     <link rel="stylesheet" href="css/main.css?version=0.1">
     <script type="module" src="js/main.js?version=0.1"></script>
@@ -39,11 +39,11 @@ session_start();
 
             <?php
                 if(!isset($_SESSION['username'])) {
-                    echo '<div id="login-con" data-id="na"><a href="login.html">Login</a><li class="link-divider">/</li><a href="register.html">Register</a></div>';
+                    echo '<div id="login-con" data-id="na"><a href="login.html">Login</a><p class="link-divider">/</p><a href="register.html">Register</a></div>';
                 } else {
                     $username = $_SESSION['username'];
                     $id = $_SESSION['id']; 
-                    echo '<div id="login-con" class="login" data-id="'.$id.'"><p>Welcome, <a class="profile-name" href="profile.php?id='.$id.'">'.$username.'</a> <li class="link-divider">/</li> <a class="logout" href="logout.php">Logout</a></p></div>';
+                    echo '<div id="login-con" class="login" data-id="'.$id.'"><p>Welcome, <a class="profile-name" href="profile.php?id='.$id.'">'.$username.'</a> <p class="link-divider">/</p> <a class="logout" href="logout.php">Logout</a></p></div>';
                 }
             ?>
             
@@ -72,7 +72,7 @@ session_start();
     </section>
 
     <section class="grid-con">
-        <h2 class="hidden"></h2>
+        <h2 class="hidden">Series Lists</h2>
 
         <div class="select-con col-span-full">
             <select class="select-list dm" id="main-select"></select>
@@ -87,6 +87,7 @@ session_start();
     </section>
 
     <section class="grid-con">
+        <h2 class="hidden">Character and Partner Display</h2>
         <div id="character-list-select" class="select-con col-span-full">
             <select class="select-list dm" id="character-list">
                 <option disabled selected value="none">--Please Select A Subseries First--</option>
@@ -99,13 +100,14 @@ session_start();
     </section>
 
     <section class="grid-con">
+        <h2 class="hidden">To Top Button</h2>
         <div class="col-start-2 col-end-4 m-col-start-6 m-col-end-8">
             <p id="top-text" class="dm">To Top ↑</p>
         </div>
     </section>
 
     <footer class="full-width-grid-con dm">
-        <p id="footer-disclaimer" class="col-start-2 col-span-1">All images used are used for a transformative work and nonprofit. The images are copyrighted or are a registered trademark, sourced from the various Wikias/Fandoms. The contributor claims fair use. No copyright infringement is intended.<br><br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br><br>Fandom PokePartners is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by any of the series, creators, parent companies, or affiliated persons found throughout the website. The content displayed in this website is meant for informational purposes only and is not official in any shape or form.<br><br><a href="privacy.php">Privacy Policy</a> | <a href="contact.php">Contact</a></p>
+        <p id="footer-disclaimer" class="col-start-2 col-span-1">All images used are used for a transformative work and nonprofit. The images are copyrighted or are a registered trademark, sourced from the various Wiki/Fandom pages and galleries. The contributor claims fair use. No copyright infringement is intended.<br><br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br><br>Fandom PokePartners is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by any of the series, creators, parent companies, or affiliated persons found throughout the website. The content displayed in this website is meant for informational purposes only and is not official in any shape or form.<br><br><a href="privacy.php">Privacy Policy</a> | <a href="contact.php">Contact</a></p>
     </footer>
 
     <section id="hamburger-menu-con" class="full-width-grid-con mobile-menu dm">
@@ -134,7 +136,7 @@ session_start();
     <section id="pokemon-submission-con" class="full-width-grid-con lightbox">
         <h2 class="hidden">Pokemon Submission Rules</h2>
 
-        <div id="pokemon-select-con" class="col-start-2 col-span-1" class="grid-con">
+        <div id="pokemon-select-con" class="col-start-2 col-span-1 grid-con">
             <h3 id="select-title" class="col-span-full">Submit A Pokemon</h3>
             
             <form id="pokemon-submit-form">
@@ -147,7 +149,7 @@ session_start();
                 <label for="shiny" id="shiny-label">Shiny?:</label>
 
                 <div id="shiny-checkbox-con">
-                    <input type="checkbox" id="pokemon-submit-shiny"><label for="shiny" id="shiny-label-click">The Pokemon is shiny</p>
+                    <input type="checkbox" id="pokemon-submit-shiny"><label for="shiny" id="shiny-label-click">The Pokemon is shiny</label>
                 </div>
 
                 <input type="submit" value="Submit" id="submit-pokemon" class="dm">
@@ -162,10 +164,12 @@ session_start();
     </section>
 
     <section id="vote-box">
+        <h2 class="hidden">Login Vote Warning Box</h2>
         <p>Sorry, you must be logged in to vote</p>
     </section>
 
     <section id="upvote-prevent-box">
+    <h2 class="hidden">Duplicate Vote Warning Box</h2>
         <p>Sorry, you have already voted for that Pokemon for that character</p>
     </section>
 
@@ -173,7 +177,7 @@ session_start();
         <h2 class="hidden">Update Notes</h2>
 
         <div id="update-info-con" class="col-start-2 col-span-1 grid-con">
-            <h3 id="update-title" class="col-span-full">Update Notes</h3>
+            <h3 id="update-title" class="col-span-full">Update Notes: March 4th, 2025</h3>
             <div id="update-info" class="col-span-full">
                 <h3>Series / Subseries Added:</h3>
                 <p>-Smosh<br>
