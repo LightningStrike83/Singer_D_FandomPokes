@@ -12,12 +12,12 @@ session_start();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="./images/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="./images/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="./images/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
-    <link rel="manifest" href="./images/favicon/site.webmanifest" />
+    <link rel="icon" type="image/png" href="./images/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="./images/favicon/favicon.svg">
+    <link rel="shortcut icon" href="./images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="MyWebSite">
+    <link rel="manifest" href="./images/favicon/site.webmanifest">
     <link rel="stylesheet" href="css/grid.css?version=0.1">
     <link rel="stylesheet" href="css/main.css?version=0.1">
     <script type="module" src="js/main.js?version=0.1"></script>
@@ -39,11 +39,11 @@ session_start();
 
             <?php
                 if(!isset($_SESSION['username'])) {
-                    echo '<div id="login-con" data-id="na"><a href="login.html">Login</a><li class="link-divider">/</li><a href="register.html">Register</a></div>';
+                    echo '<div id="login-con" data-id="na"><a href="login.html">Login</a><p class="link-divider">/</p><a href="register.html">Register</a></div>';
                 } else {
                     $username = $_SESSION['username'];
                     $id = $_SESSION['id']; 
-                    echo '<div id="login-con" class="login" data-id="'.$id.'"><p>Welcome, <a class="profile-name" href="profile.php?id='.$id.'">'.$username.'</a> <li class="link-divider">/</li> <a class="logout" href="logout.php">Logout</a></p></div>';
+                    echo '<div id="login-con" class="login" data-id="'.$id.'"><p>Welcome, <a class="profile-name" href="profile.php?id='.$id.'">'.$username.'</a> <p class="link-divider">/</p> <a class="logout" href="logout.php">Logout</a></p></div>';
                 }
             ?>
             
@@ -63,7 +63,7 @@ session_start();
     </header>
 
     <section id="privacy-info-con" class="grid-con dm">
-        <p id="privacy-update-text" class="col-span-full privacy-text">Last Updated: March 3rd, 2025</p>
+        <p id="privacy-update-text" class="col-span-full privacy-text">Last Updated: March 5th, 2025</p>
         <h3 id="privacy-title" class="col-span-full privacy-text">Privacy Policy</h3>
         <p class="col-span-full privacy-text">This privacy policy details how Fandom PokePartners collects, uses, and safeguards user information. No personal information is required to access this website or view any regular pages. Registering for an account is optional and is only required to utilize the "upvote" feature on the website.</p>
         <div id="privacy-info" class="col-span-full">
@@ -77,7 +77,7 @@ session_start();
                 <li><span class="privacy-title">Account Deletion:</span><br>To request the deletion of a user account, and its associated user data, please use the contact form on our <a class="privacy-link" href="contact.php">contact page</a>.<br>Account deletion may occur without notice if:<br>-The user is discovered to be under the age of 13<br>-The information on the profile contains information that may be deemed private, sensitive, or offensive. The aforementioned information is subject to the developer's discretion.<br>-If the user is discovered to be a bot<br>If an account is deleted, all associated data, including email addresses and any user-provided content, will be permanently removed from our systems.</li>
                 <li><span class="privacy-title">Third-Party Disclosure:</span><br>Fandom PokePartners does not engage in the sale of users' email addresses or any personal information to third parties without explicit consent, except where required by law. We may disclose personal information to comply with legal obligations, such as in response to subpoenas or court orders.<br>Fandom PokePartners uses third-party services to host the website and send communications. We use Web Hosting Canada for website hosting and Gmail for email communications. These providers are obligated to handle personal data in accordance with applicable privacy and security standards. Fandom PokePartners are not responsible for the privacy practices of these external sites.</li>
                 <li><span class="privacy-title">Updates to Privacy Policy:</span><br>This Privacy Policy may be periodically updated. The updated version will be indicated by an updated “Revised” date and the updated version will be effective as soon as it is accessible. If we make material changes to this privacy notice, we will notify you by prominently posting a notice of such changes. We encourage you to review this privacy notice frequently to be informed of how we are protecting your information.</li>
-                <li><span class="privacy-title">Cookies and Tracking:</span><br>Fandom PokePartners does not use cookies or tracking for any of the features found within the website.</li>
+                <li><span class="privacy-title">Cookies, Tracking, and Storage:</span><br>Fandom PokePartners does not use cookies or tracking for any of the features found within the website. SessionStorage is used solely to verify if a user has agreed to rules for submitting to the database. No other instance of SessionStorage is used throughout the site or for any other purpose.</li>
                 <li><span class="privacy-title">Links To Other Websites:</span><br>This website may contain links that redirect to other websites that are not covered by this privacy policy. We are not responsible for the content or privacy practices of these external sites. We encourage users to review the privacy policies of any third-party websites they visit to understand how their information may be collected and used.</li>
                 <li><span class="privacy-title">Advertising:</span><br>Fandom PokePartners does not intend to use any form of advertising services within the website. We do not collect personal data for advertising purposes, nor do we share personal data with third-party advertisers. In the event of a change, this policy will be updated and a prominent notice of these changes will be displayed to encourage users to review.</li>
                 <li><span class="privacy-title">Contact Information:</span><br>For any inquiries or concerns regarding this Privacy Policy, the use of Fandom PokePartners, or if you have concerns about how your data is being handled, please contact us through our <a class="privacy-link" href="contact.php">contact page</a>.<br>If you believe an account has been created by a user under the age of 13, please contact us immediately so appropriate action can be taken.</li>
@@ -88,13 +88,14 @@ session_start();
     </section>
 
     <section class="grid-con">
+        <h2 class="hidden">To Top Button</h2>
         <div class="col-start-2 col-end-4 m-col-start-6 m-col-end-8">
-            <p id="top-text" class="dm" class="dm">To Top ↑</p>
+            <p id="top-text" class="dm">To Top ↑</p>
         </div>
     </section>
 
     <footer class="full-width-grid-con dm">
-        <p id="footer-disclaimer" class="col-start-2 col-span-1">All images used are used for a transformative work and nonprofit. The images are copyrighted or are a registered trademark, sourced from the various Wikias/Fandoms. The contributor claims fair use. No copyright infringement is intended.<br><br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br><br>Fandom PokePartners is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by any of the series, creators, parent companies, or affiliated persons found throughout the website. The content displayed in this website is meant for informational purposes only and is not official in any shape or form.<br><br><a href="privacy.php">Privacy Policy</a> | <a href="contact.php">Contact</a></p>
+        <p id="footer-disclaimer" class="col-start-2 col-span-1">All images used are used for a transformative work and nonprofit. The images are copyrighted or are a registered trademark, sourced from the various Wiki/Fandom pages and galleries. The contributor claims fair use. No copyright infringement is intended.<br><br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br><br>Fandom PokePartners is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by any of the series, creators, parent companies, or affiliated persons found throughout the website. The content displayed in this website is meant for informational purposes only and is not official in any shape or form.<br><br><a href="privacy.php">Privacy Policy</a> | <a href="contact.php">Contact</a></p>
     </footer>
 
     <section id="hamburger-menu-con" class="full-width-grid-con mobile-menu dm">
