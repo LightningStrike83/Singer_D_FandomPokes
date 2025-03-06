@@ -22,13 +22,13 @@ export function registerUser() {
         registerError.innerHTML = ""
 
         if (!birthdayInput) {
-            registerError.innerHTML = "Please enter your date of birth"
+            registerError.innerHTML = "<p>Please enter your date of birth</p>"
         } else if (privacyCheck.checked !== true) {
-            registerError.innerHTML = "Sorry, but you must agree with the privacy policy to register for an account"
+            registerError.innerHTML = "<p>Sorry, but you must agree with the privacy policy to register for an account</p>"
         } else if (birthdate > minAge) {
-            registerError.innerHTML = "Sorry, but you must be 13 years or older to register for an account"
+            registerError.innerHTML = "<p>Sorry, but you must be 13 years or older to register for an account</p>"
         } else if (userInput === emailInput) {
-            registerError.innerHTML = "Sorry, but username and email must be different"
+            registerError.innerHTML = "<p>Sorry, but username and email must be different</p>"
         } else {
             fetch(`${baseURL}register/check/user/${userInput}`)
             .then(response => response.json())
@@ -53,15 +53,24 @@ export function registerUser() {
                             })
                             .then(response => response.json())
                             .then(function(response) {
-                                registerError.innerHTML = 'Thank you for registering! Please login <a class="register-login-link" href="login.html">here</a>'
+                                registerError.innerHTML = '<p>Thank you for registering! Please login <a class="register-login-link" href="login.html">here</a></p>'
+                            })
+                            .catch(error => {
+                                registerError.innerHTML = `<p>Sorry, something went wrong. ${error}</p>`
                             })
                         } else if (response.length > 0) {
-                            registerError.textContent = "Sorry, that email has already been registered."
+                            registerError.innerHTML = "<p>Sorry, that email has already been registered.</p>"
                         }
                     })
+                    .catch(error => {
+                        registerError.innerHTML = `<p>Sorry, something went wrong. ${error}</p>`
+                    })
                 } else if (response.length > 0) {
-                    registerError.innerHTML = "Sorry, that username has already been registered."
+                    registerError.innerHTML = "<p>Sorry, that username has already been registered.</p>"
                 }
+            })
+            .catch(error => {
+                registerError.innerHTML = `<p>Sorry, something went wrong. ${error}</p>`
             })
         }
 

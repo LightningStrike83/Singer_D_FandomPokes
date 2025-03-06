@@ -8,6 +8,7 @@ export function profilePopulation() {
     const sk = skHome.dataset.match
     const profileTabs = document.querySelectorAll(".profile-tab")
     const ballIcons = document.querySelectorAll(".pokeball-icon")
+    const profileError = document.querySelector("#profile-error-con")
 
     let userData = {
         icon: "",
@@ -30,6 +31,8 @@ export function profilePopulation() {
         fetch(`${baseURL}/upvotes/${sk}`)
         .then(response => response.json())
         .then(function(response) {
+            profileError.innerHTML = ""
+
             const upvoteCon = document.querySelector("#upvoted-con")
 
             upvoteCount.textContent = response.length
@@ -63,12 +66,16 @@ export function profilePopulation() {
                 upvoteCon.appendChild(div)
             })
         })
+        .catch(error => {
+            profileError.innerHTML = `<p>Sorry, something went wrong. Please refresh and try again. ${error}</p>`
+        })
 
         fetch(`${baseURL}/submitter/${sk}`)
         .then(response => response.json())
         .then(function(response) {
             const submissionCon = document.querySelector("#submission-con")
 
+            profileError.innerHTML = ""
             submissionCount.textContent = response.length
 
             response.forEach(character => {
@@ -100,6 +107,9 @@ export function profilePopulation() {
 
                 submissionCon.appendChild(div)
             })
+        })
+        .catch(error => {
+            profileError.innerHTML = `<p>Sorry, something went wrong. Please refresh and try again. ${error}</p>`
         })
     }
 
@@ -198,12 +208,20 @@ export function profilePopulation() {
             const select = document.createElement("select")
             const favPokemon = document.querySelector("#fav-pokemon-home")
             const textInputs = document.querySelectorAll(".text-input")
+            const loadingOption = document.createElement("option")
+
+            loadingOption.innerText = "Loading..."
+            loadingOption.disabled = true
+            loadingOption.selected = true
+            loadingOption.setAttribute("data-loading", "loading")
 
             parentNode.classList.add("edit-mode")
 
             select.setAttribute("id", "profile-select-menu")
             select.setAttribute("class", "dm")
             select.addEventListener("change", submitFavPokemon)
+
+            select.appendChild(loadingOption)
 
             if (document.body.classList.contains("dark-mode")) {
                 select.classList.add("dark-mode")
@@ -213,6 +231,8 @@ export function profilePopulation() {
             .then(response => response.json())
             .then(function(response) {
                 const defaultOption = document.createElement("option")
+
+                profileError.innerHTML = ""
 
                 defaultOption.innerText = "--Please Select A Pokemon--"
                 defaultOption.selected = true
@@ -227,8 +247,13 @@ export function profilePopulation() {
 
                     select.appendChild(option)
                 })
+
+                const loadingOption = document.querySelector("option[data-loading='loading']");
+
+                loadingOption.remove()
             })
             .catch(error => {
+                profileError.innerHTML = `<p>Sorry, something went wrong. Please refresh and try again. ${error}</p>`
             })
 
             textInputs.forEach(info => {
@@ -284,8 +309,6 @@ export function profilePopulation() {
 
         postData()
         dynamicText.textContent = inputText.value
-
-        console.log(userData)
     }
 
     function postData() {
@@ -298,7 +321,10 @@ export function profilePopulation() {
         })
         .then(response => response.json())
         .then(function(response) {
-
+            profileError.innerHTML = ""
+        })
+        .catch(error => {
+            profileError.innerHTML = `<p>Sorry, something went wrong. Please refresh and try again. ${error}</p>`
         })
     }
 
@@ -313,6 +339,8 @@ export function profilePopulation() {
             const favCharacterText = document.querySelector("#profile-fav-character")
             const fandomText = document.querySelector("#profile-fandoms")
 
+            profileError.innerHTML = ""
+
             userData = {
                 icon: response[0].icon,
                 fav_pokemon: response[0].fav_pokemon,
@@ -322,14 +350,15 @@ export function profilePopulation() {
                 fandoms: response[0].fandoms,
             }
 
-            console.log(response[0].icon)
-
             ballImage.src = response[0].icon
             favPokemonText.textContent = response[0].fav_pokemon
             favTrainerText.textContent = response[0].fav_trainer
             favSeriesText.textContent = response[0].fav_series
             favCharacterText.textContent = response[0].fav_characters
             fandomText.textContent = response[0].fandoms
+        })
+        .catch(error => {
+            profileError.innerHTML = `<p>Sorry, something went wrong. Please refresh and try again. ${error}</p>`
         })
     }
 

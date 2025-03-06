@@ -11,7 +11,7 @@ class Suggestion extends Model
      *
      * @var array
      */
-    protected $fillable = ["character_name", "series", "subseries", "wiki_page", "starting_pokemon", "submitter"];
+    protected $fillable = ["character_name", "series", "subseries", "wiki_page", "starting_pokemon", "shiny", "submitter"];
 
     /**
      * The attributes excluded from the model's JSON form.

@@ -22,6 +22,7 @@ class SuggestionController extends Suggestion {
             'subseries' => $request->subseries,
             'wiki_page' => $request->wiki_page,
             'starting_pokemon' => $request->starting_pokemon,
+            'shiny' => $request->shiny,
             'submitter' => $request->submitter
         ]);
         return response()->json($suggestion, 201);
