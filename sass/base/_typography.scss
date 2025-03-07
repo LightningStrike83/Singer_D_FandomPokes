@@ -1,4 +1,4 @@
-p, a, li, option, select, label, button, input, textarea {
+p, a, li, option, select, label, button, input, textarea, h4 {
     font-family: "Public Sans", "Arial", sans-serif;
     font-weight: 400;
     font-size: 12px;
@@ -9,6 +9,11 @@ p, a, li, option, select, label, button, input, textarea {
 
 h3 {
     font-family: "Public Sans", "Arial", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+h4 {
     font-weight: 600;
 }
 
@@ -46,14 +51,6 @@ a {
     margin-right: 5px;
 }
 
-#update-text {
-    margin-top: 10px;
-    margin-bottom: 5px;
-    text-align: right;
-    line-height: 20px;
-    margin-right: 2%;
-}
-
 .close-button {
     font-size: 30px;
     text-align: center;
@@ -82,17 +79,25 @@ a {
         font-size: 24px;
     }
 
-    p, a, li, option, select, label, button, input, textarea {
+    p, a, li, option, select, label, button, input, textarea, h4 {
         font-size: 14px;
         &:not(button) {
             line-height: 25px;
         }
     }
+
+    h3 {
+        font-size: 17px;
+    }
 }
 
 @media screen and (min-width: 1200px) {
-    p, a, li, option, select, label, button, input, textarea {
+    p, a, li, option, select, label, button, input, textarea, h4 {
         font-size: 16px;
+    }
+
+    h3 {
+        font-size: 19px;
     }
 
     .pokemon-name {

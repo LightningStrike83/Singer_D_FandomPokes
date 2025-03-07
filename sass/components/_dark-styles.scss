@@ -45,7 +45,7 @@ select.dark-mode, .tab-selected.dark-mode {
     border-right: 2px solid black;
 }
 
-#update-text.dark-mode, #top-text.dark-mode, #profile-username.dark-mode {
+#update-text.dark-mode, #top-text.dark-mode, #profile-username.dark-mode, #home-about-text.dark-mode {
     color: c.$graytext;
 }
 
@@ -62,7 +62,7 @@ button.dark-mode, .profile-info-title.dark-mode, #submit-pokemon.dark-mode {
     background-color: c.$dmprimarygray;
 }
 
-button, input[type=submit] {
+button.dark-mode, input[type=submit].dark-mode {
     &:hover {
         background-color: #afafaf!important;
         color: c.$dmprimarygray;
@@ -79,4 +79,25 @@ button, input[type=submit] {
     &::-webkit-scrollbar-track {
         background-color: c.$graytext;
     }
+}
+
+.lightbox.dark-mode {
+    background-color: rgba(36, 61, 37, 0.975)!important;
+    p, h3, label, h4, li, a {
+        color: rgb(190, 190, 190)!important;
+    }
+
+    a {
+        text-decoration: underline!important;
+    }
+}
+
+.info-box.dark-mode {
+    background-color: rgb(222, 222, 222);
+}
+
+.more-info.dark-mode {
+    background-color: rgb(222, 222, 222)!important;
+    border: 1px solid rgb(222, 222, 222)!important;
+    color: black;
 }

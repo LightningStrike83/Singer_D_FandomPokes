@@ -9,6 +9,7 @@ export function populationFunctionality() {
     const errorMessage = document.querySelector("#home-error-message")
     const patchLink = document.querySelector("#patch-open")
     const shinyCheckbox = document.querySelector("#shiny-label-click")
+    const homeText = document.querySelector("#home-about-text")
 
     function populateMain() {
         const loadingOption = document.createElement("option")
@@ -296,6 +297,7 @@ export function populationFunctionality() {
 
         loadingText.textContent = "Loading..."
 
+        pokemonSelect.innerHTML = ""
         pokemonSelect.appendChild(loadingOption)
 
         fetch(`${baseURL}species/all`)
@@ -309,8 +311,6 @@ export function populationFunctionality() {
             const text = document.querySelector("#submit-poke-text")
 
             text.textContent = ""
-
-            pokemonSelect.innerHTML = ""
 
             errorMessage.textContent = ""
 
@@ -536,6 +536,16 @@ export function populationFunctionality() {
             shinyBox.checked = true
         }
     }
+    
+    function openWelcome() {
+        const welcomeInfo = document.querySelector("#primary-info-con")
+
+        if (welcomeInfo.style.display === "flex") {
+            welcomeInfo.style.display = "none"
+        } else {
+            welcomeInfo.style.display = "flex"
+        }
+    }
 
     mainSelect.addEventListener("change", populateSub)
     subSelect.addEventListener("change", populateCharacter)
@@ -543,4 +553,5 @@ export function populationFunctionality() {
     submitHomeForm.addEventListener("submit", submitPartner)
     patchLink.addEventListener("click", openUpdateInfo)
     shinyCheckbox.addEventListener("click", checkBox)
+    homeText.addEventListener("click", openWelcome)
 }
