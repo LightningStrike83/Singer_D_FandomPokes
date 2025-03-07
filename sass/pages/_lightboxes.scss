@@ -5,8 +5,15 @@
     left: 0;
     height: 100vh;
     width: 100%;
-    background-color: #5a5a5af6;
+    background-color: rgba(52, 90, 54, 0.975);
     z-index: 1000;
+    p, h3, label, h4, li, a {
+        color: #f2f2f2;
+    }
+
+    a {
+        text-decoration: underline;
+    }
 }
 
 #pokemon-select-con {

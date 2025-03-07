@@ -63,7 +63,10 @@ session_start();
     </header>
 
     <div id="update-con" class="full-width-grid-con">
-        <p id="update-text" class="col-start-2 col-span-2 dm">Last Content Update: <span id="patch-open">March 4th, 2025</span></p>
+        <div id="head-info-con" class="col-span-full">
+            <p id="home-about-text" class="dm"><span class="more-info dm">?</span> About the Site</p>
+            <p id="update-text" class="dm">Last Content Update: <span id="patch-open">March 4th, 2025</span></p>
+        </div>
     </div>
 
     <section id="error-con" class="grid-con">
@@ -133,10 +136,10 @@ session_start();
         </div>
     </section>
 
-    <section id="pokemon-submission-con" class="full-width-grid-con lightbox">
+    <section id="pokemon-submission-con" class="full-width-grid-con lightbox dm">
         <h2 class="hidden">Pokemon Submission Rules</h2>
 
-        <div id="pokemon-select-con" class="col-start-2 col-span-1 grid-con">
+        <div id="pokemon-select-con" class="col-start-2 col-span-1">
             <h3 id="select-title" class="col-span-full">Submit A Pokemon</h3>
             
             <form id="pokemon-submit-form">
@@ -173,7 +176,7 @@ session_start();
         <p>Sorry, you have already voted for that Pokemon for that character</p>
     </section>
 
-    <section id="update-lb-con" class="full-width-grid-con lightbox">
+    <section id="update-lb-con" class="full-width-grid-con lightbox dm">
         <h2 class="hidden">Update Notes</h2>
 
         <div id="update-info-con" class="col-start-2 col-span-1 grid-con">
@@ -238,7 +241,8 @@ session_start();
                 -Project Sekai<br>
                 -Metroid<br>
                 -Miraculous: Tales of Ladybug & Cat Noir<br>
-                -Doki Doki Literature Club</p>
+                -Doki Doki Literature Club<br>
+                -Xenoblade Chronicles</p>
 
                 <h3>Characters Added:</h3>
                 <p>-The Chosen<br>
@@ -338,13 +342,51 @@ session_start();
                 -Valentino<br>
                 -Sanganomiya Kokomi<br>
                 -Batman (Terry McGinnis)<br>
-                -Yami Bakura
+                -Yami Bakura<br>
+                -Shulk
                 </p>
             </div>
         </div>
 
         <div class="col-span-1 mobile-close">
             <p class="close-button">X</p>
+        </div>
+    </section>
+
+    <section id="primary-info-con" class="full-width-grid-con lightbox dm">
+        <div class="mobile-close col-start-2 col-span-1">
+            <p class="close-button">X</p>
+        </div>
+
+        <div id="welcome-con" class="col-start-2 col-span-1">
+            <h3>Welcome to Fandom PokePartners</h3>
+            <p>Fandom PokePartners is a non-profit database of characters from fictional media with suggestions of Pokemon that they may use. This website's primary focus is to inspire creatives</p>
+
+            <h4>How to Use The Site:</h4>
+            <ul>
+                <li>Use the select lists to narrow down characters by their series and populate either the Character List box (desktop) or character select list (mobile) with characters</li>
+                <li>On desktop, click on the character you wish to view from the Character List</li>
+                <li>On mobile, use the select list to select the character you wish to view</li>
+                <li>You can submit a Pokemon for the character by clicking the "Submit A Pokemon For This Character" button and filling out a quick form (approved automatically)</li>
+                <li>To submit a character, click on the suggestion page, accept the terms of submission, and fill out the form (requires developer approval)</li>
+                <li>To upvote a partner suggestion, create an account and click the respective arrow in the Pokemon's container</li>
+                <li>Fill out your profile with fandom related information by clicking the "Edit Profile" button on your profile page</li>
+                <li>If you run into any issues or wish to contact the developer, please visit the <a href="contact.php">contact page</a></li>
+            </ul>
+
+            <h4>Disclaimers:</h4>
+            <ul>
+                <li>Fandom PokePartners is not official in any capacity nor has any relations to anyone from The Pokemon Company or any creators or series that are found within the website</li>
+                <li>All images are sourced from their respective wiki / fandom pages which are attributed as fair use</li>
+                <li>Pokemon images are sourced from spriters-resource, originally from Pokemon Home</li>
+            </ul>
+
+            <h4>Special Thanks:</h4>
+            <ul>
+                <li>DucessaEva for design review and alpha testing</li>
+                <li>Sophia for the icons for the profile pages and design help</li>
+                <li>TwistedTempoGaming, sunbiscuit, and Yumichan216 for inspiration and support</li>
+            </ul>
         </div>
     </section>
 </body>
