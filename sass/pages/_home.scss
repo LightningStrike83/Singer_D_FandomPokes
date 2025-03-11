@@ -97,6 +97,7 @@
 #character-image-box {
     height: 33%;
     margin: 10px;
+    margin-bottom: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -141,6 +142,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-right: 10px;
 }
 
 .upvote {
@@ -241,21 +243,24 @@ ul {
 #update-info-con {
     padding-top: 20px;
     width: 100%;
-    // border: 3px solid black;
-    // margin-top: 10px;
-    // padding: 10px;
-    // border-radius: 20px;
+    background-color: c.$lightboxgreen;
+    border: 3px solid black;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    height: 97.5%;
     // background-color: rgba(89, 148, 92, 0.5);
 }
 
 #update-title {
     text-align: center;
+    margin-top: 10px;
     margin-bottom: 20px;
 }
 
 #update-info {
     overflow-y: scroll;
-    height: 90vh;
+    height: 100%;
     margin-left: 15px;
     h3 {
         margin-bottom: 10px;
@@ -342,14 +347,34 @@ ul {
     cursor: pointer;
 }
 
+#pokemon-select-con {
+    background-color: c.$lightboxgreen;
+    border: 3px solid black;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    height: 97.5%;
+    .close-button {
+        text-align: right;
+        margin-bottom: 10px;
+    }
+}
+
 #head-info-con {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     margin-top: 15px;
     margin-bottom: 5px;
     p {
+        font-size: 14px;
+        text-align: center;
         margin-left: 2%;
         margin-right: 2%;
+        margin-bottom: 5px;
+        &:first-of-type {
+            margin-bottom: 15px;
+        }
     }
 }
 
@@ -360,16 +385,10 @@ ul {
 #home-about-text {
     cursor: pointer;
     transition: all ease-in-out 0.5s;
+    text-decoration: underline;
 }
 
 #primary-info-con {
-    left: 12.5%;
-    height: 97.5%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 5px solid black;
-    border-radius: 20px;
-    width: 75%;
     display: flex;
     flex-direction: column;
     .mobile-close {
@@ -383,8 +402,15 @@ ul {
 }
 
 #welcome-con {
-    padding: 15px;
+    position: absolute;
+    padding-left: 5px;
+    padding-right: 10px;
     overflow-y: scroll;
+    width: 80%;
+    left: 10%;
+    height: 97.5%;
+    background-color: rgba(52, 90, 54, 0.975);
+    scrollbar-gutter: stable both-edges;
     h3 {
         text-align: center;
         margin-bottom: 10px;
@@ -395,7 +421,7 @@ ul {
     }
 
     &::-webkit-scrollbar {
-        width: 12px;
+        width: 10px;
         height: 12px;
     }
 
@@ -468,6 +494,17 @@ ul {
     }
 }
 
+.info-con {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 3px solid black;
+    border-radius: 20px;
+}
+
+#home-error-message {
+    display: none;
+}
+
 @media screen and (min-width: 428px) {
     .pokemon-image {
         padding: 10px;
@@ -478,12 +515,27 @@ ul {
 
 @media screen and (min-width: 768px) {
     .partner-div {
-        padding-right: 50px;
+        padding-right: 40px;
     }
 
-    #primary-info-con {
+    #head-info-con {
+        flex-direction: row;
+        p {
+            &:first-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    #welcome-con {
         width: 50%;
         left: 25%;
+        padding: 15px;
+
+        &::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+        }
     }
 
     .character-image {
@@ -523,7 +575,14 @@ ul {
     #display-div {
         flex-direction: row;
     }
+
+    .vote-box {
+        margin-right: 0px;
+    }
 }
 
 @media screen and (min-width: 1200px) {
+    .partner-div {
+        padding-right: 50px;
+    }
 }

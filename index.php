@@ -116,23 +116,24 @@ session_start();
     <section id="hamburger-menu-con" class="full-width-grid-con mobile-menu dm">
         <h1 class="hidden">Mobile-Menu</h1>
         <div class="col-start-2 col-span-1 mobile-links">
+            <div class="col-span-1 mobile-close">
+                <div>
+                    <p class="close-button">X</p>
+                </div>
+            </div>
             <a href="index.php">Character Database</a>
             <div class="hamburger-divider"></div>
             <a href="suggestion.php">Suggest</a>
             <div class="hamburger-divider"></div>
             <?php if(!isset($_SESSION['username'])) {
-                    echo '<a href="login.html">Login</a><div class="hamburger-divider"></div><a href="register.html">Register</a>';
+                    echo '<a href="login.html">Login</a><div class="hamburger-divider"></div><a href="register.html">Register</a><div class="hamburger-divider"></div><a href="contact.php">Contact</a>';
                 } else {
                     $username = $_SESSION['username'];
                     $id = $_SESSION['id']; 
-                    echo '<a href="profile.php?id='.$id.'">Profile</a><div class="hamburger-divider"></div><a class="logout" href="logout.php">Logout</a>';
+                    echo '<a href="profile.php?id='.$id.'">Profile</a><div class="hamburger-divider"></div>
+                    <a href="contact.php">Contact</a><div class="hamburger-divider"></div><a class="logout" href="logout.php">Logout</a>';
                 } ?>
-            <div class="hamburger-divider"></div>
-            <a href="contact.php">Contact</a>
-        </div>
-
-        <div class="col-span-1 mobile-close">
-            <p class="close-button">X</p>
+            
         </div>
     </section>
 
@@ -140,6 +141,12 @@ session_start();
         <h2 class="hidden">Pokemon Submission Rules</h2>
 
         <div id="pokemon-select-con" class="col-start-2 col-span-1">
+            <div class="col-span-1 mobile-close">
+                <div>
+                    <p class="close-button">X</p>
+                </div>
+            </div>
+
             <h3 id="select-title" class="col-span-full">Submit A Pokemon</h3>
             
             <form id="pokemon-submit-form">
@@ -160,10 +167,6 @@ session_start();
 
             <p id="submit-poke-text"></p>
         </div>
-
-        <div class="col-span-1 mobile-close">
-            <p class="close-button">X</p>
-        </div>
     </section>
 
     <section id="vote-box">
@@ -180,6 +183,11 @@ session_start();
         <h2 class="hidden">Update Notes</h2>
 
         <div id="update-info-con" class="col-start-2 col-span-1 grid-con">
+            <div class="col-span-1 col-start-4 m-col-start-12 mobile-close">
+                <div>
+                    <p class="close-button">X</p>
+                </div>
+            </div>
             <h3 id="update-title" class="col-span-full">Update Notes: March 4th, 2025</h3>
             <div id="update-info" class="col-span-full">
                 <h3>Series / Subseries Added:</h3>
@@ -347,46 +355,47 @@ session_start();
                 </p>
             </div>
         </div>
-
-        <div class="col-span-1 mobile-close">
-            <p class="close-button">X</p>
-        </div>
     </section>
 
     <section id="primary-info-con" class="full-width-grid-con lightbox dm">
-        <div class="mobile-close col-start-2 col-span-1">
-            <p class="close-button">X</p>
-        </div>
+        <div class="wrapper-con">
+            <div id="welcome-con" class="col-start-2 col-span-1 info-con">
+                <div class="mobile-close col-start-2 col-span-1">
+                    <p class="close-button">X</p>
+                </div>
+                
+                <h3>Welcome to Fandom PokePartners</h3>
+                <p>Fandom PokePartners is a non-profit database of characters from fictional media with suggestions of Pokemon that they may use. This website's primary focus is to inspire creatives and to provide a space for others to share their ideas.</p>
 
-        <div id="welcome-con" class="col-start-2 col-span-1">
-            <h3>Welcome to Fandom PokePartners</h3>
-            <p>Fandom PokePartners is a non-profit database of characters from fictional media with suggestions of Pokemon that they may use. This website's primary focus is to inspire creatives</p>
+                <h4>How to Use The Site:</h4>
+                <ul>
+                    <li>Use the select lists to narrow down characters by their series and populate either the Character List box (desktop) or character select list (mobile) with characters</li>
+                    <li>On desktop, click on the character you wish to view from the Character List</li>
+                    <li>On mobile, use the select list to select the character you wish to view</li>
+                    <li>You can submit a Pokemon for the character by clicking the "Submit A Pokemon For This Character" button and filling out a quick form (approved automatically)</li>
+                    <li>To submit a character, click on the suggestion page, accept the terms of submission, and fill out the form (requires developer approval)</li>
+                    <li>To upvote a partner suggestion, create an account and click the respective arrow in the Pokemon's container</li>
+                    <li>Fill out your profile with fandom related information by clicking the "Edit Profile" button on your profile page</li>
+                    <li>If you run into any issues or wish to contact the developer, please visit the <a href="contact.php">contact page</a></li>
+                </ul>
 
-            <h4>How to Use The Site:</h4>
-            <ul>
-                <li>Use the select lists to narrow down characters by their series and populate either the Character List box (desktop) or character select list (mobile) with characters</li>
-                <li>On desktop, click on the character you wish to view from the Character List</li>
-                <li>On mobile, use the select list to select the character you wish to view</li>
-                <li>You can submit a Pokemon for the character by clicking the "Submit A Pokemon For This Character" button and filling out a quick form (approved automatically)</li>
-                <li>To submit a character, click on the suggestion page, accept the terms of submission, and fill out the form (requires developer approval)</li>
-                <li>To upvote a partner suggestion, create an account and click the respective arrow in the Pokemon's container</li>
-                <li>Fill out your profile with fandom related information by clicking the "Edit Profile" button on your profile page</li>
-                <li>If you run into any issues or wish to contact the developer, please visit the <a href="contact.php">contact page</a></li>
-            </ul>
+                <h4>Disclaimers & Credits:</h4>
+                <ul>
+                    <li>Fandom PokePartners is not official in any capacity nor has any relations to anyone from The Pokemon Company or any creators or series that are found within the website</li>
+                    <li>All images are sourced from their respective wiki / fandom pages which are attributed as fair use</li>
+                    <li>Pokemon images are sourced from spriters-resource, originally from Pokemon Home</li>
+                    <li>Design inspiration for the website came from <a href="https://pokedoku.com/">PokeDoku</a> and <a href="https://pkmn.net/?action=rater">PKMN.net's Name Rater</a></li>
+                    <li>Profile Edit icons are sourced from <a href="https://icons8.com/">Icons8</a></li>
+                    <li>Pokeball Profile pictures were graciously given by one of the dev's friends Sophia</li>
+                </ul>
 
-            <h4>Disclaimers:</h4>
-            <ul>
-                <li>Fandom PokePartners is not official in any capacity nor has any relations to anyone from The Pokemon Company or any creators or series that are found within the website</li>
-                <li>All images are sourced from their respective wiki / fandom pages which are attributed as fair use</li>
-                <li>Pokemon images are sourced from spriters-resource, originally from Pokemon Home</li>
-            </ul>
-
-            <h4>Special Thanks:</h4>
-            <ul>
-                <li>DucessaEva for design review and alpha testing</li>
-                <li>Sophia for the icons for the profile pages and design help</li>
-                <li>TwistedTempoGaming, sunbiscuit, and Yumichan216 for inspiration and support</li>
-            </ul>
+                <h4>Special Thanks:</h4>
+                <ul>
+                    <li>DucessaEva for design review and alpha testing</li>
+                    <li>Sophia for the icons for the profile pages and design help</li>
+                    <li>TwistedTempoGaming, sunbiscuit, and Yumichan216 for inspiration and support</li>
+                </ul>
+            </div>
         </div>
     </section>
 </body>

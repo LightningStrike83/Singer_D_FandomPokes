@@ -28,92 +28,150 @@ export function profilePopulation() {
     profileCheck()
 
     function contentPopulation() {
-        fetch(`${baseURL}/upvotes/${sk}`)
+        fetch(`${baseURL}check/${sk}`)
         .then(response => response.json())
         .then(function(response) {
             profileError.innerHTML = ""
 
-            const upvoteCon = document.querySelector("#upvoted-con")
+            console.log(response)
 
-            upvoteCount.textContent = response.length
+            if (response.length > 0) {
+                fetch(`${baseURL}/upvotes/${sk}`)
+                .then(response => response.json())
+                .then(function(response) {
+                    profileError.innerHTML = ""
 
-            response.forEach(upvote => {
-                const div = document.createElement("div")
-                const title = document.createElement("p")
-                const pokemonImage = document.createElement("img")
-                const characterImage = document.createElement("img")
-                const imageDiv = document.createElement("div")
+                    const upvoteCon = document.querySelector("#upvoted-con")
 
-                title.textContent = `${upvote.character_name} and ${upvote.species_name}`
-                pokemonImage.src = `./images/pokemon/${upvote.number}.png`
-                characterImage.src = `./images/characters/${upvote.id}.png`
-                pokemonImage.setAttribute("alt", `${upvote.species_name}`)
-                characterImage.setAttribute("alt", `${upvote.character_name}`)
+                    upvoteCount.textContent = response.length
 
-                div.setAttribute("class", "profile-content-con")
-                imageDiv.setAttribute("class", "profile-image-con")
-                title.setAttribute("class", "profile-info-title dm")
+                    if (response.length === 0) {
+                        const p = document.createElement("p")
 
-                if (document.body.classList.contains("dark-mode")) {
-                    title.classList.add("dark-mode")
-                }
+                        p.textContent = "---This user has not upvoted any partners yet---"
+                        p.setAttribute("class", "empty-info")
 
-                imageDiv.appendChild(characterImage)
-                imageDiv.appendChild(pokemonImage)
-                div.appendChild(title)
-                div.appendChild(imageDiv)
+                        upvoteCon.appendChild(p)
+                    } else {
+                        response.forEach(upvote => {
+                            const div = document.createElement("div")
+                            const title = document.createElement("p")
+                            const pokemonImage = document.createElement("img")
+                            const characterImage = document.createElement("img")
+                            const imageDiv = document.createElement("div")
+            
+                            title.textContent = `${upvote.character_name} and ${upvote.species_name}`
+                            pokemonImage.src = `./images/pokemon/${upvote.number}.png`
+                            characterImage.src = `./images/characters/${upvote.id}.png`
+                            pokemonImage.setAttribute("alt", `${upvote.species_name}`)
+                            characterImage.setAttribute("alt", `${upvote.character_name}`)
+            
+                            div.setAttribute("class", "profile-content-con")
+                            imageDiv.setAttribute("class", "profile-image-con")
+                            title.setAttribute("class", "profile-info-title dm")
+            
+                            if (document.body.classList.contains("dark-mode")) {
+                                title.classList.add("dark-mode")
+                            }
+            
+                            imageDiv.appendChild(characterImage)
+                            imageDiv.appendChild(pokemonImage)
+                            div.appendChild(title)
+                            div.appendChild(imageDiv)
+            
+                            upvoteCon.appendChild(div)
+                        })
+                    }
+                })
+                .catch(error => {
+                    profileError.innerHTML = `<p>Sorry, something went wrong. Please refresh and try again. ${error}</p>`
+                })
 
-                upvoteCon.appendChild(div)
-            })
+                fetch(`${baseURL}/submitter/${sk}`)
+                .then(response => response.json())
+                .then(function(response) {
+                    const submissionCon = document.querySelector("#submission-con")
+
+                    profileError.innerHTML = ""
+                    submissionCount.textContent = response.length
+
+                    if (response.length === 0) {
+                        const p = document.createElement("p")
+
+                        p.textContent = "---This user has not submitted any partners yet---"
+                        p.setAttribute("class", "empty-info")
+
+                        submissionCon.appendChild(p)
+                    } else {
+                        response.forEach(character => {
+                            const div = document.createElement("div")
+                            const title = document.createElement("p")
+                            const name = document.createElement("p")
+                            const characterImage = document.createElement("img")
+                            const infoDiv = document.createElement("div")
+            
+                            title.textContent = `${character.subseries_name}`
+                            name.textContent = `${character.name}`
+            
+                            characterImage.src = `./images/characters/${character.id}.png`
+                            characterImage.setAttribute("alt", `${character.name}`)
+            
+                            div.setAttribute("class", "profile-content-con")
+                            infoDiv.setAttribute("class", "character-submit-info")
+                            title.setAttribute("class", "profile-info-title")
+                            name.setAttribute("class", "character-name-submission")
+            
+                            if (document.body.classList.contains("dark-mode")) {
+                                title.classList.add("dark-mode")
+                            }
+            
+                            div.appendChild(title)
+                            infoDiv.appendChild(characterImage)
+                            infoDiv.appendChild(name)
+                            div.appendChild(infoDiv)
+            
+                            submissionCon.appendChild(div)
+                        })
+                    }
+                })
+                .catch(error => {
+                    profileError.innerHTML = `<p>Sorry, something went wrong. Please refresh and try again. ${error}</p>`
+                })
+            } else {
+                const mainInfo = document.querySelector("#main-info-con")
+                const extraInfo = document.querySelector("#extra-info-con")
+                const profileCon = document.querySelector("#profile-info-con")
+                const p = document.createElement("p")
+
+                p.textContent = "--Sorry, a user with this ID does not exist--"
+                p.setAttribute("id", "no-exist-text")
+                p.setAttribute("class", "col-span-full dm")
+
+                extraInfo.remove()
+                mainInfo.remove()
+                profileError.remove()
+
+                profileCon.appendChild(p)
+            }
         })
         .catch(error => {
             profileError.innerHTML = `<p>Sorry, something went wrong. Please refresh and try again. ${error}</p>`
         })
 
-        fetch(`${baseURL}/submitter/${sk}`)
-        .then(response => response.json())
-        .then(function(response) {
-            const submissionCon = document.querySelector("#submission-con")
-
-            profileError.innerHTML = ""
-            submissionCount.textContent = response.length
-
-            response.forEach(character => {
-                const div = document.createElement("div")
-                const title = document.createElement("p")
-                const name = document.createElement("p")
-                const characterImage = document.createElement("img")
-                const infoDiv = document.createElement("div")
-
-                title.textContent = `${character.subseries_name}`
-                name.textContent = `${character.name}`
-
-                characterImage.src = `./images/characters/${character.id}.png`
-                characterImage.setAttribute("alt", `${character.name}`)
-
-                div.setAttribute("class", "profile-content-con")
-                infoDiv.setAttribute("class", "character-submit-info")
-                title.setAttribute("class", "profile-info-title")
-                name.setAttribute("class", "character-name-submission")
-
-                if (document.body.classList.contains("dark-mode")) {
-                    title.classList.add("dark-mode")
-                }
-
-                div.appendChild(title)
-                infoDiv.appendChild(characterImage)
-                infoDiv.appendChild(name)
-                div.appendChild(infoDiv)
-
-                submissionCon.appendChild(div)
-            })
-        })
-        .catch(error => {
-            profileError.innerHTML = `<p>Sorry, something went wrong. Please refresh and try again. ${error}</p>`
-        })
+        
     }
 
-    contentPopulation()
+    function contentDisplay() {
+        const profileCon = document.querySelector("#profile-info-con")
+
+        contentPopulation()
+
+        setTimeout(() => {
+            profileCon.style.visibility = "visible"
+        }, 200)
+    }
+
+    contentDisplay()
 
     function changeBox() {
         const link = this.dataset.link
@@ -149,25 +207,39 @@ export function profilePopulation() {
         const profileTab = document.querySelector("#first-tab")
         const profileCon = document.querySelector("#profile-text-con")
 
-        profileTabs.forEach(tab => tab.classList.remove("tab-selected"))
-        infoBoxes.forEach(box => box.style.display = "none")
+        if (this.classList.contains("activated")) {
+            const editButtons = document.querySelectorAll(".edit-icon")
 
-        profileTab.classList.add("tab-selected")
-        profileCon.style.display = "flex"
+            this.classList.remove("activated")
+            editButtons.forEach(button => button.remove())
+        } else {
+            this.classList.add("activated")
 
-        editImageIcon.src = "./images/icons/edit.svg"
-        editImageIcon.addEventListener("click", openIconMenu)
-        editImageIcon.setAttribute("class", "edit-icon")
-        editImageIcon.setAttribute("alt", "Edit Profile Image Icon")
+            profileTabs.forEach(tab => tab.classList.remove("tab-selected"))
+            infoBoxes.forEach(box => box.style.display = "none")
 
-        editInfoIcon.src = "./images/icons/edit.svg"
-        editInfoIcon.addEventListener("click", openInfoMenu)
-        editInfoIcon.setAttribute("class", "edit-icon")
-        editInfoIcon.setAttribute("id", "edit-profile-icon")
-        editInfoIcon.setAttribute("alt", "Edit Profile Information Icon")
+            profileTab.classList.add("tab-selected")
+            profileCon.style.display = "flex"
 
-        profileImage.appendChild(editImageIcon)
-        textCon.appendChild(editInfoIcon)
+            editImageIcon.src = "./images/icons/edit.svg"
+            editImageIcon.addEventListener("click", openIconMenu)
+            editImageIcon.setAttribute("class", "edit-icon dm")
+            editImageIcon.setAttribute("alt", "Edit Profile Image Icon")
+
+            editInfoIcon.src = "./images/icons/edit.svg"
+            editInfoIcon.addEventListener("click", openInfoMenu)
+            editInfoIcon.setAttribute("class", "edit-icon dm")
+            editInfoIcon.setAttribute("id", "edit-profile-icon")
+            editInfoIcon.setAttribute("alt", "Edit Profile Information Icon")
+
+            if (document.body.classList.contains("dark-mode")) {
+                editImageIcon.style.backgroundColor = "#afafaf"
+                editInfoIcon.style.backgroundColor = "#afafaf"
+            }
+
+            profileImage.appendChild(editImageIcon)
+            textCon.appendChild(editInfoIcon)
+        }
     }
 
     function openIconMenu() {

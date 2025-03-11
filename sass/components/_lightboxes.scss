@@ -1,0 +1,62 @@
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1000;
+    background-color: #424242da;
+    p, h3, label, h4, li, a {
+        color: #f2f2f2;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+#pokemon-select-con {
+    margin-top: 20px;
+}
+
+#select-title {
+    text-align: center;
+}
+
+#pokemon-submit-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    margin-bottom: 5px;
+    &:not(#contact-form label) {
+        margin-top: 20px;
+    }
+}
+
+#submit-pokemon {
+    margin-top: 20px;
+}
+
+.mobile-close {
+    margin-top: 10px;
+}
+
+.close-button {
+    cursor: pointer;
+    margin-right: 10px;
+    transition: all ease-in-out 0.5s;
+    &:hover {
+        opacity: 70%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .mobile-close {
+        margin-top: 10px;
+    }
+}

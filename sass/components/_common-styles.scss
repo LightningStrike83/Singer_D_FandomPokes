@@ -7,6 +7,7 @@ body {
     justify-content: space-between;
     min-height: 100vh;
     background-color: c.$secondarygray;
+    visibility: hidden;
 }
 
 button, input[type=submit] {
@@ -16,6 +17,7 @@ button, input[type=submit] {
     cursor: pointer;
     transition: all ease-in-out 0.5s;
     padding: 5px 10px 5px 10px;
+    font-size: 14px;
     &:hover {
         background-color: c.$secondarygray;
         color: c.$primarygray;
@@ -158,6 +160,16 @@ input[type=checkbox] {
 
 option:disabled {
     color: rgb(50, 50, 50);
+}
+
+#hamburger-menu-con.dark-mode {
+    background-color: c.$dmsecondarygray;
+    a, p {
+        color: c.$graytext;
+    }
+    .hamburger-divider {
+        border-bottom: 1px solid c.$graytext;
+    }
 }
 
 @media screen and (min-width: 768px) {

@@ -34,6 +34,7 @@ $router->get("/register/check/user/{user}", "UserController@checkUser");
 $router->get("/register/check/email/{email}", "UserController@checkEmail");
 $router->post("/register", "UserController@saveUser");
 $router->post("/user/update/{id}", "UserController@updateUser");
+$router->get("/check/{id}", "UserController@checkExist");
 $router->get("/load/{id}", "UserController@loadUser");
 // $router->get("");
 // $router->get("");

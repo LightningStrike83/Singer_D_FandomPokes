@@ -25,8 +25,9 @@
 }
 
 #rule-error {
-    margin-top: 20px;
+    margin-top: 10px;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 #accept-button {
@@ -108,5 +109,10 @@
 
     .info-text {
         margin: 0;
+    }
+
+    #rule-error {
+        margin-top: 20px;
+        margin-bottom: 0px;
     }
 }
