@@ -13,6 +13,11 @@ class UserController extends User {
         return response()->json($check);
     }
 
+    public function checkExist($id) {
+        $check = User::select('id', 'username')->where('id', "=", $id)->get();
+        return response()->json($check);
+    }
+
     public function checkEmail($email) {
         $check = User::select('email')->where('email', "=", $email)->orderBy('email')->get();
         return response()->json($check);

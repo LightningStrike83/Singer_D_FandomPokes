@@ -9,28 +9,36 @@ import { ruleCheck } from "./modules/rules.js";
 import { smoothScroll } from "./modules/scroll.js";
 import { suggestionSubmit } from "./modules/suggestion.js";
 
-if (document.body.dataset.page === "home") {
-    populationFunctionality()
+function showPage() {
+    if (document.body.dataset.page === "home") {
+        populationFunctionality()
+    }
+    
+    if (document.body.dataset.page === "suggest") {
+        ruleCheck()
+        suggestionSubmit()
+    }
+    
+    if (document.body.dataset.page === 'register') {
+        registerUser()
+    }
+    
+    if (document.body.dataset.page === 'profile') {
+        profilePopulation()
+    }
+    
+    if (document.body.dataset.page === 'contact') {
+        contactForm()
+    }
+    
+    smoothScroll()
+    darkmode()
+    lightboxFunctions()
+    hamburgerMenu()
+    
+    setTimeout(() => {
+        document.body.style.visibility = "visible"
+    }, 30)
 }
 
-if (document.body.dataset.page === "suggest") {
-    ruleCheck()
-    suggestionSubmit()
-}
-
-if (document.body.dataset.page === 'register') {
-    registerUser()
-}
-
-if (document.body.dataset.page === 'profile') {
-    profilePopulation()
-}
-
-if (document.body.dataset.page === 'contact') {
-    contactForm()
-}
-
-smoothScroll()
-darkmode()
-lightboxFunctions()
-hamburgerMenu()
+document.addEventListener("DOMContentLoaded", showPage)

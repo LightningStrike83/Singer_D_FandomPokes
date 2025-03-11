@@ -101,23 +101,24 @@ session_start();
     <section id="hamburger-menu-con" class="full-width-grid-con mobile-menu dm">
         <h1 class="hidden">Mobile-Menu</h1>
         <div class="col-start-2 col-span-1 mobile-links">
+            <div class="col-span-1 mobile-close">
+                <div>
+                    <p class="close-button">X</p>
+                </div>
+            </div>
             <a href="index.php">Character Database</a>
             <div class="hamburger-divider"></div>
             <a href="suggestion.php">Suggest</a>
             <div class="hamburger-divider"></div>
             <?php if(!isset($_SESSION['username'])) {
-                    echo '<a href="login.html">Login</a><div class="hamburger-divider"></div><a href="register.html">Register</a>';
+                    echo '<a href="login.html">Login</a><div class="hamburger-divider"></div><a href="register.html">Register</a><div class="hamburger-divider"></div><a href="contact.php">Contact</a>';
                 } else {
                     $username = $_SESSION['username'];
                     $id = $_SESSION['id']; 
-                    echo '<a href="profile.php?id='.$id.'">Profile</a><div class="hamburger-divider"></div><a class="logout" href="logout.php">Logout</a>';
+                    echo '<a href="profile.php?id='.$id.'">Profile</a><div class="hamburger-divider"></div>
+                    <a href="contact.php">Contact</a><div class="hamburger-divider"></div><a class="logout" href="logout.php">Logout</a>';
                 } ?>
-            <div class="hamburger-divider"></div>
-            <a href="contact.php">Contact</a>
-        </div>
-
-        <div class="col-span-1 mobile-close">
-            <p class="close-button">X</p>
+            
         </div>
     </section>
 

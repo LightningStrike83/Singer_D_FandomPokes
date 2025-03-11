@@ -10,6 +10,9 @@ export function populationFunctionality() {
     const patchLink = document.querySelector("#patch-open")
     const shinyCheckbox = document.querySelector("#shiny-label-click")
     const homeText = document.querySelector("#home-about-text")
+    const welcomeCon = document.querySelector("#primary-info-con")
+    const welcomeClose = welcomeCon.querySelector(".close-button")
+    const getItem = localStorage.getItem("visited")
 
     function populateMain() {
         const loadingOption = document.createElement("option")
@@ -25,6 +28,7 @@ export function populationFunctionality() {
         .then(response => response.json())
         .then(function(response) {
             errorMessage.textContent = ""
+            errorMessage.style.display = "hidden"
 
             const baseOption = document.createElement("option")
             baseOption.innerText = "--Select A Series--"
@@ -47,6 +51,7 @@ export function populationFunctionality() {
         })
         .catch(error => {
             errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
+            errorMessage.style.display = "block"
         })
     }
 
@@ -73,6 +78,7 @@ export function populationFunctionality() {
             baseOption.selected = true
 
             errorMessage.textContent = ""
+            errorMessage.style.display = "hidden"
 
             subSelect.appendChild(baseOption)
 
@@ -90,6 +96,7 @@ export function populationFunctionality() {
         })
         .catch(error => {
             errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
+            errorMessage.style.display = "block"
         })
     }
 
@@ -117,7 +124,9 @@ export function populationFunctionality() {
             baseOption.selected = true
 
             characterCon.innerHTML = ""
+
             errorMessage.textContent = ""
+            errorMessage.style.display = "hidden"
 
             characterSelect.appendChild(baseOption)
 
@@ -155,6 +164,7 @@ export function populationFunctionality() {
         })
         .catch(error => {
             errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
+            errorMessage.style.display = "block"
         })
     }
 
@@ -167,6 +177,7 @@ export function populationFunctionality() {
         .then(function(response) {
             partnerCon.innerHTML = ""
             errorMessage.textContent = ""
+            errorMessage.style.display = "hidden"
 
             const characterBox = document.createElement("div")
             const characterImage = document.createElement("img")
@@ -268,6 +279,7 @@ export function populationFunctionality() {
                 })
                 .catch(error => {
                     errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
+                    errorMessage.style.display = "block"
                 })
             })
 
@@ -281,6 +293,7 @@ export function populationFunctionality() {
         })
         .catch(error => {
             errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
+            errorMessage.style.display = "block"
         })
     }
 
@@ -313,6 +326,7 @@ export function populationFunctionality() {
             text.textContent = ""
 
             errorMessage.textContent = ""
+            errorMessage.style.display = "hidden"
 
             defaultOption.innerText = "--Please Select A Pokemon--"
             defaultOption.selected = true
@@ -341,6 +355,7 @@ export function populationFunctionality() {
         })
         .catch(error => {
             errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
+            errorMessage.style.display = "block"
         })
     }
 
@@ -380,6 +395,7 @@ export function populationFunctionality() {
             const text = document.querySelector("#submit-poke-text")
 
             errorMessage.textContent = ""
+            errorMessage.style.display = "hidden"
 
             text.textContent = ""
 
@@ -403,16 +419,19 @@ export function populationFunctionality() {
                 })
                 .then(function() {
                     errorMessage.textContent = ""
+                    errorMessage.style.display = "hidden"
 
                     text.textContent = "Thank you for your submission! Please close this form and refresh the result to view the submission!"
                 })
                 .catch(error => {
                     errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
+                    errorMessage.style.display = "block"
                 })
             }
         })
         .catch(error => {
             errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
+            errorMessage.style.display = "block"
         })
     }
 
@@ -436,6 +455,7 @@ export function populationFunctionality() {
             .then(response => response.json())
             .then(function(response) {
                 errorMessage.textContent = ""
+                errorMessage.style.display = "hidden"
 
                 if (response.length === 0) {
                     let int = parseInt(number)
@@ -464,9 +484,11 @@ export function populationFunctionality() {
                     .then(response => response.json())
                     .then(function(response) {
                         errorMessage.textContent = ""
+                        errorMessage.style.display = "hidden"
                     })
                     .catch(error => {
                         errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
+                        errorMessage.style.display = "block"
                     })
 
                     fetch(`${baseURL}user-vote/post`, {
@@ -479,11 +501,13 @@ export function populationFunctionality() {
                     .then(response => response.json())
                     .then(function(response) {
                         errorMessage.textContent = ""
+                        errorMessage.style.display = "hidden"
 
                         upvoteButton.style.color = "#00FF00"
                     })
                     .catch(error => {
                         errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
+                        errorMessage.style.display = "block"
                     })
                 
                 } else if (response.length > 0) {
@@ -498,6 +522,7 @@ export function populationFunctionality() {
             })
             .catch(error => {
                 errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
+                errorMessage.style.display = "block"
             })
         } else {
             const voteBox = document.querySelector("#vote-box")
@@ -547,6 +572,16 @@ export function populationFunctionality() {
         }
     }
 
+    function rememberMessage() {
+        localStorage.setItem("visited", welcomeCon)
+    }
+
+    function checkVisited() {
+        if (getItem !== null) {
+            welcomeCon.style.display = "none"
+        }
+    }
+
     mainSelect.addEventListener("change", populateSub)
     subSelect.addEventListener("change", populateCharacter)
     characterSelect.addEventListener("change", showPokemon)
@@ -554,4 +589,6 @@ export function populationFunctionality() {
     patchLink.addEventListener("click", openUpdateInfo)
     shinyCheckbox.addEventListener("click", checkBox)
     homeText.addEventListener("click", openWelcome)
+    welcomeClose.addEventListener("click", rememberMessage)
+    window.addEventListener("load", checkVisited)
 }

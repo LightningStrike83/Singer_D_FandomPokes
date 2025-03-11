@@ -43,6 +43,11 @@ select.dark-mode, .tab-selected.dark-mode {
     border-top: 2px solid black;
     border-left: 2px solid black;
     border-right: 2px solid black;
+    background-color: #505050;
+}
+
+.edit-icon.dark-mode {
+    background-color: #afafaf;
 }
 
 #update-text.dark-mode, #top-text.dark-mode, #profile-username.dark-mode, #home-about-text.dark-mode {
@@ -60,6 +65,10 @@ select.dark-mode, .tab-selected.dark-mode {
 
 button.dark-mode, .profile-info-title.dark-mode, #submit-pokemon.dark-mode {
     background-color: c.$dmprimarygray;
+}
+
+button.dark-mode {
+    border: 1.5px solid black;
 }
 
 button.dark-mode, input[type=submit].dark-mode {
@@ -82,7 +91,6 @@ button.dark-mode, input[type=submit].dark-mode {
 }
 
 .lightbox.dark-mode {
-    background-color: rgba(36, 61, 37, 0.975)!important;
     p, h3, label, h4, li, a {
         color: rgb(190, 190, 190)!important;
     }
@@ -100,4 +108,20 @@ button.dark-mode, input[type=submit].dark-mode {
     background-color: rgb(222, 222, 222)!important;
     border: 1px solid rgb(222, 222, 222)!important;
     color: black;
+}
+
+#profile-info-con.dark-mode {
+    background-color: c.$lightboxgreen;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 15px;
+    border: 3px solid black;
+    border-radius: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    #profile-info-con.dark-mode {
+        padding-right: 15px;
+    }
 }

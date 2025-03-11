@@ -2,7 +2,7 @@ export function lightboxFunctions() {
     const mobileClose = document.querySelectorAll(".close-button")
 
     function closeBox(event) {
-        const lightbox = event.target.parentNode.parentNode
+        const lightbox = event.target.parentNode.parentNode.parentNode.parentNode
 
         lightbox.style.display = "none"
 
