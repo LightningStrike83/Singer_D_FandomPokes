@@ -1,31 +1,31 @@
-#privacy-info-con {
+#privacy-info-con, #toc-con {
     padding-left: 10px;
     padding-right: 10px;
-    margin-top: 20px;
+    margin-top: 20px!important;
 }
 
-#privacy-title {
+#privacy-title, #toc-title {
     text-align: center;
 }
 
-.privacy-text {
-    margin-bottom: 15px;
-}
-
-.privacy-title {
+.privacy-title, .toc-title {
     font-weight: bold;
 }
 
-#privacy-info ul li {
+.privacy-text, .toc-text {
+    margin-bottom: 15px;
+}
+
+#privacy-info ul li, #toc-info ul li {
     margin-bottom: 20px;
 }
 
-#privacy-update-text {
+#privacy-update-text, #toc-update-text {
     margin-top: 15px;
     text-align: right;
 }
 
-.privacy-link {
+.privacy-link, .toc-link {
     text-decoration: underline;
     transition: all ease-in-out 0.5s;
     &:hover {
@@ -34,7 +34,7 @@
 }
 
 @media screen and (min-width: 768px) {
-    #privacy-update-text {
+    #privacy-update-text, #toc-update-text {
         margin-top: 20px;
     }
 }

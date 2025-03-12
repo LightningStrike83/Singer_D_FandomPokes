@@ -14,12 +14,12 @@
 #character-title.dark-mode {
     border-top: 3px solid black;
     border-bottom: 3px solid black;
-    background-color: c.$dmprimarygray;
+    background-color: c.$dmprimarygreen;
 }
 
 #character-list-title.dark-mode {
     border-bottom: 2px solid black;
-    background-color: c.$dmprimarygray;
+    background-color: c.$dmprimarygreen;
 }
 
 body.dark-mode {
@@ -27,7 +27,7 @@ body.dark-mode {
 }
 
 header.dark-mode, footer.dark-mode {
-    background-color: c.$dmprimarygray;
+    background-color: c.$dmprimarygreen;
 }
 
 select.dark-mode, .tab-selected.dark-mode {
@@ -54,7 +54,7 @@ select.dark-mode, .tab-selected.dark-mode {
     color: c.$graytext;
 }
 
-#rule-con.dark-mode, #suggest-con.dark-mode, #contact-con.dark-mode, #login-form-con.dark-mode, #register-form-con.dark-mode, #privacy-info-con.dark-mode {
+#rule-con.dark-mode, #suggest-con.dark-mode, #contact-con.dark-mode, #login-form-con.dark-mode, #register-form-con.dark-mode, #privacy-info-con.dark-mode, #toc-con.dark-mode {
     border: 2px solid black;
     background-color: c.$darkbox;
     border-radius: 20px;
@@ -64,7 +64,7 @@ select.dark-mode, .tab-selected.dark-mode {
 }
 
 button.dark-mode, .profile-info-title.dark-mode, #submit-pokemon.dark-mode {
-    background-color: c.$dmprimarygray;
+    background-color: c.$dmprimarygreen;
 }
 
 button.dark-mode {
@@ -74,7 +74,7 @@ button.dark-mode {
 button.dark-mode, input[type=submit].dark-mode {
     &:hover {
         background-color: #afafaf!important;
-        color: c.$dmprimarygray;
+        color: c.$dmprimarygreen;
     }
 }
 

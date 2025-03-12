@@ -10,6 +10,7 @@ export function registerUser() {
         const userSelect = document.querySelector("#register-username")
         const passwordSelect = document.querySelector("#register-password")
         const birthdaySelect = document.querySelector("#register-birthday")
+        const tocCheck = document.querySelector("#toc-check")
         const privacyCheck = document.querySelector("#privacy-policy-check")
         const emailInput = emailSelect.value
         const userInput = userSelect.value
@@ -25,6 +26,8 @@ export function registerUser() {
             registerError.innerHTML = "<p>Please enter your date of birth</p>"
         } else if (privacyCheck.checked !== true) {
             registerError.innerHTML = "<p>Sorry, but you must agree with the privacy policy to register for an account</p>"
+        } else if (tocCheck.checked !== true) {
+            registerError.innerHTML = "<p>Sorry, but you must agree with the terms and conditions to register for an account</p>"
         } else if (birthdate > minAge) {
             registerError.innerHTML = "<p>Sorry, but you must be 13 years or older to register for an account</p>"
         } else if (userInput === emailInput) {
