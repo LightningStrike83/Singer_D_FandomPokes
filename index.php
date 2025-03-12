@@ -110,7 +110,7 @@ session_start();
     </section>
 
     <footer class="full-width-grid-con dm">
-        <p id="footer-disclaimer" class="col-start-2 col-span-1">All images used are used for a transformative work and nonprofit. The images are copyrighted or are a registered trademark, sourced from the various Wiki/Fandom pages and galleries. The contributor claims fair use. No copyright infringement is intended.<br><br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br><br>Fandom PokePartners is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by any of the series, creators, parent companies, or affiliated persons found throughout the website. The content displayed in this website is meant for informational purposes only and is not official in any shape or form.<br><br><a href="privacy.php">Privacy Policy</a> | <a href="contact.php">Contact</a></p>
+        <p id="footer-disclaimer" class="col-start-2 col-span-1">All images used are used for a transformative work and nonprofit. The images are copyrighted or are a registered trademark, sourced from the various Wiki/Fandom pages and galleries. The contributor claims fair use. No copyright infringement is intended.<br><br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br><br>Fandom PokePartners is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by any of the series, creators, parent companies, or affiliated persons found throughout the website. The content displayed in this website is meant for informational purposes only and is not official in any shape or form.<br><br><a href="privacy.php">Privacy Policy</a> | <a href="toc.php">Terms and Conditions</a> | <a href="contact.php">Contact</a></p>
     </footer>
 
     <section id="hamburger-menu-con" class="full-width-grid-con mobile-menu dm">
@@ -188,170 +188,180 @@ session_start();
                     <p class="close-button">X</p>
                 </div>
             </div>
-            <h3 id="update-title" class="col-span-full">Update Notes: March 4th, 2025</h3>
+            <h3 id="update-title" class="col-span-full">Update Notes: March 11th, 2025</h3>
             <div id="update-info" class="col-span-full">
                 <h3>Series / Subseries Added:</h3>
-                <p>-Smosh<br>
-                -Vocaloid<br>
-                -Yu-Gi-Oh! Duel Monsters<br>
-                -Yu-Gi-Oh! GX<br>
-                -Yu-Gi-Oh! 5D's<br>
-                -Yu-Gi-Oh! Zexal<br>
-                -Yu-Gi-Oh! Arc-V<br>
-                -Yu-Gi-Oh! VRAINS<br>
-                -Yu-Gi-Oh! Sevens<br>
-                -Yu-Gi-Oh! Go Rush!!<br>
-                -Marvel Cinematic Universe (MCU)<br>
-                -DC Universe (DCU)<br>
-                -Spiderverse (Film Series)<br>
-                -Marvel Comics<br>
-                -DC Comics<br>
-                -DC Extended Universe (DCEU)<br>
+                <p>-Ben 10 (OG)
+                -Ben 10 (Reboot)<br>
+                -Ben 10: Alien Force / Ultimate Alien<br>
+                -Ben 10: Omniverse<br>
+                -Boruto: Naruto Next Generations<br>
+                -Comics<br>
+                -Comics<br>
+                -DC Animated Movie Universe<br>
                 -DC Animated Universe (DCAU)<br>
-                -The Legend of Zelda: Breath of the Wild / Tears of the Kingdom<br>
-                -The Legend of Zelda: Echoes of Wisdom<br>
+                -DC Extended Universe (DCEU)<br>
+                -DC Universe (DCU)<br>
+                -Doki Doki Literature Club<br>
+                -Fairy Tail<br>
+                -Fairy Tail 100 Years Quest<br>
+                -Fire Emblem 0 (Cipher)<br>
+                -Fire Emblem Awakening<br>
+                -Fire Emblem Engage<br>
+                -Fire Emblem Fates<br>
+                -Fire Emblem Heroes<br>
+                -Fire Emblem Three Houses / Three Hopes<br>
+                -Fire Emblem Warriors<br>
+                -Fire Emblem: Geneology of the Holy War / Thracia 776<br>
+                -Fire Emblem: Path of Radiance / Radiant Dawn<br>
+                -Fire Emblem: Sacred Stones<br>
                 -Fire Emblem: Shadow Dragon / New Mystery of the Emblem<br>
                 -Fire Emblem: Shadows of Valentia<br>
-                -Fire Emblem: Geneology of the Holy War / Thracia 776<br>
                 -Fire Emblem: The Binding Blade<br>
                 -Fire Emblem: The Blazing Blade<br>
-                -Fire Emblem: Sacred Stones<br>
-                -Fire Emblem: Path of Radiance / Radiant Dawn<br>
-                -Fire Emblem Awakening<br>
-                -Fire Emblem Fates<br>
-                -Fire Emblem Three Houses / Three Hopes<br>
-                -Fire Emblem Heroes<br>
-                -Fire Emblem Engage<br>
-                -Tokyo Mirage Sessions #FE<br>
-                -Fire Emblem 0 (Cipher)<br>
-                -Ben 10 (OG)<br>
-                -Fire Emblem Warriors<br>
+                -Genshin Impact<br>
+                -Hazbin Hotel<br>
+                -Honkai Impact 3rd<br>
+                -Honkai Star Rail<br>
+                -Marvel Cinematic Universe (MCU)<br>
+                -Metroid<br>
+                -Miraculous: Tales of Ladybug & Cat Noir<br>
+                -Naruto<br>
+                -Naruto Shippuden<br>
                 -Persona 3<br>
                 -Persona 4<br>
                 -Persona 5<br>
+                -Project Sekai<br>
+                -Smosh<br>
+                -Sonic (game series)<br>
+                -Spiderverse (Film Series)<br>
+                -Super Mario (series)<br>
                 -Sword Art Online<br>
                 -Sword Art Online Alternative: Gun Gale Online<br>
+                -The Legend of Zelda: Breath of the Wild / Tears of the Kingdom<br>
+                -The Legend of Zelda: Echoes of Wisdom<br>
+                -Tokyo Mirage Sessions #FE<br>
                 -Trails in the Sky<br>
-                -Super Mario (series)<br>
-                -Ben 10: Alien Force / Ultimate Alien<br>
-                -Ben 10: Omniverse<br>
-                -Ben 10 (Reboot)<br>
-                -Genshin Impact<br>
-                -Honkai Impact 3rd<br>
-                -Honkai Star Rail<br>
-                -Naruto<br>
-                -Naruto Shippuden<br>
-                -Hazbin Hotel<br>
-                -Boruto: Naruto Next Generations<br>
-                -Fairy Tail<br>
-                -Fairy Tail 100 Years Quest<br>
-                -DC Animated Movie Universe<br>
-                -Project Sekai<br>
-                -Metroid<br>
-                -Miraculous: Tales of Ladybug & Cat Noir<br>
-                -Doki Doki Literature Club<br>
-                -Xenoblade Chronicles</p>
+                -Vocaloid<br>
+                -Xenoblade Chronicles<br>
+                -Yu-Gi-Oh! 5D's<br>
+                -Yu-Gi-Oh! Arc-V<br>
+                -Yu-Gi-Oh! Duel Monsters<br>
+                -Yu-Gi-Oh! Go Rush!!<br>
+                -Yu-Gi-Oh! GX<br>
+                -Yu-Gi-Oh! Sevens<br>
+                -Yu-Gi-Oh! VRAINS<br>
+                -Yu-Gi-Oh! Zexal
+                </p>
 
                 <h3>Characters Added:</h3>
-                <p>-The Chosen<br>
-                -Hatsune Miku<br>
-                -Hilda Valentine Goneril<br>
-                -Xane<br>
-                -Joey Wheeler<br>
-                -Seto Kaiba<br>
-                -Rhino (Aleksei Sytsevich)<br>
-                -Asuna Yuuki<br>
-                -Miles Morales (Earth 1610B)<br>
-                -Princess Peach<br>
-                -Yuri Leclerc<br>
-                -Noir (Haru Okumura)<br>
-                -Tita Russell<br>
-                -Marianne von Edmund<br>
-                -Joker (Ren Amamiya)<br>
-                -Rise Kujikawa<br>
-                -Mitsuru Kijiro<br>
-                -Kirito (Kazuto Kirigaya)<br>
-                -Ben Tennyson<br>
-                -Ben Tennyson<br>
-                -Princess Rosalina<br>
-                -Ben Tennyson<br>
-                -Ben Tennyson<br>
-                -Akiza Izinski<br>
-                -Blue Maiden (Skye Zaizen)<br>
-                -Shark (Reginald Kastle)<br>
-                -Chumley Huffington<br>
-                -Vellian Crowler<br>
-                -Kamisato Ayaka<br>
-                -Firefly<br>
-                -Henry<br>
-                -Celine<br>
-                -Azura<br>
-                -Eirika<br>
-                -Ephraim<br>
-                -Rinea<br>
-                -Loki<br>
-                -Tsubasa Oribe<br>
-                -Kiria Kurono<br>
-                -Hector<br>
-                -Naruto Uzumaki<br>
-                -Naruto Uzumaki<br>
-                -Alastor<br>
-                -Jiraiya<br>
-                -Jiraiya<br>
-                -Naruto Uzumaki<br>
-                -Lucy Heartfilia<br>
-                -Yukino Agria<br>
-                -Jack Atlas<br>
-                -Kevin Levin<br>
-                -LLEN (Kohirumaki Karen)<br>
-                -Harley Quinn<br>
-                -Harley Quinn<br>
-                -Harley Quinn<br>
-                -Harley Quinn<br>
-                -Princess Ilana Rostovic<br>
-                -Faris<br>
-                -Elysia<br>
-                -Captain America (Steve Rogers)<br>
+                <p>-Adrien Agreste (Cat Noir)<br>
                 -Akiyama Mizuki<br>
-                -Yuya Sakaki<br>
-                -Princess Zelda<br>
-                -Link<br>
-                -Princess Zelda<br>
-                -Ganondorf<br>
-                -Samus Aran<br>
-                -Fae<br>
-                -Reinhardt<br>
-                -Leanne<br>
-                -Rowan<br>
-                -Lianna<br>
-                -Valjean<br>
-                -Yuga Ohdo<br>
-                -Yudias Velgear<br>
-                -Marinette Dupain-Cheng (Ladybug)<br>
-                -Adrien Agreste (Cat Noir)<br>
-                -Gabriel Agreste (Hawkmoth)<br>
+                -Akiza Izinski<br>
+                -Amy Rose<br>
+                -Alastor<br>
                 -Alya Cesaire (Rena Rouge)<br>
-                -Nino Lahiffe (Carapace)<br>
-                -Chloe Bourgeois (Queen Bee)<br>
-                -Zoe Lee (Vesperia)<br>
-                -Cerise Bianca (Chrysalis)<br>
-                -Morgana (Mona)<br>
-                -Ryuji Sakamoto (Skull)<br>
                 -Ann Takamaki (Panther)<br>
-                -Makoto Niijima (Queen)<br>
-                -Yusuke Kitagawa (Fox)<br>
-                -Futaba Sakura (Oracle)<br>
-                -Goro Akechi (Crow / Black Mask)<br>
-                -Sumire Yoshizawa (Violet)<br>
-                -Lavenza<br>
-                -Sae Niijima<br>
-                -Takuto Maruki<br>
-                -Monika<br>
-                -Valentino<br>
-                -Sanganomiya Kokomi<br>
+                -Asuna Yuuki<br>
+                -Azura<br>
                 -Batman (Terry McGinnis)<br>
+                -Ben Tennyson<br>
+                -Ben Tennyson<br>
+                -Ben Tennyson<br>
+                -Ben Tennyson<br>
+                -Blue Maiden (Skye Zaizen)<br>
+                -Captain America (Steve Rogers)<br>
+                -Celine<br>
+                -Cerise Bianca (Chrysalis)<br>
+                -Chloe Bourgeois (Queen Bee)<br>
+                -Chumley Huffington<br>
+                -Dr. Ivo "Eggman" Robotnik<br>
+                -Eirika<br>
+                -Eliwood<br>
+                -Elysia<br>
+                -Ephraim<br>
+                -Fae<br>
+                -Faris<br>
+                -Firefly<br>
+                -Futaba Sakura (Oracle)<br>
+                -Gabriel Agreste (Hawkmoth)<br>
+                -Ganondorf<br>
+                -Goro Akechi (Crow / Black Mask)<br>
+                -Harley Quinn<br>
+                -Harley Quinn<br>
+                -Harley Quinn<br>
+                -Harley Quinn<br>
+                -Hatsune Miku<br>
+                -Hector<br>
+                -Henry<br>
+                -Hilda Valentine Goneril<br>
+                -Jack Atlas<br>
+                -Jiraiya<br>
+                -Jiraiya<br>
+                -Joey Wheeler<br>
+                -Joker (Ren Amamiya)<br>
+                -Kamisato Ayaka<br>
+                -Kevin Levin<br>
+                -Kiria Kurono<br>
+                -Kirito (Kazuto Kirigaya)<br>
+                -Lavenza<br>
+                -Leanne<br>
+                -Lianna<br>
+                -Link<br>
+                -LLEN (Kohirumaki Karen)<br>
+                -Loki<br>
+                -Lucy Heartfilia<br>
+                -Lyn<br>
+                -Makoto Niijima (Queen)<br>
+                -Marianne von Edmund<br>
+                -Marinette Dupain-Cheng (Ladybug)<br>
+                -Metal Sonic<br>
+                -Miles Morales (Spider-Man) (Earth 1610B)<br>
+                -Miles "Tails" Prower<br>
+                -Mitsuru Kijiro<br>
+                -Monika<br>
+                -Morgana (Mona)<br>
+                -Naruto Uzumaki<br>
+                -Naruto Uzumaki<br>
+                -Naruto Uzumaki<br>
+                -Nino Lahiffe (Carapace)<br>
+                -Noir (Haru Okumura)<br>
+                -Princess Ilana Rostovic<br>
+                -Princess Peach<br>
+                -Princess Rosalina<br>
+                -Princess Zelda<br>
+                -Princess Zelda<br>
+                -Reinhardt<br>
+                -Rhino (Aleksei Sytsevich)<br>
+                -Rinea<br>
+                -Rise Kujikawa<br>
+                -Rowan<br>
+                -Ryuji Sakamoto (Skull)<br>
+                -Sae Niijima<br>
+                -Samus Aran<br>
+                -Sanganomiya Kokomi<br>
+                -Seto Kaiba<br>
+                -Shark (Reginald Kastle)<br>
+                -Shulk<br>
+                -Silver the Hedgehog<br>
+                -Sonic the Hedgehog<br>
+                -Sumire Yoshizawa (Violet)<br>
+                -Takuto Maruki<br>
+                -The Chosen<br>
+                -Tita Russell<br>
+                -Tsubasa Oribe<br>
+                -Valentino<br>
+                -Valjean<br>
+                -Vellian Crowler<br>
+                -Xane<br>
                 -Yami Bakura<br>
-                -Shulk
+                -Yudias Velgear<br>
+                -Yuga Ohdo<br>
+                -Yukino Agria<br>
+                -Yuri Leclerc<br>
+                -Yusuke Kitagawa (Fox)<br>
+                -Yuya Sakaki<br>
+                -Zoe Lee (Vesperia)
                 </p>
             </div>
         </div>
@@ -365,7 +375,7 @@ session_start();
                 </div>
                 
                 <h3>Welcome to Fandom PokePartners</h3>
-                <p>Fandom PokePartners is a non-profit database of characters from fictional media with suggestions of Pokemon that they may use. This website's primary focus is to inspire creatives and to provide a space for others to share their ideas.</p>
+                <p>Fandom PokePartners is a non-profit database featuring characters from fictional media alongside suggestions of Pokemon that they may use or befriend. This website's primary goal is to inspire creatives and provide a space for fans to share their ideas. All character entries and Pokemon suggestions are submissions from fans.</p>
 
                 <h4>How to Use The Site:</h4>
                 <ul>
@@ -376,7 +386,14 @@ session_start();
                     <li>To submit a character, click on the suggestion page, accept the terms of submission, and fill out the form (requires developer approval)</li>
                     <li>To upvote a partner suggestion, create an account and click the respective arrow in the Pokemon's container</li>
                     <li>Fill out your profile with fandom related information by clicking the "Edit Profile" button on your profile page</li>
-                    <li>If you run into any issues or wish to contact the developer, please visit the <a href="contact.php">contact page</a></li>
+                    <li>Please take a moment to review the <a href="toc.php">terms and conditions</a> and <a href="privacy.php">privacy policy</a></li>
+                    <li>If you run into any issues or wish to contact the developer, please visit the <a href="contact.php">contact page</a> and send the dev a message</li>
+                </ul>
+
+                <h4>Creator & Associated Link:</h4>
+                <ul>
+                    <li>Fandom PokePartners is developed, designed, and operated by <a href="http://localhost/Singer_D_FandomPokes/profile.php?id=1">LightningBeyond</a></li>
+                    <li>Feel free to check out Lightning's other Pokemon-inspired website <a target="_blank" href="https://littlerootdreams.com/index.html">Littleroot Dreams</a></li>
                 </ul>
 
                 <h4>Disclaimers & Credits:</h4>
@@ -384,16 +401,16 @@ session_start();
                     <li>Fandom PokePartners is not official in any capacity nor has any relations to anyone from The Pokemon Company or any creators or series that are found within the website</li>
                     <li>All images are sourced from their respective wiki / fandom pages which are attributed as fair use</li>
                     <li>Pokemon images are sourced from spriters-resource, originally from Pokemon Home</li>
-                    <li>Design inspiration for the website came from <a href="https://pokedoku.com/">PokeDoku</a> and <a href="https://pkmn.net/?action=rater">PKMN.net's Name Rater</a></li>
-                    <li>Profile Edit icons are sourced from <a href="https://icons8.com/">Icons8</a></li>
-                    <li>Pokeball Profile pictures were graciously given by one of the dev's friends Sophia</li>
+                    <li>Design inspiration for the website came from <a target="_blank" href="https://pokedoku.com/">PokeDoku</a> and <a target="_blank" href="https://pkmn.net/?action=rater">PKMN.net's Name Rater</a></li>
+                    <li>Profile Edit icons are sourced from <a target="_blank" href="https://icons8.com/">Icons8</a></li>
+                    <li>Pokeball Profile pictures were graciously given by one of the dev's best friends</li>
                 </ul>
 
                 <h4>Special Thanks:</h4>
                 <ul>
-                    <li>DucessaEva for design review and alpha testing</li>
+                    <li><a href="https://www.tumblr.com/ducessaeva" target="_blank">DucessaEva</a> for design review and alpha testing</li>
                     <li>Sophia for the icons for the profile pages and design help</li>
-                    <li>TwistedTempoGaming, sunbiscuit, and Yumichan216 for inspiration and support</li>
+                    <li>TwistedTempoGaming, <a target="_blank" href="https://sunbiscuit.wixsite.com/portfolio">sunbiscuit</a>, and Yumichan216 for inspiration and support</li>
                 </ul>
             </div>
         </div>

@@ -11,17 +11,19 @@ body {
 }
 
 button, input[type=submit] {
-    border: 1px solid black;
+    border: 1.75px solid black;
     border-radius: 20px;
-    background-color: c.$primarygray;
+    background-color: c.$primarygreen;
     cursor: pointer;
     transition: all ease-in-out 0.5s;
     padding: 5px 10px 5px 10px;
     font-size: 14px;
     &:hover {
         background-color: c.$secondarygray;
-        color: c.$primarygray;
+        color: c.$primarygreen;
     }
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    // border-style: outset;
 }
 
 input {

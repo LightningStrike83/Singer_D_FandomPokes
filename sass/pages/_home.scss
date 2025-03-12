@@ -3,11 +3,13 @@
 #character-list-con {
     border: 1px solid black;
     margin-top: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 #character-partner-con {
     margin-top: 10px;
     border: 2px solid black;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 #character-list-con {
@@ -29,15 +31,15 @@
     }
   
      &::-webkit-scrollbar-thumb {
-        background: c.$dmprimarygray;
+        background: c.$dmprimarygreen;
     }
   
     &::-webkit-scrollbar-thumb:hover {
-        background: c.$primarygray;
+        background: c.$primarygreen;
     }
 
     &::-webkit-scrollbar-button {
-        background-color: c.$primarygray;
+        background-color: c.$primarygreen;
     }
   
     &::-webkit-scrollbar-button:vertical:decrement {
@@ -45,10 +47,10 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: 9px;
-        background-color: c.$dmprimarygray;
+        background-color: c.$dmprimarygreen;
         transition: all ease-in-out 0.5s;
         &:hover {
-            background-color: c.$primarygray;
+            background-color: c.$primarygreen;
         }
     }
     
@@ -57,10 +59,10 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: 9px;
-        background-color: c.$dmprimarygray;
+        background-color: c.$dmprimarygreen;
         transition: all ease-in-out 0.5s;
         &:hover {
-            background-color: c.$primarygray;
+            background-color: c.$primarygreen;
         }
     }
 
@@ -69,10 +71,10 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: 9px;
-        background-color: c.$dmprimarygray;
+        background-color: c.$dmprimarygreen;
         transition: all ease-in-out 0.5s;
         &:hover {
-            background-color: c.$primarygray;
+            background-color: c.$primarygreen;
         }
     }
     
@@ -81,10 +83,10 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: 9px;
-        background-color: c.$dmprimarygray;
+        background-color: c.$dmprimarygreen;
         transition: all ease-in-out 0.5s;
         &:hover {
-            background-color: c.$primarygray;
+            background-color: c.$primarygreen;
         }
     }
 
@@ -123,6 +125,8 @@
     margin-right: 2.5%;
     padding-right: 20px;
     border: 2px solid black;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
 }
 
 .pokemon-image {
@@ -164,7 +168,7 @@
     position: sticky;
     top: 0;
     z-index: 10;
-    background-color: c.$primarygray;
+    background-color: c.$primarygreen;
 }
 
 #character-box {
@@ -197,11 +201,6 @@
     text-align: center;
 }
 
-ul {
-    padding-inline-start: 25px;
-    margin-block-start: 10px;
-}
-
 #character-list-title {
     text-align: center;
     border-bottom: 1px solid black;
@@ -209,7 +208,7 @@ ul {
     padding-top: 5px;
     padding-bottom: 5px;
     font-weight: bold;
-    background-color: c.$primarygray;
+    background-color: c.$primarygreen;
 }
 
 #loading-text {
@@ -249,6 +248,7 @@ ul {
     padding: 10px;
     border-radius: 20px;
     height: 97.5%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     // background-color: rgba(89, 148, 92, 0.5);
 }
 
@@ -279,15 +279,15 @@ ul {
     }
   
      &::-webkit-scrollbar-thumb {
-        background: c.$dmprimarygray;
+        background: c.$dmprimarygreen;
     }
   
     &::-webkit-scrollbar-thumb:hover {
-        background: c.$primarygray;
+        background: c.$primarygreen;
     }
 
     &::-webkit-scrollbar-button {
-        background-color: c.$primarygray;
+        background-color: c.$primarygreen;
     }
   
     &::-webkit-scrollbar-button:vertical:decrement {
@@ -295,10 +295,10 @@ ul {
         background-repeat: no-repeat;
         background-position: center;
         background-size: 9px;
-        background-color: c.$dmprimarygray;
+        background-color: c.$dmprimarygreen;
         transition: all ease-in-out 0.5s;
         &:hover {
-            background-color: c.$primarygray;
+            background-color: c.$primarygreen;
         }
     }
     
@@ -307,10 +307,10 @@ ul {
         background-repeat: no-repeat;
         background-position: center;
         background-size: 9px;
-        background-color: c.$dmprimarygray;
+        background-color: c.$dmprimarygreen;
         transition: all ease-in-out 0.5s;
         &:hover {
-            background-color: c.$primarygray;
+            background-color: c.$primarygreen;
         }
     }
 
@@ -319,10 +319,10 @@ ul {
         background-repeat: no-repeat;
         background-position: center;
         background-size: 9px;
-        background-color: c.$dmprimarygray;
+        background-color: c.$dmprimarygreen;
         transition: all ease-in-out 0.5s;
         &:hover {
-            background-color: c.$primarygray;
+            background-color: c.$primarygreen;
         }
     }
     
@@ -331,10 +331,10 @@ ul {
         background-repeat: no-repeat;
         background-position: center;
         background-size: 9px;
-        background-color: c.$dmprimarygray;
+        background-color: c.$dmprimarygreen;
         transition: all ease-in-out 0.5s;
         &:hover {
-            background-color: c.$primarygray;
+            background-color: c.$primarygreen;
         }
     }
 
@@ -353,10 +353,15 @@ ul {
     margin-top: 10px;
     padding: 10px;
     border-radius: 20px;
-    height: 97.5%;
+    height: min-content;
+    width: min-content;
+    justify-self: center;
+    padding: 10px 75px 20px 75px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     .close-button {
         text-align: right;
         margin-bottom: 10px;
+        margin-right: 0px;
     }
 }
 
@@ -410,7 +415,7 @@ ul {
     left: 10%;
     height: 97.5%;
     background-color: rgba(52, 90, 54, 0.975);
-    scrollbar-gutter: stable both-edges;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     h3 {
         text-align: center;
         margin-bottom: 10px;
@@ -418,6 +423,10 @@ ul {
 
     p {
         margin-bottom: 10px;
+    }
+
+    ul {
+        margin-bottom: 25px;
     }
 
     &::-webkit-scrollbar {
@@ -430,15 +439,15 @@ ul {
     }
   
      &::-webkit-scrollbar-thumb {
-        background: c.$dmprimarygray;
+        background: c.$dmprimarygreen;
     }
   
     &::-webkit-scrollbar-thumb:hover {
-        background: c.$primarygray;
+        background: c.$primarygreen;
     }
 
     &::-webkit-scrollbar-button {
-        background-color: c.$primarygray;
+        background-color: c.$primarygreen;
     }
   
     &::-webkit-scrollbar-button:vertical:decrement {
@@ -446,10 +455,10 @@ ul {
         background-repeat: no-repeat;
         background-position: center;
         background-size: 9px;
-        background-color: c.$dmprimarygray;
+        background-color: c.$dmprimarygreen;
         transition: all ease-in-out 0.5s;
         &:hover {
-            background-color: c.$primarygray;
+            background-color: c.$primarygreen;
         }
     }
     
@@ -458,10 +467,10 @@ ul {
         background-repeat: no-repeat;
         background-position: center;
         background-size: 9px;
-        background-color: c.$dmprimarygray;
+        background-color: c.$dmprimarygreen;
         transition: all ease-in-out 0.5s;
         &:hover {
-            background-color: c.$primarygray;
+            background-color: c.$primarygreen;
         }
     }
 
@@ -470,10 +479,10 @@ ul {
         background-repeat: no-repeat;
         background-position: center;
         background-size: 9px;
-        background-color: c.$dmprimarygray;
+        background-color: c.$dmprimarygreen;
         transition: all ease-in-out 0.5s;
         &:hover {
-            background-color: c.$primarygray;
+            background-color: c.$primarygreen;
         }
     }
     
@@ -482,10 +491,10 @@ ul {
         background-repeat: no-repeat;
         background-position: center;
         background-size: 9px;
-        background-color: c.$dmprimarygray;
+        background-color: c.$dmprimarygreen;
         transition: all ease-in-out 0.5s;
         &:hover {
-            background-color: c.$primarygray;
+            background-color: c.$primarygreen;
         }
     }
 
@@ -578,6 +587,10 @@ ul {
 
     .vote-box {
         margin-right: 0px;
+    }
+
+    #head-info-con p {
+        font-size: 16px;
     }
 }
 
