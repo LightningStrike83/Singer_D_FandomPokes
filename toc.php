@@ -83,7 +83,8 @@ session_start();
                 -Attempting a denial of service or distributed denial of service (DDoS) attack<br>
                 -Creating user accounts for others without their knowledge<br>
                 -Using links within a profile (to prevent potential spam or malicious links)<br>
-                -Using any language that may be deemed offensive within a profile (which is at the discretion of Fandom PokePartners)<br>
+                -Having an inappropriate or offensive username<br>
+                -Using any language that may be deemed inappropriate or offensive within a profile (which is at the discretion of Fandom PokePartners)<br>
                 -Having content that may be irrelevant or illegal displayed on the profile<br><br>
                 
                 As well, using the profile services of Fandom PokePartners for anything other than their intended use. This is including, but not limited to:<br>-Spam<br>-Dating<br>-Advertising<br>-Gambling<br>-Politcal Campaigning</li>

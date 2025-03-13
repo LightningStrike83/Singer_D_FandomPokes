@@ -1,5 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+session_start();
+
+require_once('includes/connect.php');
+$query = 'SELECT id, token FROM user_controllers WHERE token = :token';
+
+$stmt = $connection->prepare($query);
+$token = $_GET['token'];
+$stmt->bindParam(':token', $token, PDO::PARAM_STR);
+$stmt->execute();
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+$stmt = null;
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,9 +32,9 @@
     <script type="module" src="js/main.js?version=0.1"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
-    <title>Fandom PokePartners- Register</title>
+    <title>Fandom PokePartners- Reset Password</title>
 </head>
-<body data-page="register" class="dm">
+<body data-page="reset-password" class="dm">
     <header class="dm">
         <div id="supplementary-header">
             <div id="theme-enable">
@@ -51,37 +66,22 @@
         </div>
     </header>
 
-    <section id="register-form-con" class="grid-con dm">
-        <div id="register-form-div" class="col-span-full">
-            <h3>Register</h3>
-            <form id="register-form" method="post">
-                <label for="email">Email:</label>
-                <input id="register-email" type="text" name="email" class="dm" required>
+    <section id="reset-password-form-con" class="grid-con dm">
+        <div id="reset-password-form-div" class="col-span-full">
+            <h3>Reset Password</h3>
+            <form id="reset-password-form" method="post">
+                <div id="form-key" class="hidden" data-pk="<?php $row['id'] ?>"></div>
 
-                <label for="username">Username:</label>
-                <input id="register-username" type="text" name="username" class="dm" required>
+                <label for="password">New Password:</label>
+                <input id="rp-input" type="password" name="password" class="dm" required>
 
-                <label for="password">Password:</label>
-                <input id="register-password" type="password" name="password" class="dm" required>
+                <label for="confirm-password">Confirm New Password:</label>
+                <input id="rp-confirm" type="password" name="password" class="dm" required>
 
-                <label for="password-confirm">Confirm Password:</label>
-                <input id="register-password-confirm" type="password" name="password-confirm" class="dm" required>
-
-                <label for="birthday">Birthday:</label>
-                <input id="register-birthday" type="date" name="birthday" class="dm" required>
-
-                <div id="toc-check-con">
-                    <input type="checkbox" id="toc-check" class="toc-checkbox dm"><label for="toc-checkbox">I have read and agree with the <a id="register-toc-link" href="toc.php">terms and conditions</a></label>
-                </div>
-
-                <div id="privacy-check-con">
-                    <input type="checkbox" id="privacy-policy-check" class="privacy-checkbox dm"><label for="privacy-policy-checkbox">I have read and agree with the <a id="register-privacy-link" href="privacy.php">privacy policy</a></label>
-                </div>
-
-                <input id="register-button" type="submit" value="Register" class="dm">
+                <input type="submit" value="Reset" class="forgot-button dm">
             </form>
 
-            <p id="register-error"></p>
+            <p id="reset-password-error"></p>
         </div>
     </section>
 

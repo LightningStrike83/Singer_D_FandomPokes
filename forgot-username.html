@@ -17,9 +17,9 @@
     <script type="module" src="js/main.js?version=0.1"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
-    <title>Fandom PokePartners- Register</title>
+    <title>Fandom PokePartners- Forgot Username</title>
 </head>
-<body data-page="register" class="dm">
+<body data-page="forgot-username" class="dm">
     <header class="dm">
         <div id="supplementary-header">
             <div id="theme-enable">
@@ -51,37 +51,17 @@
         </div>
     </header>
 
-    <section id="register-form-con" class="grid-con dm">
-        <div id="register-form-div" class="col-span-full">
-            <h3>Register</h3>
-            <form id="register-form" method="post">
+    <section class="forgot-form-con grid-con dm">
+        <div class="forgot-form-div col-span-full">
+            <h3>Forgot Username</h3>
+            <form class="forgot-form" method="post">
                 <label for="email">Email:</label>
-                <input id="register-email" type="text" name="email" class="dm" required>
+                <input id="fu-email" type="text" name="email" class="dm" required>
 
-                <label for="username">Username:</label>
-                <input id="register-username" type="text" name="username" class="dm" required>
-
-                <label for="password">Password:</label>
-                <input id="register-password" type="password" name="password" class="dm" required>
-
-                <label for="password-confirm">Confirm Password:</label>
-                <input id="register-password-confirm" type="password" name="password-confirm" class="dm" required>
-
-                <label for="birthday">Birthday:</label>
-                <input id="register-birthday" type="date" name="birthday" class="dm" required>
-
-                <div id="toc-check-con">
-                    <input type="checkbox" id="toc-check" class="toc-checkbox dm"><label for="toc-checkbox">I have read and agree with the <a id="register-toc-link" href="toc.php">terms and conditions</a></label>
-                </div>
-
-                <div id="privacy-check-con">
-                    <input type="checkbox" id="privacy-policy-check" class="privacy-checkbox dm"><label for="privacy-policy-checkbox">I have read and agree with the <a id="register-privacy-link" href="privacy.php">privacy policy</a></label>
-                </div>
-
-                <input id="register-button" type="submit" value="Register" class="dm">
+                <input type="submit" value="Submit" class="forgot-button dm">
             </form>
 
-            <p id="register-error"></p>
+            <p id="forgot-error"></p>
         </div>
     </section>
 

@@ -1,9 +1,9 @@
-#login-form, #register-form {
+#login-form, #register-form, .forgot-form, #reset-password-form {
     display: flex;
     flex-direction: column;
 }
 
-#login-form-div, #register-form-div {
+#login-form-div, #register-form-div, .forgot-form-div, #reset-password-form-div {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -13,14 +13,18 @@
     }
 }
 
-#login-button, #register-button {
+#login-button, #register-button, .forgot-button {
     margin-top: 20px;
     width: 75%;
     display: flex;
     align-self: center;
 }
 
-#register-error, #login-error {
+.forgot-button {
+    margin-bottom: 20px;
+}
+
+#register-error, #login-error, #forgot-error, #reset-password-error {
     margin-top: 20px;
     margin-bottom: 10px;
 }
@@ -33,11 +37,22 @@
     margin-top: 15px;
 }
 
-#login-form-con, #register-form-con {
+#login-form-con, #register-form-con, .forgot-form-con, #reset-password-form-con {
     margin-top: 20px;
 }
 
-#register-login-link {
+.register-login-link {
+    text-decoration: underline!important;
+}
+
+#forgot-link-div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.forgot-link {
+    margin-bottom: 15px;
     text-decoration: underline!important;
 }
 
