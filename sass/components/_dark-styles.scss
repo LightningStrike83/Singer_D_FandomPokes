@@ -54,11 +54,11 @@ select.dark-mode, .tab-selected.dark-mode {
     color: c.$graytext;
 }
 
-#rule-con.dark-mode, #suggest-con.dark-mode, #contact-con.dark-mode, #login-form-con.dark-mode, #register-form-con.dark-mode, #privacy-info-con.dark-mode, #toc-con.dark-mode {
+#rule-con.dark-mode, #suggest-con.dark-mode, #contact-con.dark-mode, #login-form-con.dark-mode, #register-form-con.dark-mode, #privacy-info-con.dark-mode, #toc-con.dark-mode, .forgot-form-con.dark-mode, #reset-password-form-con.dark-mode {
     border: 2px solid black;
     background-color: c.$darkbox;
     border-radius: 20px;
-    &:not(#suggest-con.dark-mode, #contact-con.dark-mode, #login-form-con.dark-mode, #register-form-con.dark-mode, #privacy-info-con.dark-mode) {
+    &:not(#suggest-con.dark-mode, #contact-con.dark-mode, #login-form-con.dark-mode, #register-form-con.dark-mode, #privacy-info-con.dark-mode, .forgot-form-con.dark-mode, #reset-password-form-con.dark-mode) {
         margin-top: 5px;
     }
 }

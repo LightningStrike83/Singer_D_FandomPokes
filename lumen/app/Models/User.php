@@ -11,7 +11,7 @@ class User extends Model
      *
      * @var array
      */
-    protected $fillable = ["username", "password", "email", "icon", "fav_pokemon", "fav_trainer", "fav_characters", "fav_series", "fandoms"];
+    protected $fillable = ["username", "password", "email", "icon", "fav_pokemon", "fav_trainer", "fav_characters", "fav_series", "fandoms", 'token'];
 
     /**
      * The attributes excluded from the model's JSON form.

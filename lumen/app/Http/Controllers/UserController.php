@@ -23,6 +23,11 @@ class UserController extends User {
         return response()->json($check);
     }
 
+    public function checkToken($token) {
+        $check = User::select('token')->where('token', "=", $token)->get();
+        return response()->json($check);
+    }
+
     public function saveUser(Request $request) {
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
@@ -35,8 +40,9 @@ class UserController extends User {
         // Use the Hash facade for password hashing
         $submit = User::create([
             'username' => $request->username,
-            'password' => Hash::make($request->password), // Use Hash::make() instead of bcrypt()
+            'password' => Hash::make($request->password),
             'email' => $request->email,
+            'token' => $request->token,
         ]);
 
         return response()->json($submit, 201);
@@ -58,6 +64,14 @@ class UserController extends User {
     public function loadUser($id) {
         $check = User::select('icon', 'fav_pokemon', 'fav_trainer', 'fav_characters', 'fav_series', 'fandoms')->where('id', "=", $id)->get();
         return response()->json($check);
+    }
+
+    public function updatePassword(Request $request, $id) {
+        $update = User::where('id', '=', $id)->update([
+            'password' => Hash::make($request->password),
+        ]);
+
+        return response()->json($update, 200);
     }
 
     // public function saveUser(Request $request) {
