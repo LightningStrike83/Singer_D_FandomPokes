@@ -42,8 +42,9 @@ export function forgotUsername() {
                                 forgotError.appendChild(p);
                             });
                         } else {
-                            forgotForm.reset();
                             forgotError.innerHTML = "<p>An email has been sent with the username associated with this email!</p>";
+
+                            forgotForm.reset();
                         }
                     })
                     .catch(error => {

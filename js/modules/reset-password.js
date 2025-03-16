@@ -29,6 +29,8 @@ export function resetPassword() {
             .then(response => response.json())
             .then(function(response) {
                 rpError.innerHTML = "<p>Your password has been reset!</p>"
+
+                resetForm.reset()
             })
             .catch(error => {
                 rpError.innerHTML = `<p>Sorry, something went wrong. Please refresh and try again. ${error}</p>`

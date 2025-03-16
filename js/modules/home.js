@@ -52,6 +52,8 @@ export function populationFunctionality() {
         .catch(error => {
             errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
             errorMessage.style.display = "block"
+
+            gsap.to(window, { duration: 1, scrollTo: (errorMessage)})
         })
     }
 
@@ -97,6 +99,8 @@ export function populationFunctionality() {
         .catch(error => {
             errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
             errorMessage.style.display = "block"
+
+            gsap.to(window, { duration: 1, scrollTo: (errorMessage)})
         })
     }
 
@@ -149,6 +153,12 @@ export function populationFunctionality() {
                 characterLink.setAttribute("data-name", `${character.name}`)
                 characterLink.addEventListener("click", showPokemon)
 
+                if (character.link === null) {
+                    characterLink.setAttribute("data-link", "none")
+                } else {
+                    characterLink.setAttribute("data-link", `${character.link}`)
+                }
+
                 characterSelect.appendChild(characterOption)
                 characterList.appendChild(characterLink)
             })
@@ -165,12 +175,15 @@ export function populationFunctionality() {
         .catch(error => {
             errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
             errorMessage.style.display = "block"
+
+            gsap.to(window, { duration: 1, scrollTo: (errorMessage)})
         })
     }
 
     function showPokemon(e) {
         let value = e?.currentTarget?.dataset?.character || characterSelect.value
         let nameVariable = e?.currentTarget?.dataset.name || characterSelect.options[this.selectedIndex].innerText
+        let linkVariable = e?.currentTarget?.dataset.link
 
         fetch(`${baseURL}partners/${value}`)
         .then(response => response.json())
@@ -182,6 +195,7 @@ export function populationFunctionality() {
             const characterBox = document.createElement("div")
             const characterImage = document.createElement("img")
             const partnerBox = document.createElement("div")
+            const link = document.createElement("a")
             const name = document.createElement("h3")
             const displayDiv = document.createElement("div")
             const characterImageBox = document.createElement("div")
@@ -190,9 +204,19 @@ export function populationFunctionality() {
 
             displayDiv.setAttribute("id", "display-div")
 
-            name.textContent = nameVariable
             name.setAttribute("id", "character-title")
             name.setAttribute("class", "dm")
+
+            link.setAttribute("id", "name-link")
+
+            if (linkVariable !== "none") {
+                link.innerHTML = `${nameVariable} <img class="external-icon" src="./images/icons/external.svg" alt="External Link Icon">`
+                link.setAttribute("target", "_blank")
+                link.href = linkVariable
+            } else {
+                link.textContent = nameVariable
+                link.classList.add("inactive-link")
+            }
 
             characterImage.src = `images/characters/${value}.png`
             characterImage.setAttribute("class", "character-image")
@@ -218,6 +242,7 @@ export function populationFunctionality() {
             characterImageBox.appendChild(characterImage)
             characterImageBox.appendChild(submitButton)
             characterImageBox.appendChild(loadingText)
+            name.appendChild(link)
             characterBox.appendChild(name)
             displayDiv.appendChild(characterImageBox)
 
@@ -280,6 +305,8 @@ export function populationFunctionality() {
                 .catch(error => {
                     errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
                     errorMessage.style.display = "block"
+
+                    gsap.to(window, { duration: 1, scrollTo: (errorMessage)})
                 })
             })
 
@@ -294,6 +321,8 @@ export function populationFunctionality() {
         .catch(error => {
             errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
             errorMessage.style.display = "block"
+
+            gsap.to(window, { duration: 1, scrollTo: (errorMessage)})
         })
     }
 
@@ -356,6 +385,8 @@ export function populationFunctionality() {
         .catch(error => {
             errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
             errorMessage.style.display = "block"
+
+            gsap.to(window, { duration: 1, scrollTo: (errorMessage)})
         })
     }
 
@@ -426,12 +457,16 @@ export function populationFunctionality() {
                 .catch(error => {
                     errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
                     errorMessage.style.display = "block"
+
+                    gsap.to(window, { duration: 1, scrollTo: (errorMessage)})
                 })
             }
         })
         .catch(error => {
             errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
             errorMessage.style.display = "block"
+
+            gsap.to(window, { duration: 1, scrollTo: (errorMessage)})
         })
     }
 
@@ -489,6 +524,8 @@ export function populationFunctionality() {
                     .catch(error => {
                         errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
                         errorMessage.style.display = "block"
+
+                        gsap.to(window, { duration: 1, scrollTo: (errorMessage)})
                     })
 
                     fetch(`${baseURL}user-vote/post`, {
@@ -508,6 +545,8 @@ export function populationFunctionality() {
                     .catch(error => {
                         errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
                         errorMessage.style.display = "block"
+
+                        gsap.to(window, { duration: 1, scrollTo: (errorMessage)})
                     })
                 
                 } else if (response.length > 0) {
@@ -523,6 +562,8 @@ export function populationFunctionality() {
             .catch(error => {
                 errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
                 errorMessage.style.display = "block"
+
+                gsap.to(window, { duration: 1, scrollTo: (errorMessage)})
             })
         } else {
             const voteBox = document.querySelector("#vote-box")

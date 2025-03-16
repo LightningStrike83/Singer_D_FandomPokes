@@ -15,7 +15,7 @@ class CharacterController extends Character {
      */
 
      public function getOne($id) {
-        $character = Character::select('id', 'name', 'subseries')->where('subseries', "=", $id)->orderBy('name', 'asc')->get();
+        $character = Character::select('id', 'name', 'subseries', 'link')->where('subseries', "=", $id)->orderBy('name', 'asc')->get();
         return response()->json($character);
     }
 

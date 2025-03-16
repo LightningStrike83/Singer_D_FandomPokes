@@ -49,7 +49,7 @@ session_start();
         </div>
 
         <div id="primary-header">
-            <a id="header-logo" href="index.php"><img src="images/logo-black.svg" alt="Logo for Fandom PokePartners"></a>
+            <a id="header-logo" href="index.php"><img src="images/logo3.svg" alt="Logo for Fandom PokePartners"></a>
 
             <div id="links-con">
                 <ul id="links">
@@ -63,7 +63,7 @@ session_start();
 
     <section id="toc-con" class="grid-con dm">
         <p id="toc-update-text" class="col-span-full toc-text">Last Updated: March 11th, 2025</p>
-        <h3 id="toc-title" class="col-span-full toc-text">Terms and Conditions</h3>
+        <h3 id="toc-title" class="col-span-full toc-text page-title">Terms and Conditions</h3>
         <p class="col-span-full toc-text">Fandom PokePartners is a free to use database with an optional account system for additional user experience. These terms and conditions outline how Fandom PokePartners helps ensure the quality and experience of the website.</p>
         <div id="toc-info" class="col-span-full">
             <ul>
@@ -109,7 +109,7 @@ session_start();
     </section>
 
     <footer class="full-width-grid-con dm">
-        <p id="footer-disclaimer" class="col-start-2 col-span-1">All images used are used for a transformative work and nonprofit. The images are copyrighted or are a registered trademark, sourced from the various Wiki/Fandom pages and galleries. The contributor claims fair use. No copyright infringement is intended.<br><br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br><br>Fandom PokePartners is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by any of the series, creators, parent companies, or affiliated persons found throughout the website. The content displayed in this website is meant for informational purposes only and is not official in any shape or form.<br><br><a href="privacy.php">Privacy Policy</a> | <a href="toc.php">Terms and Conditions</a> | <a href="contact.php">Contact</a></p>
+        <p id="footer-disclaimer" class="col-start-2 col-span-1">All images used are used for a transformative work and nonprofit. The images are copyrighted or are a registered trademark, sourced from the various Wiki/Fandom pages and galleries. The contributor claims fair use. No copyright infringement is intended.<br><br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br><br>Fandom PokePartners is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by any of the series, creators, parent companies, or affiliated persons found throughout the website. Fandom PokePartners is not affiliated or endorsed by Fandom. The content displayed in this website is meant for informational purposes only and is not official in any shape or form.<br><br><a href="privacy.php">Privacy Policy</a> | <a href="toc.php">Terms and Conditions</a> | <a href="contact.php">Contact</a></p>
     </footer>
 
     <section id="hamburger-menu-con" class="full-width-grid-con mobile-menu dm">

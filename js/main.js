@@ -57,3 +57,5 @@ function showPage() {
 }
 
 document.addEventListener("DOMContentLoaded", showPage)
+document.addEventListener("DOMContentLoaded", (event) => {
+    gsap.registerPlugin(ScrollToPlugin)});

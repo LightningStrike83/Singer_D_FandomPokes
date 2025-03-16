@@ -85,6 +85,8 @@ export function profilePopulation() {
                 })
                 .catch(error => {
                     profileError.innerHTML = `<p>Sorry, something went wrong. Please refresh and try again. ${error}</p>`
+
+                    gsap.to(window, { duration: 1, scrollTo: (profileError)})
                 })
 
                 fetch(`${baseURL}/submitter/${sk}`)
@@ -118,7 +120,7 @@ export function profilePopulation() {
             
                             div.setAttribute("class", "profile-content-con")
                             infoDiv.setAttribute("class", "character-submit-info")
-                            title.setAttribute("class", "profile-info-title")
+                            title.setAttribute("class", "profile-info-title dm")
                             name.setAttribute("class", "character-name-submission")
             
                             if (document.body.classList.contains("dark-mode")) {
@@ -136,6 +138,8 @@ export function profilePopulation() {
                 })
                 .catch(error => {
                     profileError.innerHTML = `<p>Sorry, something went wrong. Please refresh and try again. ${error}</p>`
+
+                    gsap.to(window, { duration: 1, scrollTo: (profileError)})
                 })
             } else {
                 const mainInfo = document.querySelector("#main-info-con")
@@ -156,6 +160,8 @@ export function profilePopulation() {
         })
         .catch(error => {
             profileError.innerHTML = `<p>Sorry, something went wrong. Please refresh and try again. ${error}</p>`
+
+            gsap.to(window, { duration: 1, scrollTo: (profileError)})
         })
 
         
@@ -192,6 +198,7 @@ export function profilePopulation() {
         button.innerHTML = "Edit Profile"
         button.setAttribute("class", "dm")
         button.addEventListener("click", activateEditMode)
+        button.setAttribute("id", "edit-profile-button")
 
         if (document.body.classList.contains("match")) {
             skHome.appendChild(button)
@@ -326,6 +333,8 @@ export function profilePopulation() {
             })
             .catch(error => {
                 profileError.innerHTML = `<p>Sorry, something went wrong. Please refresh and try again. ${error}</p>`
+
+                gsap.to(window, { duration: 1, scrollTo: (profileError)})
             })
 
             textInputs.forEach(info => {
@@ -397,6 +406,8 @@ export function profilePopulation() {
         })
         .catch(error => {
             profileError.innerHTML = `<p>Sorry, something went wrong. Please refresh and try again. ${error}</p>`
+
+            gsap.to(window, { duration: 1, scrollTo: (profileError)})
         })
     }
 
@@ -431,6 +442,8 @@ export function profilePopulation() {
         })
         .catch(error => {
             profileError.innerHTML = `<p>Sorry, something went wrong. Please refresh and try again. ${error}</p>`
+
+            gsap.to(window, { duration: 1, scrollTo: (profileError)})
         })
     }
 

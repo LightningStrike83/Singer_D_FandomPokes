@@ -5,7 +5,5 @@ export function smoothScroll() {
         gsap.to(window, { duration: 1, scrollTo: (0)})
     }
 
-    document.addEventListener("DOMContentLoaded", (event) => {
-        gsap.registerPlugin(ScrollToPlugin)});
     topText.addEventListener("click", toTop)
 }

@@ -14,6 +14,9 @@ header {
 #theme-image {
     margin-left: 10px;
     margin-right: 10px;
+    background-color: c.$textgreen;
+    border-radius: 20px;
+    border: 1px solid c.$textgreen;
 }
 
 #theme-enable-text {
@@ -94,8 +97,8 @@ header {
 #supplementary-header {
     display: flex;
     justify-content: space-between;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .mobile-links a {
@@ -121,8 +124,8 @@ header {
         top: 0;
         left: 2.5%; 
         width: 95%;
-        height: 1px;
-        background-color: black;
+        height: 1.5px;
+        background-color: c.$textgreen;
     }
 
     #primary-header {

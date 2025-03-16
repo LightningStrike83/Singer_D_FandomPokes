@@ -50,7 +50,7 @@ session_start();
         </div>
 
         <div id="primary-header">
-            <a id="header-logo" href="index.php"><img src="images/logo-black.svg" alt="Logo for Fandom PokePartners"></a>
+            <a id="header-logo" href="index.php"><img src="images/logo3.svg" alt="Logo for Fandom PokePartners"></a>
 
             <div id="links-con">
                 <ul id="links">
@@ -64,7 +64,7 @@ session_start();
 
     <section id="contact-con" class="grid-con dm">
       <h1 class="hidden">Contact Form</h1>
-        <h3 id="contact-title" class="col-span-full">Contact</h3>
+        <h3 id="contact-title" class="col-span-full page-title">Contact</h3>
         <div id="contact-form-con" class="col-span-full dm">
             <form id="contact-form">
                 <label for="name">Preferred Name:</label>
@@ -75,6 +75,11 @@ session_start();
                 <input id="subject" name="subject" type="text" placeholder="Please Enter A Subject" class="dm">
                 <label for="message">Your Message:</label>
                 <textarea name="message" id="message" placeholder="Please Enter Your Message" class="dm"></textarea>
+
+                <div id="privacy-check-con">
+                    <input type="checkbox" id="privacy-policy-check" class="privacy-checkbox dm"><label for="privacy-policy-checkbox">I have read and agree with the <a id="register-privacy-link" href="privacy.php">privacy policy</a></label>
+                </div>
+
                 <input type="submit" value="Send" id="submit-contact" class="dm">
             </form>
 
@@ -93,7 +98,7 @@ session_start();
     </section>
 
     <footer class="full-width-grid-con dm">
-        <p id="footer-disclaimer" class="col-start-2 col-span-1">All images used are used for a transformative work and nonprofit. The images are copyrighted or are a registered trademark, sourced from the various Wiki/Fandom pages and galleries. The contributor claims fair use. No copyright infringement is intended.<br><br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br><br>Fandom PokePartners is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by any of the series, creators, parent companies, or affiliated persons found throughout the website. The content displayed in this website is meant for informational purposes only and is not official in any shape or form.<br><br><a href="privacy.php">Privacy Policy</a> | <a href="toc.php">Terms and Conditions</a> | <a href="contact.php">Contact</a></p>
+        <p id="footer-disclaimer" class="col-start-2 col-span-1">All images used are used for a transformative work and nonprofit. The images are copyrighted or are a registered trademark, sourced from the various Wiki/Fandom pages and galleries. The contributor claims fair use. No copyright infringement is intended.<br><br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br><br>Fandom PokePartners is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by any of the series, creators, parent companies, or affiliated persons found throughout the website. Fandom PokePartners is not affiliated or endorsed by Fandom. The content displayed in this website is meant for informational purposes only and is not official in any shape or form.<br><br><a href="privacy.php">Privacy Policy</a> | <a href="toc.php">Terms and Conditions</a> | <a href="contact.php">Contact</a></p>
     </footer>
 
     <section id="hamburger-menu-con" class="full-width-grid-con mobile-menu dm">
