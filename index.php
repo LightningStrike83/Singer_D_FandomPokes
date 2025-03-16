@@ -16,7 +16,7 @@ session_start();
     <link rel="icon" type="image/svg+xml" href="./images/favicon/favicon.svg">
     <link rel="shortcut icon" href="./images/favicon/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
-    <meta name="apple-mobile-web-app-title" content="MyWebSite">
+    <meta name="apple-mobile-web-app-title" content="Fandom PokePartners">
     <link rel="manifest" href="./images/favicon/site.webmanifest">
     <link rel="stylesheet" href="css/grid.css?version=0.1">
     <link rel="stylesheet" href="css/main.css?version=0.1">
@@ -34,7 +34,7 @@ session_start();
             </div>
 
             <div id="hamburger-menu">
-                <img src="images/ham_menu.svg" alt="Hamburger Menu">
+                <img class="dm" src="images/ham_menu.svg" alt="Hamburger Menu">
             </div>
 
             <?php
@@ -50,7 +50,7 @@ session_start();
         </div>
 
         <div id="primary-header">
-            <a id="header-logo" href="index.php"><img src="images/logo3.svg" alt="Logo for Fandom PokePartners"></a>
+            <a id="header-logo" class="dm" href="index.php"><img src="images/logo3.svg" alt="Logo for Fandom PokePartners"></a>
 
             <div id="links-con">
                 <ul id="links">
@@ -65,7 +65,7 @@ session_start();
     <div id="update-con" class="full-width-grid-con">
         <div id="head-info-con" class="col-span-full">
             <p id="home-about-text" class="dm"><span class="more-info dm">?</span> About the Site</p>
-            <p id="update-text" class="dm">Last Content Update: <span id="patch-open">March 11th, 2025</span></p>
+            <p id="update-text" class="dm">Last Content Update: <span id="patch-open">March 16th, 2025</span></p>
         </div>
     </div>
 
@@ -188,7 +188,7 @@ session_start();
                     <p class="close-button">X</p>
                 </div>
             </div>
-            <h3 id="update-title" class="col-span-full">Update Notes: March 11th, 2025</h3>
+            <h3 id="update-title" class="col-span-full">Update Notes: March 16th, 2025</h3>
             <div id="update-info" class="col-span-full">
                 <h3>Series / Subseries Added:</h3>
                 <p>-Ben 10 (OG)
@@ -316,7 +316,6 @@ session_start();
                 -Marianne von Edmund<br>
                 -Marinette Dupain-Cheng (Ladybug)<br>
                 -Metal Sonic<br>
-                -Miles Morales (Spider-Man) (Earth 1610B)<br>
                 -Miles "Tails" Prower<br>
                 -Mitsuru Kijiro<br>
                 -Monika<br>
@@ -341,10 +340,14 @@ session_start();
                 -Samus Aran<br>
                 -Sanganomiya Kokomi<br>
                 -Seto Kaiba<br>
+                -Sir Pentious<br>
                 -Shark (Reginald Kastle)<br>
                 -Shulk<br>
                 -Silver the Hedgehog<br>
+                -Spider-Man (Miles Morales) (Earth 1610B)<br>
+                -Spider-Man Noir (Peter Parker) (Earth-90214)<br>
                 -Sonic the Hedgehog<br>
+                -Strea<br>
                 -Sumire Yoshizawa (Violet)<br>
                 -Takuto Maruki<br>
                 -The Chosen<br>
@@ -375,7 +378,10 @@ session_start();
                     <p class="close-button">X</p>
                 </div>
                 
-                <h3>Welcome to Fandom PokePartners</h3>
+                <div id="intro-con">
+                    <img id="intro-logo" src="images/logo3-dark.svg" alt="Logo of Fandom PokePartners">
+                    <h3>Welcome to Fandom PokePartners</h3>
+                </div>
                 <p>Fandom PokePartners is a non-profit database featuring characters from fictional media alongside suggestions of Pokemon that they may use or befriend. This website's primary goal is to inspire creatives and provide a space for fans to share their ideas. All character entries and Pokemon suggestions are submissions from fans.</p>
 
                 <h4>How to Use The Site:</h4>
@@ -394,7 +400,7 @@ session_start();
 
                 <h4>Creator & Associated Link:</h4>
                 <ul>
-                    <li>Fandom PokePartners is developed, designed, and operated by <a href="http://localhost/Singer_D_FandomPokes/profile.php?id=1">LightningBeyond</a></li>
+                    <li>Fandom PokePartners is developed, designed, and operated by <a target="_blank" href="http://localhost/Singer_D_FandomPokes/profile.php?id=1">LightningBeyond</a></li>
                     <li>Feel free to check out Lightning's other Pokemon-inspired website <a target="_blank" href="https://littlerootdreams.com/index.html">Littleroot Dreams</a></li>
                 </ul>
 

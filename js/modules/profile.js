@@ -66,12 +66,12 @@ export function profilePopulation() {
                             pokemonImage.setAttribute("alt", `${upvote.species_name}`)
                             characterImage.setAttribute("alt", `${upvote.character_name}`)
             
-                            div.setAttribute("class", "profile-content-con")
+                            div.setAttribute("class", "profile-content-con dm")
                             imageDiv.setAttribute("class", "profile-image-con")
-                            title.setAttribute("class", "profile-info-title dm")
+                            title.setAttribute("class", "profile-info-title")
             
                             if (document.body.classList.contains("dark-mode")) {
-                                title.classList.add("dark-mode")
+                                div.classList.add("dark-mode")
                             }
             
                             imageDiv.appendChild(characterImage)
@@ -118,13 +118,13 @@ export function profilePopulation() {
                             characterImage.src = `./images/characters/${character.id}.png`
                             characterImage.setAttribute("alt", `${character.name}`)
             
-                            div.setAttribute("class", "profile-content-con")
+                            div.setAttribute("class", "profile-content-con dm")
                             infoDiv.setAttribute("class", "character-submit-info")
-                            title.setAttribute("class", "profile-info-title dm")
+                            title.setAttribute("class", "profile-info-title")
                             name.setAttribute("class", "character-name-submission")
             
                             if (document.body.classList.contains("dark-mode")) {
-                                title.classList.add("dark-mode")
+                                div.classList.add("dark-mode")
                             }
             
                             div.appendChild(title)

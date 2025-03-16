@@ -164,16 +164,6 @@ option:disabled {
     color: rgb(50, 50, 50);
 }
 
-#hamburger-menu-con.dark-mode {
-    background-color: c.$dmsecondarygray;
-    a, p {
-        color: c.$graytext;
-    }
-    .hamburger-divider {
-        border-bottom: 1px solid c.$graytext;
-    }
-}
-
 @media screen and (min-width: 768px) {
     .select-list {
         width: 50%;

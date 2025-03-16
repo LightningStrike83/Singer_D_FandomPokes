@@ -23,6 +23,8 @@ export function ruleCheck() {
         
         if (uncheckedBox.length > 0) {
             ruleError.textContent = `Please accept the rules of: ${uncheckedBox.map(box => box.dataset.checkbox).join(", ")}`;
+
+            gsap.to(window, { duration: 1, scrollTo: (ruleError)})
         } else {
             const ruleCon = document.querySelector("#rule-con")
 

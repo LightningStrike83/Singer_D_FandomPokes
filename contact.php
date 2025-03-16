@@ -16,7 +16,7 @@ session_start();
     <link rel="icon" type="image/svg+xml" href="./images/favicon/favicon.svg">
     <link rel="shortcut icon" href="./images/favicon/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
-    <meta name="apple-mobile-web-app-title" content="MyWebSite">
+    <meta name="apple-mobile-web-app-title" content="Fandom PokePartners">
     <link rel="manifest" href="./images/favicon/site.webmanifest">
     <link rel="stylesheet" href="css/grid.css?version=0.1">
     <link rel="stylesheet" href="css/main.css?version=0.1">
@@ -34,7 +34,7 @@ session_start();
             </div>
 
             <div id="hamburger-menu">
-                <img src="images/ham_menu.svg" alt="Hamburger Menu">
+                <img class="dm" src="images/ham_menu.svg" alt="Hamburger Menu">
             </div>
 
             <?php
@@ -50,7 +50,7 @@ session_start();
         </div>
 
         <div id="primary-header">
-            <a id="header-logo" href="index.php"><img src="images/logo3.svg" alt="Logo for Fandom PokePartners"></a>
+            <a id="header-logo" class="dm" href="index.php"><img src="images/logo3.svg" alt="Logo for Fandom PokePartners"></a>
 
             <div id="links-con">
                 <ul id="links">

@@ -408,7 +408,7 @@
 
 #welcome-con {
     position: absolute;
-    padding-left: 5px;
+    padding-left: 10px;
     padding-right: 10px;
     overflow-y: scroll;
     width: 80%;
@@ -418,7 +418,6 @@
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     h3 {
         text-align: center;
-        margin-bottom: 10px;
     }
 
     p {
@@ -523,7 +522,19 @@
 }
 
 .external-icon {
-    width: 17.5px;
+    width: 15px;
+    margin-left: 2.5px;
+}
+
+#intro-con {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+    img {
+        width: 175px;
+        margin-bottom: 20px;
+    }
 }
 
 @media screen and (min-width: 428px) {
@@ -609,5 +620,16 @@
 @media screen and (min-width: 1200px) {
     .partner-div {
         padding-right: 50px;
+    }
+
+    #intro-con {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-end;
+        padding-right: 15%;
+        img {
+            padding-right: 15px;
+            margin-bottom: 0;
+        }
     }
 }
