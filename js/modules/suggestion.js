@@ -44,6 +44,8 @@ export function suggestionSubmit() {
         })
         .catch(error => {
             errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
+
+            gsap.to(window, { duration: 1, scrollTo: (errorMessage)})
         })
     }
 
@@ -108,9 +110,13 @@ export function suggestionSubmit() {
             suggestError.textContent = "Submitted! The request will be reviewed and will be added in the next update if approved!"
 
             form.reset()
+
+            gsap.to(window, { duration: 1, scrollTo: (errorMessage)})
         })
         .catch(error => {
             errorMessage.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
+
+            gsap.to(window, { duration: 1, scrollTo: (errorMessage)})
         })
     }
 

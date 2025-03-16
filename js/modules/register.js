@@ -87,6 +87,8 @@ export function registerUser() {
                                     .then(response => response.json())
                                     .then(function(response) {
                                         registerError.innerHTML = '<p>Thank you for registering! Please login <a class="register-login-link" href="login.html">here ►</a></p>'
+
+                                        registerForm.reset()
                                     })
                                     .catch(error => {
                                         registerError.innerHTML = `<p>Sorry, something went wrong. ${error}</p>`

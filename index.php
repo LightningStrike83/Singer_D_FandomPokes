@@ -50,7 +50,7 @@ session_start();
         </div>
 
         <div id="primary-header">
-            <a id="header-logo" href="index.php"><img src="images/logo-black.svg" alt="Logo for Fandom PokePartners"></a>
+            <a id="header-logo" href="index.php"><img src="images/logo3.svg" alt="Logo for Fandom PokePartners"></a>
 
             <div id="links-con">
                 <ul id="links">
@@ -65,7 +65,7 @@ session_start();
     <div id="update-con" class="full-width-grid-con">
         <div id="head-info-con" class="col-span-full">
             <p id="home-about-text" class="dm"><span class="more-info dm">?</span> About the Site</p>
-            <p id="update-text" class="dm">Last Content Update: <span id="patch-open">March 4th, 2025</span></p>
+            <p id="update-text" class="dm">Last Content Update: <span id="patch-open">March 11th, 2025</span></p>
         </div>
     </div>
 
@@ -110,7 +110,7 @@ session_start();
     </section>
 
     <footer class="full-width-grid-con dm">
-        <p id="footer-disclaimer" class="col-start-2 col-span-1">All images used are used for a transformative work and nonprofit. The images are copyrighted or are a registered trademark, sourced from the various Wiki/Fandom pages and galleries. The contributor claims fair use. No copyright infringement is intended.<br><br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br><br>Fandom PokePartners is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by any of the series, creators, parent companies, or affiliated persons found throughout the website. The content displayed in this website is meant for informational purposes only and is not official in any shape or form.<br><br><a href="privacy.php">Privacy Policy</a> | <a href="toc.php">Terms and Conditions</a> | <a href="contact.php">Contact</a></p>
+        <p id="footer-disclaimer" class="col-start-2 col-span-1">All images used are used for a transformative work and nonprofit. The images are copyrighted or are a registered trademark, sourced from the various Wiki/Fandom pages and galleries. The contributor claims fair use. No copyright infringement is intended.<br><br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br><br>Fandom PokePartners is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by any of the series, creators, parent companies, or affiliated persons found throughout the website. Fandom PokePartners is not affiliated or endorsed by Fandom. The content displayed in this website is meant for informational purposes only and is not official in any shape or form.<br><br><a href="privacy.php">Privacy Policy</a> | <a href="toc.php">Terms and Conditions</a> | <a href="contact.php">Contact</a></p>
     </footer>
 
     <section id="hamburger-menu-con" class="full-width-grid-con mobile-menu dm">
@@ -283,6 +283,7 @@ session_start();
                 -Fae<br>
                 -Faris<br>
                 -Firefly<br>
+                -Forrest<br>
                 -Futaba Sakura (Oracle)<br>
                 -Gabriel Agreste (Hawkmoth)<br>
                 -Ganondorf<br>
@@ -296,7 +297,6 @@ session_start();
                 -Henry<br>
                 -Hilda Valentine Goneril<br>
                 -Jack Atlas<br>
-                -Jiraiya<br>
                 -Jiraiya<br>
                 -Joey Wheeler<br>
                 -Joker (Ren Amamiya)<br>
@@ -353,6 +353,7 @@ session_start();
                 -Valentino<br>
                 -Valjean<br>
                 -Vellian Crowler<br>
+                -Waluigi<br>
                 -Xane<br>
                 -Yami Bakura<br>
                 -Yudias Velgear<br>
@@ -383,6 +384,7 @@ session_start();
                     <li>On desktop, click on the character you wish to view from the Character List</li>
                     <li>On mobile, use the select list to select the character you wish to view</li>
                     <li>You can submit a Pokemon for the character by clicking the "Submit A Pokemon For This Character" button and filling out a quick form (approved automatically)</li>
+                    <li>You can visit the character's wiki / fandom page by clicking or tapping their name if it has an <img class="external-icon" src="./images/icons/white-external.svg" alt="External Link Icon"> icon</li>
                     <li>To submit a character, click on the suggestion page, accept the terms of submission, and fill out the form (requires developer approval)</li>
                     <li>To upvote a partner suggestion, create an account and click the respective arrow in the Pokemon's container</li>
                     <li>Fill out your profile with fandom related information by clicking the "Edit Profile" button on your profile page</li>
@@ -402,7 +404,7 @@ session_start();
                     <li>All images are sourced from their respective wiki / fandom pages which are attributed as fair use</li>
                     <li>Pokemon images are sourced from spriters-resource, originally from Pokemon Home</li>
                     <li>Design inspiration for the website came from <a target="_blank" href="https://pokedoku.com/">PokeDoku</a> and <a target="_blank" href="https://pkmn.net/?action=rater">PKMN.net's Name Rater</a></li>
-                    <li>Profile Edit icons are sourced from <a target="_blank" href="https://icons8.com/">Icons8</a></li>
+                    <li>Profile Edit icons and External Link icon are sourced from <a target="_blank" href="https://icons8.com/">Icons8</a></li>
                     <li>Pokeball Profile pictures were graciously given by one of the dev's best friends</li>
                 </ul>
 
@@ -410,7 +412,8 @@ session_start();
                 <ul>
                     <li><a href="https://www.tumblr.com/ducessaeva" target="_blank">DucessaEva</a> for design review and alpha testing</li>
                     <li>Sophia for the icons for the profile pages and design help</li>
-                    <li>TwistedTempoGaming, <a target="_blank" href="https://sunbiscuit.wixsite.com/portfolio">sunbiscuit</a>, and Yumichan216 for inspiration and support</li>
+                    <li>Yumichan216 for design review and advice</li>
+                    <li>TwistedTempoGaming, <a target="_blank" href="https://sunbiscuit.wixsite.com/portfolio">sunbiscuit</a> for inspiration and support</li>
                 </ul>
             </div>
         </div>

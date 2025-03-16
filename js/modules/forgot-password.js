@@ -42,8 +42,9 @@ export function forgotPassword() {
                                 forgotError.appendChild(p);
                             });
                         } else {
-                            forgotForm.reset();
                             forgotError.innerHTML = "<p>An email has been sent with instructions on how to reset the password!</p>";
+
+                            forgotForm.reset();
                         }
                     })
                     .catch(error => {

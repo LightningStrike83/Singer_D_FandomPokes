@@ -15,11 +15,15 @@
     border-top: 3px solid black;
     border-bottom: 3px solid black;
     background-color: c.$dmprimarygreen;
+    a {
+        color: c.$textgreen;
+    }
 }
 
 #character-list-title.dark-mode {
     border-bottom: 2px solid black;
     background-color: c.$dmprimarygreen;
+    color: c.$textgreen;
 }
 
 body.dark-mode {
@@ -67,20 +71,36 @@ button.dark-mode, .profile-info-title.dark-mode, #submit-pokemon.dark-mode {
     background-color: c.$dmprimarygreen;
 }
 
+.profile-info-title.dark-mode {
+    color: c.$textgreen;
+}
+
 button.dark-mode {
     border: 1.5px solid black;
 }
 
-button.dark-mode, input[type=submit].dark-mode {
+#submit-pokemon-button.dark-mode, #submit-pokemon.dark-mode {
+    color: c.$textgreen;
     &:hover {
         background-color: #afafaf!important;
-        color: c.$dmprimarygreen;
+    }
+}
+
+#edit-profile-button.dark-mode {
+    background-color: #afafaf;
+    &:hover {
+        background-color: #505050;
     }
 }
 
 .info-box.dark-mode, #suggest-pokemon.dark-mode, input.dark-mode, textarea.dark-mode, #profile-select-menu.dark-mode, #pokemon-submit-select.dark-mode {
     &:not(#submit-pokemon.dark-mode) {
         background-color: #afafaf!important;
+
+        &:hover {
+            background-color: c.$dmsecondarygray!important;
+            color: c.$graytext;
+        }
     }
 }
 

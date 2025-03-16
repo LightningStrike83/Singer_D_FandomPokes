@@ -24,7 +24,6 @@
     margin-top: 5px;
     border-radius: 10px;
     padding: 5px;
-    width: 80%;
     margin-bottom: 20px;
 }
 
@@ -37,23 +36,11 @@
 }
 
 #submit-contact {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 10px;
     margin-top: 20px;
-    cursor: pointer;
-    transition: all ease-in-out 0.5s;
-    background-color: white;
-    width: 25%;
-    &:hover {
-        color: white;
-    }
 }
 
 #error-message {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 #error-text {
@@ -72,7 +59,7 @@
 }
 
 @media screen and (min-width: 768px) {
-    #contact-form input:not(#submit-contact) {
+    #contact-form input:not(#submit-contact, #privacy-policy-check) {
         width: 50%;
     }
 

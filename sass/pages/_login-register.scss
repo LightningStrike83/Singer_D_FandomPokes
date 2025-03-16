@@ -1,3 +1,5 @@
+@use "../abstracts/colours" as c;
+
 #login-form, #register-form, .forgot-form, #reset-password-form {
     display: flex;
     flex-direction: column;
@@ -54,6 +56,9 @@
 .forgot-link {
     margin-bottom: 15px;
     text-decoration: underline!important;
+    &:hover {
+        color: c.$graytext;
+    }
 }
 
 @media screen and (min-width: 768px) {
