@@ -210,7 +210,13 @@ export function populationFunctionality() {
             link.setAttribute("id", "name-link")
 
             if (linkVariable !== "none") {
-                link.innerHTML = `${nameVariable} <img class="external-icon" src="./images/icons/external.svg" alt="External Link Icon">`
+                
+                if (document.body.classList.contains("dark-mode")) {
+                    link.innerHTML = `${nameVariable} <img class="external-icon" src="./images/icons/external-dark.svg" alt="External Link Icon">`
+                } else {
+                    link.innerHTML = `${nameVariable} <img class="external-icon" src="./images/icons/external.svg" alt="External Link Icon">`
+                }
+
                 link.setAttribute("target", "_blank")
                 link.href = linkVariable
             } else {
